@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 
 const Logo = ({ scrolled }: { scrolled: boolean }) => (
   <Link href="/" className="flex items-center gap-2">
-    <Rocket className={cn("h-6 w-6", scrolled ? "text-primary" : "text-white")} />
+    <Rocket className={cn("h-6 w-6", scrolled ? "text-orange-500" : "text-white")} />
     <span className={cn(
       "text-xl font-bold font-headline",
       scrolled ? "text-foreground" : "text-white"
