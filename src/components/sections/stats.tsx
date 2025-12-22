@@ -59,7 +59,7 @@ export function Stats() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {stats.map((stat, index) => (
                         <div key={index} className="text-center flex flex-col items-center">
-                            <Icon name={stat.icon} className="h-12 w-12 mb-4 text-accent" />
+                            <Icon name={stat.icon} className="h-12 w-12 mb-4 text-white" />
                             <CountUp end={stat.value} />
                             <span className="text-lg mt-2">{stat.label}</span>
                         </div>
