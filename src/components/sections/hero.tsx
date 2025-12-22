@@ -8,8 +8,8 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[calc(100vh-4rem)] min-h-[700px] w-full text-white">
-      <Carousel className="absolute inset-0 h-full w-full">
+    <section id="home" className="relative h-screen min-h-[700px] w-full text-white pt-16">
+      <Carousel className="absolute inset-0 top-16 h-[calc(100vh-4rem)] w-full">
         <CarouselContent className="h-full">
           {heroData.images.map((img, index) => (
             <CarouselItem key={index} className="h-full">
@@ -25,7 +25,7 @@ export function Hero() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 top-16 h-[calc(100vh-4rem)] bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center p-4">
         <div className="space-y-6 max-w-4xl">
             <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
