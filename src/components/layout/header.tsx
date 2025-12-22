@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -18,29 +19,17 @@ const Logo = () => (
 );
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header className={cn(
-      "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent"
-    )}>
+    <header className="sticky top-0 z-50 w-full bg-background border-b">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <div className={cn("transition-colors", "text-foreground")}>
+        <div className="text-foreground">
             <Logo />
         </div>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={cn("text-sm font-medium transition-colors", "text-foreground/80 hover:text-foreground")}>
+            <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
               {link.label}
             </Link>
           ))}
@@ -48,7 +37,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn("transition-colors", "text-foreground hover:bg-accent/10")}>
+              <Button variant="ghost" size="icon" className="text-foreground hover:bg-accent/10">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
