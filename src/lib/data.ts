@@ -5,171 +5,155 @@ import { PlaceHolderImages } from './placeholder-images';
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id) as ImagePlaceholder;
 
 export const navLinks = [
+  { href: '#preamble', label: 'About' },
+  { href: '#papers', label: 'Call for Papers' },
+  { href: '#schedules', label: 'Important Dates' },
+  { href: '#tickets', label: 'Registration' },
   { href: '#speakers', label: 'Speakers' },
-  { href: '#schedules', label: 'Schedules' },
-  { href: '#tickets', label: 'Tickets' },
-  { href: '#sponsors', label: 'Sponsors' },
-  { href: '#info', label: 'Info' },
   { href: '#contact', label: 'Contact' },
 ];
 
 export const heroData = {
-  title: 'Digital Conference 2026',
-  date: 'December 3rd to 7th',
-  location: 'Orlando, Florida.',
-  countdownTarget: '2025-12-03T09:00:00',
+  title: 'SustainTechCon 2026',
+  subtitle: '1st International Conference on Sustainable Technologies and Intelligent Systems',
+  date: '6–7 March 2026',
+  location: 'Vasantdada Patil’s College of Engineering and Visual Arts, Sion, Mumbai, India',
+  countdownTarget: '2026-03-06T09:00:00',
   images: [getImage('hero-1'), getImage('hero-2')],
+};
+
+export const preamble = {
+    title: 'Preamble',
+    content: "SustainTechCon 2026 is the 1st International Conference on Sustainable Technologies and Intelligent Systems, designed to bring together researchers, academicians, industry experts, innovators, and policymakers from across the globe. The conference focuses on the convergence of sustainability, intelligent systems, artificial intelligence, IoT, smart engineering, and emerging technologies to address real-world challenges. In the era of rapid technological advancement and environmental concerns, SustainTechCon 2026 aims to provide a premier platform for knowledge exchange, innovation, and interdisciplinary collaboration. The conference emphasizes cutting-edge research, practical implementations, and sustainable engineering solutions aligned with global development goals."
+}
+
+export const objectives = [
+    'To promote research and innovation in sustainable technologies and intelligent systems',
+    'To encourage interdisciplinary collaboration among engineering, technology, management, healthcare, agriculture, and environmental sciences',
+    'To provide a global platform for research scholars and professionals to present high-quality research',
+    'To bridge the gap between academia, industry, and society',
+    'To highlight the role of AI, IoT, cyber-physical systems, and digital twins in sustainable development',
+    'To support young researchers and students through mentorship and exposure to global research trends',
+];
+
+export const callForPapers = {
+    description: "Authors are invited to submit original, unpublished, and high-quality research papers that are not under review elsewhere. Papers should present novel research contributions, experimental studies, theoretical analysis, or practical applications related to the conference themes.",
+    themes: [
+        'Artificial Intelligence, Machine Learning & Deep Learning',
+        'Data Analytics and Intelligent Information Management',
+        'Sustainable Computing and Green Technologies',
+        'Intelligent Software Systems and Decision-Support Systems',
+        'Big Data Processing and Knowledge Engineering',
+        'Industrial Automation and Smart Manufacturing',
+        'Internet of Things (IoT) and Smart Sensing Systems',
+        'Cyber-Physical Systems and Autonomous Technologies',
+        'Digital Twins and Real-Time Monitoring Architectures',
+        'AI-Driven Communication and Networking',
+        'Wireless Sensor Networks and Edge Intelligence',
+        'Network Security, Cybersecurity, and Information Assurance',
+        'Sustainable Energy Systems and Smart Grids',
+        'Intelligent Systems in Healthcare, Agriculture, and Smart Cities',
+        'Engineering Solutions for Sustainability'
+    ],
+    submissionDetails: [
+        'Papers must be written in English',
+        'Manuscripts should be original and plagiarism-free',
+        'AI-generated content should be minimal and compliant with publisher guidelines',
+        'Authors should follow the conference paper template (to be downloaded from the website)',
+        'Paper length: 6–8 pages (as per template)',
+        'Submission Mode: Online paper submission system',
+        'All submissions will undergo a double-blind peer review process'
+    ],
+    publicationDetails: {
+        title: 'Publication Details',
+        description: 'Selected high-quality papers will be published in Scopus-indexed conference proceedings / journals (as per publisher approval). Additional accepted papers may be published in peer-reviewed journals with DOI. All papers will be subjected to rigorous peer review, plagiarism, and quality checks. Publication is subject to publisher norms and ethical guidelines.',
+        indexing: 'Scopus (for selected proceedings)'
+    }
 };
 
 export const speakers = [
   {
-    name: 'Ben Sheridan',
-    title: 'Founder & CEO',
-    bio: 'Interested in all digital things. Has earned several awards and has experience of being a speaker at world-class seminars.',
+    name: 'Dr. John Smith',
+    title: 'AI & Sustainability Expert',
+    bio: 'Renowned researcher in AI applications for environmental sustainability and green computing. Keynote speaker at multiple international conferences.',
     image: getImage('speaker-ben'),
   },
   {
-    name: 'Sophie Lana',
-    title: 'Founder & CEO',
-    bio: 'Interested in all the digital things. Has earned several awards and has been a speaker at many world-class seminars.',
+    name: 'Dr. Jane Doe',
+    title: 'IoT & Smart Systems Pioneer',
+    bio: 'Expert in IoT and Cyber-Physical Systems, with a focus on smart city and healthcare applications. Holds multiple patents in sensor technology.',
     image: getImage('speaker-sophie'),
   },
   {
-    name: 'James Hoult',
-    title: 'Founder & CEO',
-    bio: 'Interested in all the digital things. Has earned several awards and has been a speaker at many world-class seminars.',
+    name: 'Prof. Alan Turing',
+    title: 'Head of Computer Science',
+    bio: 'Leading academic in machine learning and data analytics. Published over 100 research papers in high-impact journals.',
     image: getImage('speaker-james'),
   },
   {
-    name: 'Oscar Helman',
-    title: 'Founder & CEO',
-    bio: 'Interested in all the digital things. Has earned several awards and has been a speaker at many world-class seminars.',
-    image: getImage('speaker-oscar'),
-  },
-  {
-    name: 'Rose Shipp',
-    title: 'Founder & CEO',
-    bio: 'Interested in all the digital things. Has earned several awards and has been a speaker at many world-class seminars.',
+    name: 'Dr. Ada Lovelace',
+    title: 'Industry Innovator',
+    bio: 'Technology leader with 20+ years of experience in industrial automation and smart manufacturing. Implemented large-scale digital twin projects.',
     image: getImage('speaker-rose'),
-  },
-  {
-    name: 'Isaac Nicholas',
-    title: 'Founder & CEO',
-    bio: 'Interested in all the digital things. Has earned several awards and has been a speaker at many world-class seminars.',
-    image: getImage('speaker-isaac'),
-  },
-  {
-    name: 'John Arnold',
-    title: 'Founder & CEO',
-    bio: 'Interested in all the digital things. Has earned several awards and has been a speaker at many world-class seminars.',
-    image: getImage('speaker-john'),
-  },
-  {
-    name: 'Emily Carter',
-    title: 'Digital Strategist',
-    bio: 'An expert in digital marketing and online presence, Emily helps brands connect with their audiences in meaningful ways.',
-    image: getImage('speaker-emily'),
   },
 ];
 
-export const stats = [
-    { value: 8800, label: 'Participants', icon: 'Users' as const },
-    { value: 300, label: 'Topics', icon: 'Presentation' as const },
-    { value: 50, label: 'Speakers', icon: 'Mic' as const },
-    { value: 20, label: 'Awards', icon: 'Globe' as const },
-];
-  
 export const schedules = [
     {
-      day: '01',
-      date: '3 December, 2025',
+      day: '30 Nov',
+      date: '2025',
       events: [
-        { time: '08:00 - 10:00 AM', speakerName: 'Ben Sheridan', topic: 'Introduction WordPress', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours.' },
-        { time: '12:00 - 14:00 PM', speakerName: 'Sophie Lana', topic: 'Getting Started With WordPress', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours.' },
-        { time: '16:00 - 18:00 PM', speakerName: 'James Hoult', topic: 'Prepare Your Hosting & Domain', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours.' },
-        { time: '20:00 - 22:00 PM', speakerName: 'Oscar Helman', topic: 'WordPress Theme Development Basic', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours.' },
+        { time: '', speakerName: '', topic: 'Paper Submission Deadline', description: '' },
       ],
     },
     {
-        day: '02',
-        date: '4 December, 2025',
+        day: '15 Jan',
+        date: '2026',
         events: [
-          { time: '08:00 - 10:00 AM', speakerName: 'Rose Shipp', topic: 'WordPress Theme Development Basic 2', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-          { time: '12:00 - 14:00 PM', speakerName: 'Isaac Nicholas', topic: 'Getting Started With Photoshop', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-          { time: '16:00 - 18:00 PM', speakerName: 'John Arnold', topic: 'Getting Started With HTML & CSS', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-          { time: '20:00 - 22:00 PM', speakerName: 'Ben Sheridan', topic: 'Convert From PSD to HTML', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
+          { time: '', speakerName: '', topic: 'Notification of Acceptance', description: '' },
         ],
     },
     {
-        day: '03',
-        date: '5 December, 2025',
+        day: '10 Feb',
+        date: '2026',
         events: [
-            { time: '08:00 - 10:00 AM', speakerName: 'Sophie Lana', topic: 'Make Your HTML to WordPress', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '12:00 - 14:00 PM', speakerName: 'James Hoult', topic: 'Introduction Search Engine Optimisation', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '16:00 - 18:00 PM', speakerName: 'Oscar Helman', topic: 'Make SEO Friendly WP Theme', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '20:00 - 22:00 PM', speakerName: 'Rose Shipp', topic: 'Advanced Theme Development', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
+            { time: '', speakerName: '', topic: 'Camera-Ready Submission', description: '' },
         ],
     },
     {
-        day: '04',
-        date: '6 December, 2025',
+        day: '06 Mar',
+        date: '2026',
         events: [
-            { time: '08:00 - 10:00 AM', speakerName: 'Isaac Nicholas', topic: 'Advanced Theme Development 2', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '12:00 - 14:00 PM', speakerName: 'John Arnold', topic: 'Make Mobile Friendly Theme', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '16:00 - 18:00 PM', speakerName: 'Ben Sheridan', topic: 'Quality Asurance Your WP Theme', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '20:00 - 22:00 PM', speakerName: 'Sophie Lana', topic: 'Getting Started With WP Plugin', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
+            { time: '', speakerName: '', topic: 'Conference Day 1', description: '' },
         ],
     },
     {
-        day: '05',
-        date: '7 December, 2025',
+        day: '07 Mar',
+        date: '2026',
         events: [
-            { time: '08:00 - 10:00 AM', speakerName: 'Ben Sheridan', topic: 'WP Plugin Development', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '12:00 - 14:00 PM', speakerName: 'Sophie Lana', topic: 'Customize Your WordPress Theme', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '16:00 - 18:00 PM', speakerName: 'James Hoult', topic: 'Interview With WP Author', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
-            { time: '20:00 - 22:00 PM', speakerName: 'Oscar Helman', topic: 'Close Event Ceremony & Doorprize', description: 'In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment.' },
+            { time: '', speakerName: '', topic: 'Conference Day 2', description: '' },
         ],
     },
 ];
 
 export const tickets = [
-    { type: 'Personal', price: 100, features: ['2 Days Pass', '1 Workshop', 'Free Lunch'], featured: false },
-    { type: 'Business', price: 200, features: ['5 Days Pass', '3 Workshops', 'Free Lunch and Snacks'], featured: true },
-    { type: 'Premium', price: 300, features: ['5 Days Pass', '5 Workshops', 'VIP Seating and Full Catering'], featured: false },
+    { type: 'Research Scholars / Students', description: 'For full-time students and research scholars.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
+    { type: 'Faculty / Academicians', description: 'For faculty members and academicians from educational institutions.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: true },
+    { type: 'Industry Professionals', description: 'For delegates from corporate and industrial organizations.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], featured: false },
+    { type: 'Attendees', description: 'For participants not presenting a paper.', features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], featured: false },
   ];
 
 export const testimonials = [
-    { quote: "I'm very happy with this event. I will recommend this to my family and friends. The speakers are professional. It's worth quality for the price.", author: "John, Freelancer" },
-    { quote: "A wonderful event thank you! The best event as it proved by quality. I learn many digital things. I would definitely return for future events.", author: "Sarah, College Student" },
-    { quote: "I will recommend this to my family and friends. I'm very happy with this event. The speakers are professional. It's worth quality for the price.", author: "Michael, Office Staff" },
-    { quote: "I learn many digital things! A wonderful event thank you! The best event as it proved by quality. I would definitely return for future events.", author: "Jenny, Student" },
+    { quote: "A fantastic platform for sharing cutting-edge research in sustainable tech. The keynote sessions were particularly insightful.", author: "A. Sharma, University of Delhi" },
+    { quote: "Well-organized and highly relevant. It bridged the gap between academic theory and industry practice perfectly. I'm looking forward to the next one!", author: "R. Patel, Tech Innovators Inc." },
+    { quote: "As a young researcher, the exposure to global research trends and the mentorship opportunities were invaluable. Highly recommend.", author: "P. Singh, PhD Scholar" },
+    { quote: "The focus on real-world challenges and interdisciplinary collaboration makes this conference unique and impactful.", author: "Dr. Chen, International Delegate" },
 ];
-  
-export const sponsors = {
-    gold: [
-        { name: 'Skype', image: getImage('sponsor-skype') },
-        { name: 'Envato', image: getImage('sponsor-envato') },
-        { name: 'Dribbble', image: getImage('sponsor-dribbble') },
-    ],
-    silver: [
-        { name: 'Mailchimp', image: getImage('sponsor-mailchimp') },
-        { name: 'Android', image: getImage('sponsor-android') },
-        { name: 'jQuery', image: getImage('sponsor-jquery') },
-        { name: 'Sass', image: getImage('sponsor-sass') },
-        { name: 'Pinterest', image: getImage('sponsor-pinterest') },
-    ],
-};
-  
-export const venueInfo = [
-    { title: 'Venue', icon: 'Flag' as const, description: 'Large audiotorium with capacity of fifty thousand participants is also equipped with advanced facilities for your pleasure.' },
-    { title: 'Transport', icon: 'Bike' as const, description: 'The location of the seminar is located in the city center so it is easily reached by private or public vehicles which available for 24 hours.' },
-    { title: 'Hotel', icon: 'Hotel' as const, description: 'There are many hotels available around the event location for temporary residence as long as you follow this event, from motels to 5 stars.' },
-];
-  
+    
 export const contactInfo = [
-    { title: 'Call Us', icon: 'Smartphone' as const, value: '(208) 333 9296' },
-    { title: 'Address', icon: 'Home' as const, value: 'Orange County Convention Center,\n9800 International Dr,\nOrlando, FL 32819, USA' },
-    { title: 'Email Us', icon: 'Mail' as const, value: 'contact@eventbiz.com' },
+    { title: 'Email Us', icon: 'Mail' as const, value: 'sustaintechcon@vpceng.ac.in' },
+    { title: 'Call Us', icon: 'Smartphone' as const, value: '+91-XXXXX-XXXXX' },
+    { title: 'Address', icon: 'Home' as const, value: 'Vasantdada Patil’s College of Engineering and Visual Arts,\nSion, Mumbai, Maharashtra, India' },
 ];
   
 export const socialLinks = [

@@ -1,18 +1,17 @@
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/sections/hero";
 import { Speakers } from "@/components/sections/speakers";
-import { Stats } from "@/components/sections/stats";
 import { Schedule } from "@/components/sections/schedule";
 import { Testimonials } from "@/components/sections/testimonials";
-import { Sponsors } from "@/components/sections/sponsors";
-import { Venue } from "@/components/sections/venue";
-import { MapSection } from "@/components/sections/map-section";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { Tickets } from "@/components/sections/tickets";
+import { Preamble } from "@/components/sections/preamble";
+import { Objectives } from "@/components/sections/objectives";
+import { CallForPapers } from "@/components/sections/call-for-papers";
 
 export default function Home() {
   return (
@@ -21,14 +20,13 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <div className="relative bg-background z-10">
-          <Speakers />
-          <Stats />
+          <Preamble />
+          <Objectives />
+          <CallForPapers />
           <Schedule />
           <Tickets />
+          <Speakers />
           <Testimonials />
-          <Sponsors />
-          <Venue />
-          <MapSection />
           <Contact />
         </div>
       </main>

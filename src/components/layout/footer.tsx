@@ -20,7 +20,7 @@ export function Footer() {
           ))}
         </div>
         <p className="text-sm text-white/80">
-          © Copyright {new Date().getFullYear()} - Event Planner Pro by Firebase Studio
+          © Copyright {new Date().getFullYear()} - SustainTechCon by Vasantdada Patil’s College of Engineering and Visual Arts
         </p>
       </div>
     </footer>

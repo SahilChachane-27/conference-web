@@ -8,10 +8,10 @@ export function Speakers() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">
-            <span className="text-primary">Event</span> Speakers
+            <span className="text-primary">Keynote</span> Speakers
           </h2>
           <p className="text-lg text-muted-foreground mt-2">
-            We invite digital experts from around the world
+            Invited talks by eminent academicians, industry experts, and technology leaders.
           </p>
         </div>
 

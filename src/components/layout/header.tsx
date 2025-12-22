@@ -15,7 +15,7 @@ const Logo = ({ scrolled }: { scrolled: boolean }) => (
       "text-xl font-bold font-headline",
       scrolled ? "text-foreground" : "text-white"
     )}>
-      Event Planner Pro
+      SustainTechCon
     </span>
   </Link>
 );
@@ -30,6 +30,7 @@ export function Header() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -56,39 +57,49 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="md:hidden">
-          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className={cn(
-                  "hover:bg-white/10",
-                  scrolled ? "text-foreground hover:bg-black/10" : "text-white"
-                )}
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex flex-col gap-6 p-6">
-                <Logo scrolled={true} />
-                <nav className="flex flex-col gap-4">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
+        <div className="flex items-center">
+            <div className="hidden md:block">
+                <Button asChild variant={scrolled ? 'default' : 'secondary'}>
+                    <Link href="#tickets">Register</Link>
+                </Button>
+            </div>
+            <div className="md:hidden ml-4">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className={cn(
+                      "hover:bg-white/10",
+                      scrolled ? "text-foreground hover:bg-black/10" : "text-white"
+                    )}
+                  >
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle Menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <div className="flex flex-col gap-6 p-6">
+                    <Logo scrolled={true} />
+                    <nav className="flex flex-col gap-4">
+                      {navLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </nav>
+                    <Button asChild className="mt-4">
+                        <Link href="#tickets" onClick={() => setMobileMenuOpen(false)}>Register</Link>
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
         </div>
       </div>
     </header>

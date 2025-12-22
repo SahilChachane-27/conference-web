@@ -44,32 +44,28 @@ export function Tickets() {
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">
-                        <span className="text-accent">Get</span> Tickets
+                        <span className="text-accent">Registration</span> Details
                     </h2>
                     <p className="text-lg text-primary-foreground/80 mt-2">
-                        Join the biggest digital event of the year
+                        At least one author must register for each accepted paper to ensure inclusion in the conference proceedings.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    {tickets.map((ticket) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    {tickets.map((ticket, index) => (
                         <Card key={ticket.type} className={cn(
                             "bg-card/80 backdrop-blur-sm text-card-foreground flex flex-col transition-all duration-300 hover:scale-105",
                             ticket.featured && "border-accent border-2 scale-105 shadow-2xl"
                         )}>
-                            {ticket.featured && <div className="bg-accent text-center py-1 text-sm font-bold text-accent-foreground">Best Selling</div>}
+                            {ticket.featured && <div className="bg-accent text-center py-1 text-sm font-bold text-accent-foreground">Most Popular</div>}
                             <CardHeader className="text-center">
-                                <CardTitle className="font-headline text-3xl">{ticket.type}</CardTitle>
-                                <p className="text-4xl font-bold text-primary">
-                                    <span className="text-2xl align-top">$</span>
-                                    {ticket.price}
-                                    <span className="text-sm font-normal text-muted-foreground">/person</span>
-                                </p>
+                                <CardTitle className="font-headline text-2xl">{ticket.type}</CardTitle>
                             </CardHeader>
                             <CardContent className="flex-grow">
-                                <ul className="space-y-3">
+                                <p className="text-sm text-muted-foreground">{ticket.description}</p>
+                                <ul className="space-y-3 mt-4">
                                     {ticket.features.map((feature, i) => (
-                                        <li key={i} className="flex items-center gap-3">
-                                            <Check className="h-5 w-5 text-green-500" />
+                                        <li key={i} className="flex items-start gap-3">
+                                            <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
                                             <span>{feature}</span>
                                         </li>
                                     ))}
@@ -81,7 +77,7 @@ export function Tickets() {
                                     variant={ticket.featured ? "default" : "secondary"} 
                                     className={cn("w-full", ticket.featured && "bg-accent hover:bg-accent/90 text-accent-foreground")}
                                 >
-                                    Get Ticket
+                                    Register
                                 </Button>
                             </CardFooter>
                         </Card>
@@ -92,10 +88,10 @@ export function Tickets() {
             <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
-                    <AlertDialogTitle className="text-primary font-headline">Booking Confirmation</AlertDialogTitle>
+                    <AlertDialogTitle className="text-primary font-headline">Registration Confirmation</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You have successfully simulated booking a ticket for the <span className="font-bold">{selectedTicket}</span> package.
-                        This is a demonstration and no actual ticket has been issued.
+                        You have successfully simulated registering for the <span className="font-bold">{selectedTicket}</span> category.
+                        This is a demonstration and no actual registration has been made.
                     </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
