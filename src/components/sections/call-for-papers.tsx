@@ -28,7 +28,7 @@ export function CallForPapers() {
               </div>
             </CardHeader>
             <CardContent className="flex-grow">
-                <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
+                <Accordion type="multiple" collapsible className="w-full" defaultValue={["item-1", "item-2"]}>
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="text-base font-semibold">
                             AI, Data, and Intelligent Systems
