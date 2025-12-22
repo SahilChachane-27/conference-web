@@ -12,7 +12,6 @@ import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
-import { Tickets } from "@/components/sections/tickets";
 
 export default function Home() {
   return (
@@ -20,17 +19,19 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <Speakers />
-        <Stats />
-        <Schedule />
-        <Testimonials />
-        <Sponsors />
-        <Venue />
-        <MapSection />
-        <Contact />
+        <div className="relative bg-background z-10">
+          <Speakers />
+          <Stats />
+          <Schedule />
+          <Testimonials />
+          <Sponsors />
+          <Venue />
+          <MapSection />
+          <Contact />
+        </div>
       </main>
       <Footer />
-      <Link href="#home" className="fixed bottom-4 right-4">
+      <Link href="#home" className="fixed bottom-4 right-4 z-50">
         <Button size="icon" className="rounded-full shadow-lg bg-accent hover:bg-accent/90 text-accent-foreground">
           <ArrowUp className="h-6 w-6" />
           <span className="sr-only">Back to Top</span>

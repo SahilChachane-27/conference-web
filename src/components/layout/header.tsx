@@ -36,8 +36,8 @@ export function Header() {
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full transition-colors duration-300",
-      scrolled ? "bg-background border-b" : "bg-transparent"
+      "fixed top-0 z-50 w-full transition-colors duration-300",
+      scrolled ? "bg-white" : "bg-transparent"
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Logo scrolled={scrolled} />
@@ -49,7 +49,7 @@ export function Header() {
               href={link.href} 
               className={cn(
                 "text-sm font-medium transition-colors",
-                scrolled ? "text-foreground/80 hover:text-foreground" : "text-white/80 hover:text-white"
+                scrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
               )}
             >
               {link.label}
@@ -64,8 +64,7 @@ export function Header() {
                 variant="ghost" 
                 size="icon" 
                 className={cn(
-                  "hover:bg-white/10",
-                  scrolled ? "text-foreground hover:bg-accent/10" : "text-white"
+                  scrolled ? "text-black hover:bg-black/10" : "text-white hover:bg-white/10"
                 )}
               >
                 <Menu className="h-6 w-6" />
