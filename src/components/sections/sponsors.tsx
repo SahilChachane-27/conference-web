@@ -15,7 +15,6 @@ export function Sponsors() {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold font-headline mb-6 text-yellow-500">Gold Sponsors</h3>
           <div className="flex justify-center items-center gap-8 md:gap-12 flex-wrap mb-16">
             {sponsors.gold.map((sponsor) => (
               <div key={sponsor.name} className="relative h-20 w-40">

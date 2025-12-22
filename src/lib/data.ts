@@ -1,3 +1,4 @@
+
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
 
@@ -139,39 +140,18 @@ export const testimonials = [
   
 export const sponsors = {
     gold: [
-        { name: 'Gold Sponsor 1', image: getImage('sponsor-gold-1') },
-        { name: 'Gold Sponsor 2', image: getImage('sponsor-gold-2') },
-        { name: 'Gold Sponsor 3', image: getImage('sponsor-gold-3') },
+        { name: 'Skype', image: getImage('sponsor-skype') },
+        { name: 'Envato', image: getImage('sponsor-envato') },
+        { name: 'Dribbble', image: getImage('sponsor-dribbble') },
     ],
     silver: [
-        { name: 'Silver Sponsor 1', image: getImage('sponsor-silver-1') },
-        { name: 'Silver Sponsor 2', image: getImage('sponsor-silver-2') },
-        { name: 'Silver Sponsor 3', image: getImage('sponsor-silver-3') },
-        { name: 'Silver Sponsor 4', image: getImage('sponsor-silver-4') },
-        { name: 'Silver Sponsor 5', image: getImage('sponsor-silver-5') },
+        { name: 'Mailchimp', image: getImage('sponsor-mailchimp') },
+        { name: 'Android', image: getImage('sponsor-android') },
+        { name: 'jQuery', image: getImage('sponsor-jquery') },
+        { name: 'Sass', image: getImage('sponsor-sass') },
+        { name: 'Pinterest', image: getImage('sponsor-pinterest') },
     ],
 };
-
-export const tickets = [
-    {
-      type: 'Early Bird',
-      price: 39,
-      features: ['1 Conference Day', '1 Workshop Day', 'Regular Seat', 'Free Coffee/Lunch', 'One Certificate'],
-      featured: false,
-    },
-    {
-      type: 'Regular',
-      price: 99,
-      features: ['2 Conference Day', '2 Workshop Day', 'Regular Seat', 'Free Coffee/Lunch', 'Two Certificate'],
-      featured: true,
-    },
-    {
-      type: 'Exclusive',
-      price: 199,
-      features: ['Full Conference Day', 'Full Workshop Day', 'VIP Seat', 'Free Coffee/Lunch', 'Three Certificate'],
-      featured: false,
-    },
-];
   
 export const venueInfo = [
     { title: 'Venue', icon: 'Flag' as const, description: 'Large audiotorium with capacity of fifty thousand participants is also equipped with advanced facilities for your pleasure.' },
@@ -191,3 +171,5 @@ export const socialLinks = [
     { name: 'Rss', icon: 'Rss' as const, href: '#' },
     { name: 'Dribbble', icon: 'Dribbble' as const, href: '#' },
 ];
+
+    
