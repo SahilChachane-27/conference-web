@@ -13,7 +13,7 @@ export const navLinks = [
 ];
 
 export const heroData = {
-  title: 'Digital Conference 2025',
+  title: 'Digital Conference 2026',
   date: 'December 3rd to 7th',
   location: 'Orlando, Florida.',
   countdownTarget: '2025-12-03T09:00:00',

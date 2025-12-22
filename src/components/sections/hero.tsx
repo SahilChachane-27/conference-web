@@ -13,7 +13,7 @@ export function Hero() {
             <CarouselItem key={index} className="h-full">
               <Image
                 src="/1.jpg"
-                alt={img.description}
+                alt="one image"
                 fill
                 className="object-cover"
                 priority={index === 0}
