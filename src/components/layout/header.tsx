@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 
 const Logo = ({ scrolled }: { scrolled: boolean }) => (
     <Link href="/" className="flex items-center gap-2">
-    <Image src="/reframed_logo-preview.png" alt="SustainTechCon Logo" width={160} height={48} className="h-12 w-40 "/>
+    <Image src="/reframed logo.jpeg" alt="SustainTechCon Logo" width={160} height={48} className="h-12 w-40 "/>
   </Link>
 );
 
