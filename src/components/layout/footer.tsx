@@ -20,7 +20,7 @@ export function Footer() {
           ))}
         </div>
         <p className="text-sm text-white/80">
-          © Copyright {new Date().getFullYear()} - SustainTechCon by Vasantdada Patil’s College of Engineering and Visual Arts
+          © Copyright {new Date().getFullYear()} - SustainTechCon by Researcher Connect Innovation & Impact Pvt Ltd
         </p>
       </div>
     </footer>
