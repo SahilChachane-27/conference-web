@@ -17,7 +17,7 @@ const CommitteeList = ({ title, members }: { title: string, members: { name: str
     const Icon = iconMap[title as keyof typeof iconMap] || Users;
     
     return (
-        <Card className="shadow-lg">
+        <Card className="shadow-lg flex flex-col h-full">
             <CardHeader>
                 <div className="flex items-center gap-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
@@ -26,7 +26,7 @@ const CommitteeList = ({ title, members }: { title: string, members: { name: str
                     <CardTitle className="font-headline text-2xl">{title}</CardTitle>
                 </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex-grow">
                 <ul className="space-y-3 text-muted-foreground">
                     {members.map((member, index) => (
                         <li key={index}>
@@ -49,22 +49,29 @@ export function Committee() {
             <span className="text-primary">Organizing</span> Committee
           </h2>
           <p className="text-lg text-muted-foreground mt-3 max-w-3xl mx-auto">
-            Meet the team behind SustainTechCon 2026.
+            Meet the dedicated team behind SustainTechCon 2026.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="md:col-span-2 lg:col-span-3">
-                <CommitteeList title={committeeData.advisoryCommittee.title} members={committeeData.advisoryCommittee.members} />
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Top-level leadership */}
             <CommitteeList title={committeeData.chiefPatrons.title} members={committeeData.chiefPatrons.members} />
-            <div className="md:col-span-2">
-                <CommitteeList title={committeeData.patrons.title} members={committeeData.patrons.members} />
-            </div>
             <CommitteeList title={committeeData.generalChief.title} members={committeeData.generalChief.members} />
             <CommitteeList title={committeeData.convener.title} members={committeeData.convener.members} />
+
+            {/* Patrons */}
+            <div className="lg:col-span-3">
+                <CommitteeList title={committeeData.patrons.title} members={committeeData.patrons.members} />
+            </div>
+
+            {/* Advisory Committee */}
+            <div className="lg:col-span-3">
+                <CommitteeList title={committeeData.advisoryCommittee.title} members={committeeData.advisoryCommittee.members} />
+            </div>
+            
+            {/* Co-convener and Contacts */}
             <CommitteeList title={committeeData.coConvener.title} members={committeeData.coConvener.members} />
-            <div className="md:col-span-2 lg:col-span-3">
+            <div className="lg:col-span-2">
                 <CommitteeList title={committeeData.correspondenceContact.title} members={committeeData.correspondenceContact.members} />
             </div>
         </div>
