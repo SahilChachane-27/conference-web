@@ -13,32 +13,30 @@ const iconMap = {
   'Correspondence Contact': Phone,
 };
 
-const CommitteeList = ({ title, members }: { title: string, members: { name: string, role: string }[] }) => {
-    const Icon = iconMap[title as keyof typeof iconMap] || Users;
-    
-    return (
-        <Card className="shadow-lg flex flex-col h-full">
-            <CardHeader>
-                <div className="flex items-center gap-4">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                        <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="font-headline text-2xl">{title}</CardTitle>
-                </div>
-            </CardHeader>
-            <CardContent className="flex-grow">
-                <ul className="space-y-3 text-muted-foreground">
-                    {members.map((member, index) => (
-                        <li key={index}>
-                            <p className="font-semibold text-foreground">{member.name}</p>
-                            <p className="text-sm">{member.role}</p>
-                        </li>
-                    ))}
-                </ul>
-            </CardContent>
-        </Card>
-    );
-};
+const SectionTitle = ({ title }: { title: string }) => (
+    <div className="mb-8 text-center">
+        <h3 className="font-headline text-3xl font-bold text-primary">{title}</h3>
+        <div className="w-20 h-0.5 bg-primary/50 mx-auto mt-2"></div>
+    </div>
+);
+
+const MemberCard = ({ name, role }: { name:string, role: string}) => (
+    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+        <CardContent className="p-6 flex flex-col items-center justify-center">
+            <p className="font-bold text-lg text-foreground">{name}</p>
+            <p className="text-sm text-muted-foreground">{role}</p>
+        </CardContent>
+    </Card>
+);
+
+const ContactCard = ({ name, role }: { name:string, role: string}) => (
+    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+        <CardContent className="p-6 flex flex-col items-center justify-center">
+            <p className="font-bold text-lg text-foreground">{name}</p>
+            <p className="text-sm text-primary font-semibold">{role}</p>
+        </CardContent>
+    </Card>
+);
 
 export function Committee() {
   return (
@@ -53,24 +51,54 @@ export function Committee() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-8">
-            {/* Top-level leadership */}
-            <CommitteeList title={committeeData.chiefPatrons.title} members={committeeData.chiefPatrons.members} />
-            <CommitteeList title={committeeData.generalChief.title} members={committeeData.generalChief.members} />
-            <CommitteeList title={committeeData.convener.title} members={committeeData.convener.members} />
+        {/* Leadership */}
+        <div className="mb-16">
+            <SectionTitle title={committeeData.chiefPatrons.title} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {committeeData.chiefPatrons.members.map((member, i) => <MemberCard key={i} {...member} />)}
+            </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-             {/* Patrons & Advisory */}
-            <CommitteeList title={committeeData.patrons.title} members={committeeData.patrons.members} />
-            <CommitteeList title={committeeData.advisoryCommittee.title} members={committeeData.advisoryCommittee.members} />
+        <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div>
+                    <SectionTitle title={committeeData.generalChief.title} />
+                    {committeeData.generalChief.members.map((member, i) => <MemberCard key={i} {...member} />)}
+                </div>
+                <div>
+                    <SectionTitle title={committeeData.convener.title} />
+                    {committeeData.convener.members.map((member, i) => <MemberCard key={i} {...member} />)}
+                </div>
+            </div>
+        </div>
+
+        {/* Patrons */}
+        <div className="mb-16">
+            <SectionTitle title={committeeData.patrons.title} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {committeeData.patrons.members.map((member, i) => <MemberCard key={i} {...member} />)}
+            </div>
+        </div>
+
+        {/* Advisory Committee */}
+        <div className="mb-16">
+            <SectionTitle title={committeeData.advisoryCommittee.title} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {committeeData.advisoryCommittee.members.map((member, i) => <MemberCard key={i} {...member} />)}
+            </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {/* Co-convener and Contacts */}
-            <CommitteeList title={committeeData.coConvener.title} members={committeeData.coConvener.members} />
-            <div className="md:col-span-2">
-                <CommitteeList title={committeeData.correspondenceContact.title} members={committeeData.correspondenceContact.members} />
+        {/* Co-convener and Contacts */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+            <div className="text-center">
+                 <SectionTitle title={committeeData.coConvener.title} />
+                {committeeData.coConvener.members.map((member, i) => <MemberCard key={i} {...member} />)}
+            </div>
+            <div>
+                <SectionTitle title={committeeData.correspondenceContact.title} />
+                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {committeeData.correspondenceContact.members.map((member, i) => <ContactCard key={i} {...member} />)}
+                </div>
             </div>
         </div>
       </div>
