@@ -10,7 +10,7 @@ const SectionTitle = ({ title }: { title: string }) => (
 );
 
 const MemberCard = ({ name, role }: { name:string, role: string}) => (
-    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300">
         <CardContent className="p-6 flex flex-col items-center justify-center">
             <p className="font-bold text-lg text-foreground">{name}</p>
             <p className="text-sm text-muted-foreground">{role}</p>
@@ -19,7 +19,7 @@ const MemberCard = ({ name, role }: { name:string, role: string}) => (
 );
 
 const ContactCard = ({ name, role }: { name:string, role: string}) => (
-    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300">
         <CardContent className="p-6 flex flex-col items-center justify-center">
             <p className="font-bold text-lg text-foreground">{name}</p>
             <p className="text-sm text-primary font-semibold">{role}</p>
