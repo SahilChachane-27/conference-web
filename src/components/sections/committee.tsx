@@ -62,7 +62,7 @@ export function Committee() {
         </div>
 
         {/* Patrons */}
-        <div className="mb-16">
+        <div className="my-16">
             <SectionTitle title={committeeData.patrons.title} />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {committeeData.patrons.members.map((member, i) => <MemberCard key={i} {...member} />)}
@@ -70,7 +70,7 @@ export function Committee() {
         </div>
 
         {/* Advisory Committee */}
-        <div className="mb-16">
+        <div className="my-16">
             <SectionTitle title={committeeData.advisoryCommittee.title} />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {committeeData.advisoryCommittee.members.map((member, i) => <MemberCard key={i} {...member} />)}
