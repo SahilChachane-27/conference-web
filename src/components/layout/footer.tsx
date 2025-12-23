@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { socialLinks } from '@/lib/data';
 import * as Icons from 'lucide-react';
 
@@ -11,6 +12,9 @@ export function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="container py-12 text-center">
+        <div className="flex justify-center mb-8">
+            <Image src="/demo.png" alt="SustainTechCon Logo" width={120} height={120} />
+        </div>
         <div className="flex justify-center gap-6 mb-6">
           {socialLinks.map((link) => (
             <Link key={link.name} href={link.href} className="text-white hover:text-primary transition-colors">
