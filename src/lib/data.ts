@@ -233,28 +233,28 @@ export const objectives = [
 
 export const speakers = [
   {
-    name: 'Dr. John Smith',
-    title: 'AI & Sustainability Expert',
-    bio: 'Renowned researcher in AI applications for environmental sustainability and green computing. Keynote speaker at multiple international conferences.',
-    image: getImage('speaker-ben'),
+    name: 'Coming Soon',
+    title: 'Coming Soon',
+    bio: '',
+    image: getImage('speaker-placeholder'),
   },
   {
-    name: 'Dr. Jane Doe',
-    title: 'IoT & Smart Systems Pioneer',
-    bio: 'Expert in IoT and Cyber-Physical Systems, with a focus on smart city and healthcare applications. Holds multiple patents in sensor technology.',
-    image: getImage('speaker-sophie'),
+    name: 'Coming Soon',
+    title: 'Coming Soon',
+    bio: '',
+    image: getImage('speaker-placeholder'),
   },
   {
-    name: 'Prof. Alan Turing',
-    title: 'Head of Computer Science',
-    bio: 'Leading academic in machine learning and data analytics. Published over 100 research papers in high-impact journals.',
-    image: getImage('speaker-james'),
+    name: 'Coming Soon',
+    title: 'Coming Soon',
+    bio: '',
+    image: getImage('speaker-placeholder'),
   },
   {
-    name: 'Dr. Ada Lovelace',
-    title: 'Industry Innovator',
-    bio: 'Technology leader with 20+ years of experience in industrial automation and smart manufacturing. Implemented large-scale digital twin projects.',
-    image: getImage('speaker-rose'),
+    name: 'Coming Soon',
+    title: 'Coming Soon',
+    bio: '',
+    image: getImage('speaker-placeholder'),
   },
 ];
 

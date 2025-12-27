@@ -13,6 +13,12 @@
       "imageHint": "AI green"
     },
     {
+      "id": "speaker-placeholder",
+      "description": "Placeholder for a speaker headshot.",
+      "imageUrl": "https://placehold.co/400x400/eeeeee/31343C?text=?",
+      "imageHint": "placeholder person"
+    },
+    {
       "id": "speaker-ben",
       "description": "Headshot of Dr. John Smith.",
       "imageUrl": "/1(1).jpg",
