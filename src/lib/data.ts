@@ -329,7 +329,7 @@ export const committeeData = {
     convener: {
         title: 'Convener',
         members: [
-            { name: 'Dr. Pravin Yadav', role: 'Vice Principal, VPPCOE & VA' }
+            { name: 'Dr. Rais A. Mulla', role: 'HoD, Computer Engineering' }
         ]
     },
     coConvener: {
