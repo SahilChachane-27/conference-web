@@ -9,9 +9,19 @@ export default function AboutCollegePage() {
       <Header />
       <main className="flex-grow pt-20">
         <div className="container mx-auto px-4 md:px-6 py-12">
-          <h1 className="text-4xl font-bold font-headline mb-8">About Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts</h1>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="prose lg:prose-xl max-w-none text-muted-foreground space-y-6">
+            <div className="mb-12">
+                 <Image
+                    src="/college.JPG"
+                    alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
+                    width={1200}
+                    height={400}
+                    className="rounded-lg shadow-2xl object-cover w-full aspect-[3/1]"
+                    data-ai-hint="college building"
+                />
+            </div>
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold font-headline mb-8 text-center">About Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts</h1>
+            <div className="prose lg:prose-xl max-w-none text-muted-foreground space-y-6 text-justify">
               <p>
                 Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts
                 (VPPCOE&VA) formerly known as Padmabhushan Vasantdada Patil Pratishthan’s College of Engineering (PVPPCOE) is one of the top private engineering colleges
@@ -29,16 +39,6 @@ export default function AboutCollegePage() {
                 Information Technology programs of the institute are accredited by National
                 Board of Accreditation (NBA) for 3 years w.e.f. April 03, 2024.
               </p>
-            </div>
-            <div>
-                <Image
-                    src="/college.JPG"
-                    alt="Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts"
-                    width={600}
-                    height={800}
-                    className="rounded-lg shadow-2xl object-contain w-full"
-                    data-ai-hint="college building"
-                />
             </div>
           </div>
         </div>
