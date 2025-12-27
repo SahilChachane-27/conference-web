@@ -80,11 +80,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center">
-            <div className="hidden md:block">
-                <Button asChild variant={scrolled ? 'default' : 'default'}>
-                    <Link href="/registration">Register</Link>
-                </Button>
-            </div>
+            
             <div className="md:hidden ml-4">
               {isClient && (
                 <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -138,9 +134,6 @@ export function Header() {
                           </div>
                         ))}
                       </nav>
-                      <Button asChild className="mt-4">
-                          <Link href="/registration" onClick={() => setMobileMenuOpen(false)}>Register</Link>
-                      </Button>
                     </div>
                   </SheetContent>
                 </Sheet>
