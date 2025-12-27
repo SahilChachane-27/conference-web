@@ -68,24 +68,152 @@ export const objectives = [
     },
   ];
 
-export const callForPapers = {
+  export const callForPapers = {
     description: "Authors are invited to submit original, unpublished, and high-quality research papers that are not under review elsewhere. Papers should present novel research contributions, experimental studies, theoretical analysis, or practical applications related to the conference themes.",
-    themes: [
-        'Artificial Intelligence, Machine Learning & Deep Learning',
-        'Data Analytics and Intelligent Information Management',
-        'Sustainable Computing and Green Technologies',
-        'Intelligent Software Systems and Decision-Support Systems',
-        'Big Data Processing and Knowledge Engineering',
-        'Industrial Automation and Smart Manufacturing',
-        'Internet of Things (IoT) and Smart Sensing Systems',
-        'Cyber-Physical Systems and Autonomous Technologies',
-        'Digital Twins and Real-Time Monitoring Architectures',
-        'AI-Driven Communication and Networking',
-        'Wireless Sensor Networks and Edge Intelligence',
-        'Network Security, Cybersecurity, and Information Assurance',
-        'Sustainable Energy Systems and Smart Grids',
-        'Intelligent Systems in Healthcare, Agriculture, and Smart Cities',
-        'Engineering Solutions for Sustainability'
+    tracks: [
+        {
+            title: "Track 1: Sustainable Engineering & Smart Infrastructure",
+            topics: [
+                "Green civil and structural engineering",
+                "Sustainable transportation and mobility systems",
+                "Smart cities and resilient infrastructure",
+                "Energy-efficient building materials and design",
+                "Intelligent construction technologies",
+                "Lifecycle analysis and carbon-neutral engineering"
+            ],
+            sdgs: "SDG 9, SDG 11, SDG 13",
+            explanation: "This track supports sustainable infrastructure development, resilient urban systems, and low-carbon engineering solutions that reduce environmental impact and improve urban livability."
+        },
+        {
+            title: "Track 2: Computer Science, Artificial Intelligence & Intelligent Systems",
+            topics: [
+                "Artificial intelligence and machine learning for sustainability",
+                "Internet of Things (IoT) and cyber-physical systems",
+                "Big data analytics for environmental monitoring",
+                "Blockchain for sustainable and transparent systems",
+                "Decision-support and intelligent control systems",
+                "Green computing and sustainable software engineering"
+            ],
+            sdgs: "SDG 9, SDG 11, SDG 12",
+            explanation: "AI, IoT, and data-driven systems enable intelligent decision-making, optimized resource usage, and digital sustainability across sectors."
+        },
+        {
+            title: "Track 3: Electrical, Electronics & Renewable Energy Systems",
+            topics: [
+                "Renewable energy technologies and hybrid systems",
+                "Smart grids and power system optimization",
+                "Energy storage and battery management systems",
+                "Power electronics for sustainable applications",
+                "Electric vehicles and charging infrastructure",
+                "Low-power and energy-efficient electronic design"
+            ],
+            sdgs: "SDG 7, SDG 9, SDG 13",
+            explanation: "Focuses on clean energy generation, smart grids, energy efficiency, and electrification technologies that promote decarbonization and universal access to energy."
+        },
+        {
+            title: "Track 4: Mechanical Engineering, Robotics & Sustainable Manufacturing",
+            topics: [
+                "Sustainable and smart manufacturing processes",
+                "Robotics and automation for environmental applications",
+                "Energy-efficient thermal and fluid systems",
+                "Industry 4.0 and digital manufacturing",
+                "Additive manufacturing and lightweight structures",
+                "Predictive maintenance and intelligent systems"
+            ],
+            sdgs: "SDG 8, SDG 9, SDG 12",
+            explanation: "Promotes sustainable manufacturing, automation, and energy-efficient systems that enhance productivity while reducing waste and emissions."
+        },
+        {
+            title: "Track 5: Sustainable Microfinance, FinTech & Socio-Economic Systems",
+            topics: [
+                "Technology-enabled microfinance and financial inclusion",
+                "FinTech solutions for sustainable development",
+                "AI-based credit risk assessment and impact analysis",
+                "Social entrepreneurship and sustainable business models",
+                "Policy frameworks for inclusive economic growth",
+                "Digital platforms for community empowerment"
+            ],
+            sdgs: "SDG 1, SDG 8, SDG 10",
+            explanation: "Addresses financial inclusion, poverty alleviation, and equitable economic growth through technology-driven microfinance and digital financial services."
+        },
+        {
+            title: "Track 6: Water Hygiene, Sanitation & Public Health Engineering",
+            topics: [
+                "Water quality assessment and monitoring technologies",
+                "Sustainable WASH (Water, Sanitation and Hygiene) systems",
+                "Low-cost sanitation engineering solutions",
+                "Smart sensors for hygiene and health monitoring",
+                "Public health analytics and water-borne disease control",
+                "Governance and policy for water hygiene sustainability"
+            ],
+            sdgs: "SDG 3, SDG 6, SDG 11",
+            explanation: "Covers WASH technologies, water quality monitoring, and sanitation systems that directly improve public health and living conditions."
+        },
+        {
+            title: "Track 7: Water Technologies & Intelligent Water Resource Management",
+            topics: [
+                "Advanced water purification and desalination technologies",
+                "Wastewater treatment, reuse, and recycling",
+                "Smart irrigation and agricultural water systems",
+                "AI-driven water demand and supply forecasting",
+                "Hydrological modeling and water resource optimization",
+                "Nature-based and climate-resilient water solutions"
+            ],
+            sdgs: "SDG 6, SDG 12, SDG 13",
+            explanation: "Focuses on sustainable water use, treatment, reuse, and intelligent management to address water scarcity and climate resilience."
+        },
+        {
+            title: "Track 8: Polymer Science, Materials Engineering & Green Chemistry",
+            topics: [
+                "Sustainable and biodegradable polymer materials",
+                "Advanced composites and functional materials",
+                "Materials for water treatment and environmental remediation",
+                "Smart materials and responsive systems",
+                "Recycling technologies and circular material economy",
+                "Nanomaterials for sustainable engineering applications"
+            ],
+            sdgs: "SDG 9, SDG 12, SDG 14",
+            explanation: "Promotes sustainable materials, biodegradable polymers, recycling technologies, and pollution reduction through advanced material innovation."
+        },
+        {
+            title: "Track 9: Agriculture, Entomology & Sustainable Food Systems",
+            topics: [
+                "Agricultural entomology and integrated pest management",
+                "Precision agriculture and smart farming technologies",
+                "AI and IoT for crop monitoring and protection",
+                "Bio-pesticides and eco-friendly pest control",
+                "Climate-resilient and sustainable farming practices",
+                "Digital tools for food security and supply chains"
+            ],
+            sdgs: "SDG 2, SDG 12, SDG 15",
+            explanation: "Supports sustainable agriculture, pest management, food security, and ecosystem protection through intelligent and ecological farming practices."
+        },
+        {
+            title: "Track 10: Visual Arts, Media & Design for Sustainability",
+            topics: [
+                "Visual communication and media for sustainability awareness",
+                "Digital art, AI, and generative media",
+                "Sustainable design methodologies",
+                "Interactive and immersive media technologies",
+                "Media ethics and social impact",
+                "Cultural heritage and creative sustainability"
+            ],
+            sdgs: "SDG 4, SDG 11, SDG 12",
+            explanation: "Uses visual communication, media, and design to promote sustainability awareness, education, cultural preservation, and behavioral change."
+        },
+        {
+            title: "Track 11: Interdisciplinary Research, SDGs & Societal Impact",
+            topics: [
+                "Technologies aligned with UN Sustainable Development Goals",
+                "Cross-disciplinary sustainability research",
+                "Ethical, responsible, and inclusive innovation",
+                "Community-centered and participatory technologies",
+                "Education and capacity building for sustainability",
+                "Case studies, pilot projects, and real-world deployments"
+            ],
+            sdgs: "SDG 17, SDG 16, All SDGs (Cross-cutting)",
+            explanation: "Encourages interdisciplinary collaboration, policy integration, ethical innovation, and real-world implementations aligned with multiple SDGs."
+        }
     ],
     submissionDetails: [
         'Papers must be written in English',

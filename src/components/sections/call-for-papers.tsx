@@ -2,7 +2,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { callForPapers } from "@/lib/data";
-import { FileText, BookOpenCheck, ListChecks } from "lucide-react";
+import { FileText, BookOpenCheck, ListChecks, Landmark } from "lucide-react";
 
 export function CallForPapers() {
   return (
@@ -25,59 +25,34 @@ export function CallForPapers() {
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <ListChecks className="h-7 w-7 text-primary" />
                 </div>
-                <CardTitle className="font-headline text-2xl">Conference Themes</CardTitle>
+                <CardTitle className="font-headline text-2xl">Conference Tracks</CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-grow">
-                <Accordion type="multiple" className="w-full" defaultValue={["item-1", "item-2"]}>
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger className="text-base font-semibold">
-                            AI, Data, and Intelligent Systems
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
-                                {callForPapers.themes.slice(0, 5).map((theme) => (
-                                    <li key={theme}>{theme}</li>
-                                ))}
-                            </ul>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger className="text-base font-semibold">
-                            Hardware, IoT, and Automation
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
-                                {callForPapers.themes.slice(5, 9).map((theme) => (
-                                    <li key={theme}>{theme}</li>
-                                ))}
-                            </ul>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger className="text-base font-semibold">
-                            Networking and Security
-                        </AccordionTrigger>
-                        <AccordionContent>
-                             <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
-                                {callForPapers.themes.slice(9, 12).map((theme) => (
-                                    <li key={theme}>{theme}</li>
-                                ))}
-                            </ul>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-4" className="border-b-0">
-                        <AccordionTrigger className="text-base font-semibold">
-                            Applications and Sustainability
-                        </AccordionTrigger>
-                        <AccordionContent>
-                             <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
-                                {callForPapers.themes.slice(12).map((theme) => (
-                                    <li key={theme}>{theme}</li>
-                                ))}
-                            </ul>
-                        </AccordionContent>
-                    </AccordionItem>
+                <Accordion type="multiple" className="w-full" defaultValue={["item-0"]}>
+                    {callForPapers.tracks.map((track, index) => (
+                         <AccordionItem key={index} value={`item-${index}`} className={index === callForPapers.tracks.length -1 ? "border-b-0" : ""}>
+                            <AccordionTrigger className="text-base font-semibold text-left">
+                                {track.title}
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <div className="space-y-4">
+                                    <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
+                                        {track.topics.map((topic) => (
+                                            <li key={topic}>{topic}</li>
+                                        ))}
+                                    </ul>
+                                    <div className="p-3 bg-muted/50 rounded-md">
+                                        <p className="font-semibold text-primary text-sm flex items-center gap-2">
+                                            <Landmark className="h-4 w-4" />
+                                            Relevant SDGs: <span className="font-normal text-muted-foreground">{track.sdgs}</span>
+                                        </p>
+                                        <p className="text-xs text-muted-foreground mt-1 italic">{track.explanation}</p>
+                                    </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
                 </Accordion>
             </CardContent>
           </Card>
