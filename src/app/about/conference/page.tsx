@@ -18,11 +18,11 @@ export default function AboutConferencePage() {
                 {conferenceImage && (
                 <div className="mb-8">
                     <Image
-                        src={conferenceImage.imageUrl}
+                        src="/reframed_logo-preview.png"
                         alt="About the conference"
                         width={600}
                         height={400}
-                        className="rounded-lg shadow-xl object-cover w-full aspect-[3/2] mx-auto"
+                        className="rounded-lg  object-contain w-full mx-auto"
                         data-ai-hint={conferenceImage.imageHint}
                     />
                 </div>
