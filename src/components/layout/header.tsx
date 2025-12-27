@@ -12,8 +12,18 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navLinks } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { navLinks, socialLinks } from "@/lib/data";
+import * as Icons from "lucide-react";
+
+const Icon = ({
+  name,
+  ...props
+}: {
+  name: keyof typeof Icons;
+} & React.ComponentProps<typeof Icons.Icon>) => {
+  const LucideIcon = Icons[name] as React.ComponentType<any>;
+  return <LucideIcon {...props} />;
+};
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2">
@@ -77,73 +87,96 @@ export function Header() {
           )}
         </nav>
 
-        {/* ================= RIGHT ACTIONS ================= */}
-        <div className="flex items-center gap-4">
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="/registration">Register</Link>
-          </Button>
+        {/* ================= RIGHT SIDE (IMAGE + SOCIAL ICONS) ================= */}
+        <div className="hidden md:flex items-center gap-6">
+          {/* Image (not logo) */}
+          <Image
+            src="/header-image.png" // change path if needed
+            alt="Header Visual"
+            width={60}
+            height={40}
+            className="object-contain"
+          />
 
-          {/* ================= MOBILE MENU ================= */}
-          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" aria-label="Open Menu">
-                <Menu className="h-6 w-6 text-black" />
-              </Button>
-            </SheetTrigger>
-
-            <SheetContent side="right">
-              <SheetHeader>
-                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-              </SheetHeader>
-
-              <div className="flex flex-col gap-6 p-6">
-                <Logo />
-
-                <nav className="flex flex-col gap-4">
-                  {navLinks.map((link) =>
-                    link.isDropdown ? (
-                      <div key={link.label}>
-                        <p className="text-sm font-semibold text-black">
-                          {link.label}
-                        </p>
-                        <div className="ml-4 mt-2 flex flex-col gap-2">
-                          {link.subLinks?.map((sub) => (
-                            <Link
-                              key={sub.href}
-                              href={sub.href}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="text-black hover:text-gray-700"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-lg font-medium text-black hover:text-gray-700"
-                      >
-                        {link.label}
-                      </Link>
-                    )
-                  )}
-                </nav>
-
-                <Button asChild>
-                  <Link
-                    href="/registration"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Register
-                  </Link>
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-black hover:text-gray-700 transition-colors"
+              >
+                <Icon name={link.icon} className="h-5 w-5" />
+                <span className="sr-only">{link.name}</span>
+              </Link>
+            ))}
+          </div>
         </div>
+
+        {/* ================= MOBILE MENU ================= */}
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" aria-label="Open Menu">
+              <Menu className="h-6 w-6 text-black" />
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent side="right">
+            <SheetHeader>
+              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+            </SheetHeader>
+
+            <div className="flex flex-col gap-6 p-6">
+              <Logo />
+
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) =>
+                  link.isDropdown ? (
+                    <div key={link.label}>
+                      <p className="text-sm font-semibold text-black">
+                        {link.label}
+                      </p>
+                      <div className="ml-4 mt-2 flex flex-col gap-2">
+                        {link.subLinks?.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-black hover:text-gray-700"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-lg font-medium text-black hover:text-gray-700"
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
+              </nav>
+
+              {/* Social icons in mobile */}
+              <div className="flex gap-4 pt-4">
+                {socialLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-black hover:text-gray-700"
+                  >
+                    <Icon name={link.icon} className="h-5 w-5" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
