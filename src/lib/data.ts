@@ -133,39 +133,24 @@ export const speakers = [
 
 export const schedules = [
     {
-      day: '30 Nov',
-      date: '2025',
-      events: [
-        { time: '', speakerName: '', topic: 'Paper Submission Deadline', description: '' },
-      ],
+      topic: 'Paper Submission Deadline',
+      date: '31 Jan 2026',
     },
     {
-        day: '15 Jan',
-        date: '2026',
-        events: [
-          { time: '', speakerName: '', topic: 'Notification of Acceptance', description: '' },
-        ],
+      topic: 'Notification of Acceptance',
+      date: '10 Feb 2026',
     },
     {
-        day: '10 Feb',
-        date: '2026',
-        events: [
-            { time: '', speakerName: '', topic: 'Camera-Ready Submission', description: '' },
-        ],
+      topic: 'Registration Deadline',
+      date: '20 Feb 2026',
     },
     {
-        day: '06 Mar',
-        date: '2026',
-        events: [
-            { time: '', speakerName: '', topic: 'Conference Day 1', description: '' },
-        ],
+      topic: 'Conference Day 1',
+      date: '06 Mar 2026',
     },
     {
-        day: '07 Mar',
-        date: '2026',
-        events: [
-            { time: '', speakerName: '', topic: 'Conference Day 2', description: '' },
-        ],
+      topic: 'Conference Day 2',
+      date: '07 Mar 2026',
     },
 ];
 

@@ -50,8 +50,8 @@ export function Schedule() {
                     <TableBody>
                         {schedules.map((schedule, index) => (
                         <TableRow key={index} className="border-b-muted/20 last:border-b-0 hover:bg-muted/5">
-                            <TableCell className="font-semibold text-base text-foreground">{schedule.events[0].topic}</TableCell>
-                            <TableCell className="text-right font-medium text-base text-muted-foreground">{schedule.day} {schedule.date}</TableCell>
+                            <TableCell className="font-semibold text-base text-foreground">{schedule.topic}</TableCell>
+                            <TableCell className="text-right font-medium text-base text-muted-foreground">{schedule.date}</TableCell>
                         </TableRow>
                         ))}
                     </TableBody>
