@@ -201,19 +201,6 @@ export const objectives = [
             ],
             sdgs: "SDG 4, SDG 11, SDG 12",
             explanation: "Uses visual communication, media, and design to promote sustainability awareness, education, cultural preservation, and behavioral change."
-        },
-        {
-            title: "Track 11: Interdisciplinary Research, SDGs & Societal Impact",
-            topics: [
-                "Technologies aligned with UN Sustainable Development Goals",
-                "Cross-disciplinary sustainability research",
-                "Ethical, responsible, and inclusive innovation",
-                "Community-centered and participatory technologies",
-                "Education and capacity building for sustainability",
-                "Case studies, pilot projects, and real-world deployments"
-            ],
-            sdgs: "SDG 17, SDG 16, All SDGs (Cross-cutting)",
-            explanation: "Encourages interdisciplinary collaboration, policy integration, ethical innovation, and real-world implementations aligned with multiple SDGs."
         }
     ],
     submissionDetails: [
@@ -374,3 +361,6 @@ export const committeeData = {
     }
 };
 
+
+
+    
