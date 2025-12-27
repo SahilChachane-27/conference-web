@@ -13,9 +13,9 @@ export function Footer() {
     <footer className="bg-black text-white">
       <div className="container py-8 text-center">
         <div className="flex justify-center items-center gap-8 md:gap-12 mb-8 flex-wrap">
-            <Image src="/reframed_logo-preview.png" alt="SustainTechCon Logo" width={120} height={120} className="object-contain" />
-            <Image src="/college.JPG" alt="College Logo" width={120} height={120} className="object-contain rounded-md" />
-            <Image src="/RC_logo.jpeg" alt="Researcher Connect Logo" width={120} height={120} className="object-contain" />
+            <Image src="/reframed_logo-preview.png" alt="SustainTechCon Logo" width={120} height={120} className="object-contain bg-white p-2 rounded-md" />
+            <Image src="/College.png" alt="College Logo" width={120} height={120} className="object-contain bg-white p-2 rounded-md" />
+            <Image src="/RC_logo.jpeg" alt="Researcher Connect Logo" width={120} height={120} className="object-contain bg-white p-2 rounded-md" />
         </div>
         <div className="flex justify-center gap-6 mb-6">
           {socialLinks.map((link) => (
