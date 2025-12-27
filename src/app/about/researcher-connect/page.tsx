@@ -17,11 +17,11 @@ export default function AboutResearcherConnectPage() {
           {pageImage && (
               <div className="mb-12">
                 <Image
-                    src={pageImage.imageUrl}
+                    src="/RClogo.webp"
                     alt={pageImage.description}
                     width={1200}
                     height={400}
-                    className="rounded-lg shadow-2xl object-cover w-full aspect-[3/1]"
+                    className="rounded-lg object-contain w-full aspect-[3/1]"
                     data-ai-hint={pageImage.imageHint}
                 />
               </div>
