@@ -3,11 +3,18 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
 import { tickets } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Check } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import {
     AlertDialog,
     AlertDialogAction,
@@ -46,39 +53,39 @@ export function Tickets() {
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">
                         <span className="text-accent">Registration</span> Details
                     </h2>
-                    <p className="text-lg text-primary-foreground/80 mt-2">
-                        At least one author must register for each accepted paper to ensure inclusion in the conference proceedings.
+                    <p className="text-lg text-primary-foreground/80 mt-2 max-w-4xl mx-auto">
+                        At least one author must register for each accepted paper to ensure inclusion in the conference proceedings. Registration fee is non-refundable. For detailed guidelines, please <Link href="/registration-guidelines" className='underline hover:text-accent'>click here</Link>.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                    {tickets.map((ticket, index) => (
-                        <Card key={ticket.type} className={cn(
-                            "bg-card/80 backdrop-blur-sm text-card-foreground flex flex-col transition-all duration-300 hover:scale-105",
-                            ticket.featured && "border-accent border-2 scale-105 shadow-2xl"
-                        )}>
-                            {ticket.featured && <div className="bg-accent text-center py-1 text-sm font-bold text-accent-foreground">Most Popular</div>}
-                            <CardHeader className="text-center">
-                                <CardTitle className="font-headline text-2xl">{ticket.type}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow space-y-4">
-                                <p className="text-sm text-muted-foreground">{ticket.description}</p>
-                                <div className="text-4xl font-bold text-center font-headline text-primary">
-                                    {ticket.cost}
-                                </div>
-                                <ul className="space-y-3 pt-4">
-                                    {ticket.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start gap-3">
-                                            <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                            <CardFooter>
-                                <p className='text-xs text-muted-foreground text-center w-full'>Registration fee is non-refundable.</p>
-                            </CardFooter>
-                        </Card>
-                    ))}
+                <div className="max-w-6xl mx-auto bg-card/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+                   <Table className="text-card-foreground">
+                        <TableHeader>
+                            <TableRow className="border-b-white/20">
+                            <TableHead className="text-white font-bold">Category</TableHead>
+                            <TableHead className="text-white font-bold">Description</TableHead>
+                            <TableHead className="text-white font-bold text-center">Cost (USD)</TableHead>
+                            <TableHead className="text-right text-white font-bold">Action</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {tickets.map((ticket) => (
+                            <TableRow key={ticket.type} className="border-b-white/10 last:border-b-0">
+                                <TableCell className="font-semibold">{ticket.type}</TableCell>
+                                <TableCell className="text-white/80">{ticket.description}</TableCell>
+                                <TableCell className="text-center font-bold text-xl">{ticket.cost}</TableCell>
+                                <TableCell className="text-right">
+                                <Button
+                                    variant={ticket.featured ? "default" : "secondary"}
+                                    onClick={() => handleGetTicket(ticket.type)}
+                                    className={ticket.featured ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}
+                                >
+                                    Register
+                                </Button>
+                                </TableCell>
+                            </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
                 </div>
             </div>
 
