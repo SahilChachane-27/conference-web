@@ -93,14 +93,18 @@ export function Committee() {
         </div>
         
         {/* Co-convener and Contacts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-            <div>
-                <SectionTitle title={committeeData.correspondenceContact.title} />
-                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {committeeData.correspondenceContact.members.map((member, i) => <ContactCard key={i} {...member} />)}
-                </div>
-            </div>
-        </div>
+   <div className="min-h-screen flex items-center justify-center">
+  <div className="max-w-6xl w-full">
+    <SectionTitle title={committeeData.correspondenceContact.title} />
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+      {committeeData.correspondenceContact.members.map((member, i) => (
+        <ContactCard key={i} {...member} />
+      ))}
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );
