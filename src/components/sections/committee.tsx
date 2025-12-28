@@ -97,7 +97,7 @@ export function Committee() {
   <div className="max-w-6xl w-full">
     <SectionTitle title={committeeData.correspondenceContact.title} />
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
       {committeeData.correspondenceContact.members.map((member, i) => (
         <ContactCard key={i} {...member} />
       ))}
