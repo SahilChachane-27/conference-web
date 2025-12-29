@@ -1,10 +1,12 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, ChevronDown } from "lucide-react";
+import * as Icons from "lucide-react";
+import type { LucideProps } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -13,19 +15,21 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navLinks, socialLinks } from "@/lib/data";
-import * as Icons from "lucide-react";
 
+import { navLinks, socialLinks } from "@/lib/data";
+
+/* ================= ICON HELPER ================= */
 const Icon = ({
   name,
   ...props
 }: {
   name: keyof typeof Icons;
-} & React.ComponentProps<typeof Icons.Icon>) => {
-  const LucideIcon = Icons[name] as React.ComponentType<any>;
+} & LucideProps) => {
+  const LucideIcon = Icons[name] as React.FC<LucideProps>;
   return <LucideIcon {...props} />;
 };
 
+/* ================= LOGO ================= */
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2">
     <Image
@@ -39,6 +43,7 @@ const Logo = () => (
   </Link>
 );
 
+/* ================= HEADER ================= */
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
@@ -47,47 +52,42 @@ export function Header() {
     setIsClient(true);
   }, []);
 
-
   return (
     <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+        {/* Logo */}
         <Logo />
 
         {/* ================= DESKTOP NAV ================= */}
-        <nav
-          className="hidden md:flex items-center gap-6"
-          aria-label="Main navigation"
-        >
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) =>
             link.isDropdown ? (
               <div key={link.label} className="relative group">
                 <button
                   type="button"
-                  aria-haspopup="true"
-                  className="flex items-center gap-1 text-sm font-medium text-black"
-                >
+                  className="flex items-center gap-1 text-sm font-medium text-black">
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
 
-                <div className="absolute left-0 pt-0 hidden min-w-[220px] group-hover:block">
-                    <div className="rounded-md bg-white shadow-lg py-2">
-                        {link.subLinks?.map((sub) => (
-                            <Link
-                            key={sub.href}
-                            href={sub.href}
-                            className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
-                            >
-                            {sub.label}
-                            </Link>
-                        ))}
-                    </div>
+                <div className="absolute left-0 hidden min-w-[220px] pt-2 group-hover:block">
+                  <div className="rounded-md bg-white shadow-lg py-2">
+                    {link.subLinks?.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             ) : (
               <Link
                 key={link.href}
-                href=""
+                href={link.href}
                 className="text-sm font-medium text-black hover:text-gray-700"
               >
                 {link.label}
@@ -96,15 +96,15 @@ export function Header() {
           )}
         </nav>
 
-        {/* ================= RIGHT SIDE (IMAGE + SOCIAL ICONS) ================= */}
+        {/* ================= RIGHT SIDE ================= */}
         <div className="hidden md:flex items-center gap-6">
-          {/* Image (not logo) */}
+          {/* Extra Image */}
           <Image
-            src="/scopus.png" // change path if needed
-            alt="Header Visual"
+            src="/scopus.png"
+            alt="Scopus"
             width={150}
             height={150}
-            className=" h-24"
+            className="h-24 w-auto"
           />
 
           {/* Social Icons */}
@@ -114,9 +114,9 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 className="text-black hover:text-gray-700 transition-colors"
+                aria-label={link.name}
               >
                 <Icon name={link.icon} className="h-5 w-5" />
-                <span className="sr-only">{link.name}</span>
               </Link>
             ))}
           </div>
@@ -144,7 +144,7 @@ export function Header() {
                     {navLinks.map((link) =>
                       link.isDropdown ? (
                         <div key={link.label}>
-                          <p className="text-lg font-medium text-black hover:text-gray-700">
+                          <p className="text-lg font-medium text-black">
                             {link.label}
                           </p>
                           <div className="ml-4 mt-2 flex flex-col gap-2">
@@ -163,7 +163,7 @@ export function Header() {
                       ) : (
                         <Link
                           key={link.href}
-                          href=""
+                          href="{link.href}"
                           onClick={() => setMobileMenuOpen(false)}
                           className="text-lg font-medium text-black hover:text-gray-700"
                         >
@@ -173,7 +173,7 @@ export function Header() {
                     )}
                   </nav>
 
-                  {/* Social icons in mobile */}
+                  {/* Mobile Social Icons */}
                   <div className="flex gap-4 pt-4">
                     {socialLinks.map((link) => (
                       <Link
