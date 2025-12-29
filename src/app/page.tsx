@@ -8,7 +8,6 @@ import Link from "next/link";
 import { Preamble } from "@/components/sections/preamble";
 import { Objectives } from "@/components/sections/objectives";
 import { AboutCollege } from "@/components/sections/about-college";
-import { Contact } from "@/components/sections/contact";
 import { Organizers } from "@/components/sections/organizers";
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
           <AboutCollege />
           <Objectives />
           <Organizers />
-          <Contact />
         </div>
       </main>
       <Footer />
