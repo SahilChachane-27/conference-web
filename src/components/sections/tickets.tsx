@@ -50,24 +50,36 @@ export function Tickets() {
                         At least one author must register for each accepted paper to ensure inclusion in the conference proceedings. Registration fee is non-refundable. For detailed guidelines, please <Link href="/registration-guidelines" className='underline hover:text-accent'>click here</Link>.
                     </p>
                 </div>
-                <div className="max-w-5xl mx-auto bg-white/10 backdrop-blur-md rounded-lg shadow-lg overflow-hidden border border-white/20">
+                <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-md rounded-lg shadow-lg overflow-hidden border border-white/20">
                    <Table>
                         <TableHeader>
                             <TableRow className="border-b border-white/20">
-                                <TableHead className="text-white font-bold text-base md:text-lg">Registration Type</TableHead>
-                                <TableHead className="text-accent font-bold text-base md:text-lg text-center">Early Bird</TableHead>
-                                <TableHead className="text-accent font-bold text-base md:text-lg text-center">Late Bird</TableHead>
+                                <TableHead rowSpan={2} className="text-white font-bold text-base md:text-lg align-middle">Registration Type</TableHead>
+                                <TableHead colSpan={2} className="text-accent font-bold text-base md:text-lg text-center">Early Bird</TableHead>
+                                <TableHead colSpan={2} className="text-accent font-bold text-base md:text-lg text-center">Late Bird</TableHead>
+                            </TableRow>
+                             <TableRow className="border-b border-white/20">
+                                <TableHead className="text-white font-semibold text-sm text-center">USD</TableHead>
+                                <TableHead className="text-white font-semibold text-sm text-center">INR</TableHead>
+                                <TableHead className="text-white font-semibold text-sm text-center">USD</TableHead>
+                                <TableHead className="text-white font-semibold text-sm text-center">INR</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {tickets.map((ticket) => (
                                 <TableRow key={ticket.type} className="border-0">
                                     <TableCell className="font-headline text-base md:text-lg font-semibold text-white">{ticket.type}</TableCell>
-                                    <TableCell className="font-bold text-base md:text-lg text-white text-center">
-                                        {ticket.earlyBird.usd} / {ticket.earlyBird.inr}
+                                    <TableCell className="font-bold text-base text-white text-center">
+                                        {ticket.earlyBird.usd}
                                     </TableCell>
-                                    <TableCell className="font-bold text-base md:text-lg text-white text-center">
-                                        {ticket.lateBird.usd} / {ticket.lateBird.inr}
+                                     <TableCell className="font-bold text-base text-white text-center">
+                                        {ticket.earlyBird.inr}
+                                    </TableCell>
+                                    <TableCell className="font-bold text-base text-white text-center">
+                                        {ticket.lateBird.usd}
+                                    </TableCell>
+                                    <TableCell className="font-bold text-base text-white text-center">
+                                        {ticket.lateBird.inr}
                                     </TableCell>
                                 </TableRow>
                             ))}
@@ -93,5 +105,3 @@ export function Tickets() {
         </section>
     );
 }
-
-    
