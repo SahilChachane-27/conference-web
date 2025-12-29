@@ -6,8 +6,8 @@ export function RegisterNowCta() {
   return (
     <section className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
+          <div className="md:mr-8">
             <h2 className="font-headline text-3xl font-bold">
               Ready to Join Us?
             </h2>
