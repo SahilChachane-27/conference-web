@@ -5,7 +5,12 @@ const logos = [
     { src: "/College.png", alt: "College Logo" },
     { src: "/SDG.webp", alt: "SDG Logo" },
     { src: "/RC Updated.jpeg", alt: "Researcher Connect Logo" },
-];
+    { src: "/google_scholar.png", alt: "Researcher Connect Logo" },
+    { src: "/Elsevier.png", alt: "Researcher Connect Logo" },
+    { src: "/scopus.png", alt: "scopus.png" },
+    { src: "/logo3.png", alt: "Researcher Connect Logo" },
+
+  ];
 
 export function Organizers() {
   return (
