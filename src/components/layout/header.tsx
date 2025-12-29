@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, ChevronDown } from "lucide-react";
@@ -40,6 +41,12 @@ const Logo = () => (
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
@@ -116,69 +123,73 @@ export function Header() {
         </div>
 
         {/* ================= MOBILE MENU ================= */}
-        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Open Menu">
-              <Menu className="h-6 w-6 text-black" />
-            </Button>
-          </SheetTrigger>
+        <div className="md:hidden">
+          {isClient && (
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Open Menu">
+                  <Menu className="h-6 w-6 text-black" />
+                </Button>
+              </SheetTrigger>
 
-          <SheetContent side="right">
-            <SheetHeader>
-              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-            </SheetHeader>
+              <SheetContent side="right">
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                </SheetHeader>
 
-            <div className="flex flex-col gap-6 p-6">
-              <Logo />
+                <div className="flex flex-col gap-6 p-6">
+                  <Logo />
 
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((link) =>
-                  link.isDropdown ? (
-                    <div key={link.label}>
-                      <p className="text-lg font-medium text-black hover:text-gray-700">
-                        {link.label}
-                      </p>
-                      <div className="ml-4 mt-2 flex flex-col gap-2">
-                        {link.subLinks?.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="text-black hover:text-gray-700"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-lg font-medium text-black hover:text-gray-700"
-                    >
-                      {link.label}
-                    </Link>
-                  )
-                )}
-              </nav>
+                  <nav className="flex flex-col gap-4">
+                    {navLinks.map((link) =>
+                      link.isDropdown ? (
+                        <div key={link.label}>
+                          <p className="text-lg font-medium text-black hover:text-gray-700">
+                            {link.label}
+                          </p>
+                          <div className="ml-4 mt-2 flex flex-col gap-2">
+                            {link.subLinks?.map((sub) => (
+                              <Link
+                                key={sub.href}
+                                href={sub.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="text-black hover:text-gray-700"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="text-lg font-medium text-black hover:text-gray-700"
+                        >
+                          {link.label}
+                        </Link>
+                      )
+                    )}
+                  </nav>
 
-              {/* Social icons in mobile */}
-              <div className="flex gap-4 pt-4">
-                {socialLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-black hover:text-gray-700"
-                  >
-                    <Icon name={link.icon} className="h-5 w-5" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+                  {/* Social icons in mobile */}
+                  <div className="flex gap-4 pt-4">
+                    {socialLinks.map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        className="text-black hover:text-gray-700"
+                      >
+                        <Icon name={link.icon} className="h-5 w-5" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          )}
+        </div>
       </div>
     </header>
   );
