@@ -394,6 +394,16 @@ export const committeeData = {
     }
 };
 
+export const publishingPartners = [
+    { name: 'Skype', image: getImage('sponsor-skype') },
+    { name: 'Envato', image: getImage('sponsor-envato') },
+    { name: 'Dribbble', image: getImage('sponsor-dribbble') },
+    { name: 'Mailchimp', image: getImage('sponsor-mailchimp') },
+    { name: 'Android', image: getImage('sponsor-android') },
+    { name: 'jQuery', image: getImage('sponsor-jquery') },
+    { name: 'Sass', image: getImage('sponsor-sass') },
+    { name: 'Pinterest', image: getImage('sponsor-pinterest') },
+];
 
 
     

@@ -1,10 +1,17 @@
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { callForPapers } from "@/lib/data";
+import { callForPapers, publishingPartners } from "@/lib/data";
 import { Check } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function PublicationDetailsPage() {
 
@@ -41,6 +48,40 @@ export default function PublicationDetailsPage() {
                      <p>
                         We are committed to the highest standards of publication ethics. Authors must ensure their work is original and has not been published elsewhere. Any use of AI-generated content must be clearly disclosed and comply with the publisher's policies.
                     </p>
+                </div>
+
+                <div className="pt-8">
+                    <h2 className="text-2xl font-headline font-bold text-foreground mb-6 text-center">Publishing Partners</h2>
+                    <Carousel
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent>
+                            {publishingPartners.map((partner, index) => (
+                                <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                                    <div className="p-1">
+                                        <Card className="overflow-hidden">
+                                            <CardContent className="flex aspect-square items-center justify-center p-6">
+                                                <Image 
+                                                    src={partner.image.imageUrl}
+                                                    alt={partner.name}
+                                                    width={150}
+                                                    height={150}
+                                                    className="object-contain"
+                                                    data-ai-hint={partner.image.imageHint}
+                                                />
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
                 </div>
             </div>
           </div>
