@@ -49,7 +49,7 @@ export function Committee() {
             <SectionTitle title={committeeData.chiefPatrons.title} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {committeeData.chiefPatrons.members.map((member, i) => (
-                    <Card key={i} className="text-center shadow-lg bg-card border-b-4 border-primary transition-all duration-300 hover:-translate-y-2">
+                    <Card key={i} className="text-center shadow-lg bg-card border-b-4 border-primary transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center">
                         <CardContent className="p-6">
                             <p className="font-bold text-lg text-black">{member.name}</p>
                             <p className="text-sm text-black/80">{member.role}</p>
