@@ -63,12 +63,12 @@ export function Footer() {
                             {navLinks.map((link) => (
                                 link.isDropdown ? (
                                     link.subLinks?.map(subLink => (
-                                        <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
+                                        <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1">
                                             {subLink.label}
                                         </Link>
                                     ))
                                 ) : (
-                                    <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
+                                    <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap py-1">
                                         {link.label}
                                     </Link>
                                 )
