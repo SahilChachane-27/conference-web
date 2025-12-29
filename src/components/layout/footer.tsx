@@ -57,7 +57,7 @@ export function Footer() {
                  <h2 className="font-headline text-2xl font-bold">
                     Quick <span className="text-accent">Links</span>
                 </h2>
-                <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5">
+                <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 mt-2">
                     {navLinks.map((link) => (
                         link.isDropdown ? (
                             link.subLinks?.map(subLink => (
@@ -75,7 +75,7 @@ export function Footer() {
             </div>
 
             {/* Column 3: Social Links */}
-            <div className="space-y-4 flex flex-col items-center md:items-center">
+            <div className="space-y-4 flex flex-col items-center">
                  <h2 className="font-headline text-2xl font-bold">
                     Follow <span className="text-accent">Us</span>
                 </h2>
