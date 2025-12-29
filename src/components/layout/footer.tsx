@@ -13,7 +13,7 @@ const Icon = ({ name, ...props }: { name: keyof typeof Icons } & React.Component
 export function Footer() {
     const bgImage = PlaceHolderImages.find(img => img.id === 'testimonials-background');
   return (
-    <footer className="relative bg-black text-white py-12 md:py-16">
+    <footer className="relative bg-black text-white py-12">
        {bgImage && (
             <Image
                 src={bgImage.imageUrl}
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="absolute inset-0 bg-black/80" />
 
       <div className="container relative mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Column 1: Contact Info */}
             <div className="space-y-4">
                 <h2 className="font-headline text-2xl font-bold">
@@ -56,16 +56,16 @@ export function Footer() {
                  <h2 className="font-headline text-2xl font-bold">
                     Quick <span className="text-accent">Links</span>
                 </h2>
-                <nav className="flex flex-col space-y-1.5 text-center">
+                <nav className="grid grid-cols-2 gap-x-8 gap-y-1.5 text-left">
                     {navLinks.map((link) => (
                         link.isDropdown ? (
                             link.subLinks?.map(subLink => (
-                                <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors">
+                                <Link key={subLink.href} href={subLink.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
                                     {subLink.label}
                                 </Link>
                             ))
                         ) : (
-                            <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors">
+                            <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap">
                                 {link.label}
                             </Link>
                         )
