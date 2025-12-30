@@ -40,7 +40,7 @@ export function Tickets() {
                     data-ai-hint={bgImage.imageHint}
                 />
             )}
-            <div className="absolute inset-0 bg-primary/90" />
+            <div className="absolute inset-0 bg-black/90" />
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">

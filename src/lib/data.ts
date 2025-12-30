@@ -208,13 +208,10 @@ export const objectives = [
         }
     ],
     submissionDetails: [
-        'Papers must be written in English',
-        'Manuscripts should be original and plagiarism-free',
-        'AI-generated content should be minimal and compliant with publisher guidelines',
-        'Authors should follow the conference paper template (to be downloaded from the website)',
-        'Paper length: 6–8 pages (as per template)',
-        'Submission Mode: Online paper submission system',
-        'All submissions will undergo a double-blind peer review process'
+        "Full papers must be submitted in PDF format through the official conference portal.",
+        "Papers should be formatted according to the provided template.",
+        "A double-blind peer review process will be followed.",
+        "At least one author must register for the conference for the paper to be published."
     ],
     publicationDetails: {
         title: 'Publication Details',
@@ -441,10 +438,12 @@ export const businessTypesData = [
     { name: 'Other', value: 14 },
 ];
 
-export const COLORS = ['#6A5ACD', '#C71585', '#FFA500', '#00008B', '#4682B4', '#D2B48C'];
+export const COLORS = ['#808080', '#A9A9A9', '#D3D3D3', '#000000', '#696969', '#C0C0C0'];
     
 
     
+
+
 
 
 

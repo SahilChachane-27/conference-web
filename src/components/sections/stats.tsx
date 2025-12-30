@@ -43,7 +43,7 @@ const DonutChart = ({ data, title }: {data: any[], title: string}) => {
 
 
     return (
-         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
             <div className="w-full h-[250px]">
                 <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
@@ -78,7 +78,7 @@ export function Stats() {
     const bgImage = PlaceHolderImages.find(img => img.id === 'stats-background');
 
   return (
-    <section id="stats" className="relative py-20 md:py-28 text-white">
+    <section id="stats" className="relative py-20 md:py-28 text-foreground">
         {bgImage && (
             <Image
                 src={bgImage.imageUrl}
@@ -123,4 +123,3 @@ export function Stats() {
     </section>
   );
 }
-

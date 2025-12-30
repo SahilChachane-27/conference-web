@@ -32,7 +32,7 @@ export function CallForPapers() {
             </CardHeader>
             <CardContent className="flex-grow">
                 <Accordion type="multiple" className="w-full" defaultValue={["item-0"]}>
-                    {callForPapers.tracks.map((track, index) => (
+                    {callForPapers.tracks && callForPapers.tracks.map((track, index) => (
                          <AccordionItem key={index} value={`item-${index}`} className={index === callForPapers.tracks.length -1 ? "border-b-0" : ""}>
                             <AccordionTrigger className="text-base font-semibold text-left">
                                 {track.title}
