@@ -1,16 +1,16 @@
 
 import Image from 'next/image';
+import { Card } from '@/components/ui/card';
 
 const logos = [
-    { src: "/College.png", alt: "College Logo" },
-    { src: "/SDG.webp", alt: "SDG Logo" },
-    { src: "/RC Updated.jpeg", alt: "Researcher Connect Logo" },
-    { src: "/google_scholar.png", alt: "Researcher Connect Logo" },
-    { src: "/Elsevier.png", alt: "Researcher Connect Logo" },
-    { src: "/scopus.png", alt: "scopus.png" },
-    { src: "/logo3.png", alt: "Researcher Connect Logo" },
-
-  ];
+    { src: "/College.png", alt: "Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts" },
+    { src: "/SDG.webp", alt: "Sustainable Development Goals" },
+    { src: "/RC Updated.jpeg", alt: "Researcher Connect" },
+    { src: "/google_scholar.png", alt: "Google Scholar" },
+    { src: "/Elsevier.png", alt: "Elsevier" },
+    { src: "/scopus.png", alt: "Scopus" },
+    { src: "/logo3.png", alt: "Collaborator Logo" },
+];
 
 export function Organizers() {
   return (
@@ -24,21 +24,23 @@ export function Organizers() {
             Proudly organized and supported by the following institutions.
           </p>
         </div>
-        <div className="relative w-full overflow-hidden">
-            <div className="flex animate-marquee">
-                {[...logos, ...logos].map((logo, index) => (
-                    <div key={index} className="flex-shrink-0 mx-6">
-                        <Image 
-                            src={logo.src} 
-                            alt={logo.alt} 
-                            width={120} 
-                            height={160} 
-                            className="object-contain bg-white rounded-md" 
-                        />
-                    </div>
+        
+        <div className="max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center items-center gap-8">
+                {logos.map((logo, index) => (
+                    <Card key={index} className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center justify-center h-32 w-48">
+                        <div className="relative h-full w-full">
+                            <Image 
+                                src={logo.src} 
+                                alt={logo.alt} 
+                                layout="fill"
+                                objectFit="contain"
+                                className="grayscale hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
+                    </Card>
                 ))}
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
         </div>
       </div>
     </section>
