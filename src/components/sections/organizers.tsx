@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 
 const logos = [
-    { src: "/College.png", alt: "Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts" },
+    { src: "/college.png", alt: "Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts" },
     { src: "/SDG.webp", alt: "Sustainable Development Goals" },
-    { src: "/RC Updated.jpeg", alt: "Researcher Connect" },
+    { src: "/RC_Updated.jpeg", alt: "Researcher Connect" },
     { src: "/google_scholar.png", alt: "Google Scholar" },
     { src: "/Elsevier.png", alt: "Elsevier" },
     { src: "/scopus.png", alt: "Scopus" },
@@ -37,8 +37,8 @@ export function Organizers() {
                             <Image 
                                 src={logo.src} 
                                 alt={logo.alt} 
-                                layout="fill"
-                                objectFit="contain"
+                                fill
+                                style={{ objectFit: "contain" }}
                                 className="grayscale hover:grayscale-0 transition-all duration-300"
                             />
                         </div>
