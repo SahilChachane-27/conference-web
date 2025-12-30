@@ -3,6 +3,7 @@ import { Inter, Farsan, Old_Standard_TT } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 import "./menu-bar.css";
+import "./toaster.css";
 
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
