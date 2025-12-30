@@ -57,7 +57,7 @@ export function Hero() {
 
           <div className="pt-4">
             <div className="flex justify-center gap-4">
-                <Button asChild size="lg" variant="outline" className="border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button asChild size="lg" variant="secondary">
                     <Link href="#preamble">View Highlights</Link>
                 </Button>
                 <Button asChild size="lg">
