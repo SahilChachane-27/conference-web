@@ -1,3 +1,4 @@
+
 "use client"
 
 import Image from 'next/image';
@@ -32,28 +33,39 @@ const DonutChart = ({ data, title }: {data: any[], title: string}) => {
         color: COLORS[index % COLORS.length],
     }));
 
+    const chartConfig = data.reduce((acc, entry, index) => {
+        acc[entry.name] = {
+            label: entry.name,
+            color: COLORS[index % COLORS.length],
+        };
+        return acc;
+    }, {});
+
+
     return (
          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
             <div className="w-full h-[250px]">
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={60}
-                            outerRadius={80}
-                            fill="#8884d8"
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            {data.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                            ))}
-                        </Pie>
-                        <Tooltip content={<ChartTooltipContent />} />
-                    </PieChart>
-                </ResponsiveContainer>
+                <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Pie
+                                data={data}
+                                cx="50%"
+                                cy="50%"
+                                innerRadius={60}
+                                outerRadius={80}
+                                fill="#8884d8"
+                                paddingAngle={5}
+                                dataKey="value"
+                            >
+                                {data.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} name={entry.name} />
+                                ))}
+                            </Pie>
+                            <Tooltip content={<ChartTooltipContent nameKey="name" />} />
+                        </PieChart>
+                    </ResponsiveContainer>
+                </ChartContainer>
             </div>
             <div>
                 <CustomLegend payload={legendPayload} title={title} />
@@ -111,3 +123,4 @@ export function Stats() {
     </section>
   );
 }
+
