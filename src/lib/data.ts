@@ -438,10 +438,11 @@ export const businessTypesData = [
     { name: 'Other', value: 14 },
 ];
 
-export const COLORS = ['#808080', '#A9A9A9', '#D3D3D3', '#000000', '#696969', '#C0C0C0'];
+export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#FF9800'];
     
 
     
+
 
 
 
