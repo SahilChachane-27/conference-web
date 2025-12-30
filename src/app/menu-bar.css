@@ -44,10 +44,11 @@
     cursor: pointer;
     white-space: nowrap;
     font-size: 14px;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
 }
 
 .menu-bar li:hover {
-    background-color: #e0e0e0;
-    color: black;
+    color: hsl(var(--primary));
+    border-bottom-color: hsl(var(--primary));
 }
