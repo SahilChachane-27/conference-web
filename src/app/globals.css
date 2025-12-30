@@ -15,13 +15,13 @@
     --popover-foreground: 215 28% 17%;
 
     /* Brand Colors */
-    --primary: 217 91% 60%;          /* #3B82F6 */
-    --primary-foreground: 210 40% 98%;  /* #F8FAFC */
+    --primary: 173 80% 40%;          /* #14A38B */
+    --primary-foreground: 0 0% 100%;  /* #FFFFFF */
 
     --secondary: 210 40% 96%;        /* #F1F5F9 */
     --secondary-foreground: 215 28% 17%;
 
-    --accent: 217 91% 68%;           /* #60A5FA */
+    --accent: 173 70% 50%;           /* #29D9B9 */
     --accent-foreground: 215 28% 17%;
 
     /* Muted */
@@ -31,12 +31,12 @@
     /* Borders & Inputs */
     --border: 214 32% 91%;           /* #E2E8F0 */
     --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --ring: 173 80% 40%;
 
     --radius: 0.5rem;
 
     /* Charts (same palette) */
-    --chart-1: 217 91% 60%;
+    --chart-1: 173 80% 40%;
     --chart-2: 190 80% 50%;
     --chart-3: 215 28% 17%;
     --chart-4: 210 40% 90%;
