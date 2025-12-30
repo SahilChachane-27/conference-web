@@ -28,7 +28,7 @@ export function Footer() {
 
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Column 1: Navigation Links */}
+            {/* Column 1: Quick Links */}
             <div className="space-y-4 flex flex-col items-center">
                  <h2 className="font-headline text-2xl font-bold">
                     Quick <span className="text-accent">Links</span>
@@ -50,7 +50,7 @@ export function Footer() {
                 </nav>
             </div>
 
-            {/* Column 2: Contact Info */}
+            {/* Column 2: Get in Touch */}
             <div className="space-y-4">
                 <h2 className="font-headline text-2xl font-bold text-center">
                     Get in <span className="text-accent">Touch</span>
