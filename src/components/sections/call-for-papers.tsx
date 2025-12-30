@@ -1,8 +1,7 @@
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { callForPapers } from "@/lib/data";
-import { FileText, BookOpenCheck, ListChecks, Landmark, ArrowRight } from "lucide-react";
+import { FileText, BookOpenCheck, ListChecks, Landmark, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
@@ -21,48 +20,50 @@ export function CallForPapers() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Conference Themes */}
-          <Card className="lg:col-span-2 shadow-lg flex flex-col">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <ListChecks className="h-7 w-7 text-primary" />
+          <div className="lg:col-span-2 space-y-8">
+            <Card className="shadow-lg">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <ListChecks className="h-7 w-7 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-2xl">Conference Tracks</CardTitle>
                 </div>
-                <CardTitle className="font-headline text-2xl">Conference Tracks</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="flex-grow">
-                <Accordion type="multiple" className="w-full" defaultValue={["item-0"]}>
-                    {callForPapers.tracks && callForPapers.tracks.map((track, index) => (
-                         <AccordionItem key={index} value={`item-${index}`} className={index === callForPapers.tracks.length -1 ? "border-b-0" : ""}>
-                            <AccordionTrigger className="text-base font-semibold text-left hover:no-underline">
-                                {track.title}
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <div className="space-y-4 pt-2">
-                                    <div className="space-y-2">
-                                        {track.topics.map((topic, topicIndex) => (
-                                            <div key={topicIndex} className="p-3 text-muted-foreground border rounded-md bg-muted/50">
-                                                {topic}
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="p-3 bg-muted/50 rounded-md">
-                                        <p className="font-semibold text-primary text-sm flex items-center gap-2">
-                                            <Landmark className="h-4 w-4" />
-                                            Relevant SDGs: <span className="font-normal text-muted-foreground">{track.sdgs}</span>
-                                        </p>
-                                        <p className="text-xs text-muted-foreground mt-1 italic">{track.explanation}</p>
-                                    </div>
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
-            </CardContent>
-          </Card>
+              </CardHeader>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {callForPapers.tracks.map((track, index) => (
+                    <Card key={index} className="flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <CardHeader>
+                            <CardTitle className="text-lg font-semibold">{track.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow space-y-4">
+                           <ul className="space-y-2">
+                                {track.topics.map((topic, topicIndex) => (
+                                    <li key={topicIndex} className="flex items-start gap-2">
+                                        <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
+                                        <span className="text-muted-foreground text-sm">{topic}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </CardContent>
+                        <CardFooter className="bg-muted/50 p-4 mt-auto">
+                            <div>
+                                <p className="font-semibold text-primary text-xs flex items-center gap-2">
+                                    <Landmark className="h-4 w-4" />
+                                    Relevant SDGs: <span className="font-normal text-muted-foreground">{track.sdgs}</span>
+                                </p>
+                                <p className="text-xs text-muted-foreground/80 mt-1 italic">{track.explanation}</p>
+                            </div>
+                        </CardFooter>
+                    </Card>
+                ))}
+            </div>
+          </div>
 
           {/* Submission and Publication Details */}
-          <div className="lg:col-span-1 space-y-8">
+          <div className="lg:col-span-1 space-y-8 sticky top-24">
             <Card className="shadow-lg">
               <CardHeader>
                 <div className="flex items-center gap-4">
@@ -78,6 +79,9 @@ export function CallForPapers() {
                     <li key={detail}>{detail}</li>
                   ))}
                 </ul>
+                 <Button asChild className="w-full mt-6">
+                    <Link href="#">Submit Paper (Link disabled)</Link>
+                </Button>
               </CardContent>
             </Card>
 
