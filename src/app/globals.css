@@ -5,42 +5,40 @@
 @layer base {
   :root {
     /* Background & Text */
-    --background: 210 20% 98%;      /* #F7F9FA */
-    --foreground: 215 28% 17%;      /* #202937 */
+    --background: 210 20% 98%;      /* Off White #F8FAFC */
+    --foreground: 222 47% 11%;      /* Midnight Blue #0F172A */
 
     /* Cards & Popovers */
-    --card: 0 0% 100%;               /* #FFFFFF */
-    --card-foreground: 215 28% 17%;  /* #202937 */
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
     /* Brand Colors */
-    --primary: 173 80% 40%;          /* #14A38B */
-    --primary-foreground: 0 0% 100%;  /* #FFFFFF */
+    --primary: 222 47% 11%;          /* Midnight Blue #0F172A */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;        /* #F1F5F9 */
-    --secondary-foreground: 215 28% 17%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --accent: 173 70% 50%;           /* #29D9B9 */
-    --accent-foreground: 215 28% 17%;
+    --accent: 221 83% 53%;           /* Royal Blue #2563EB */
+    --accent-foreground: 0 0% 100%;
 
     /* Muted */
-    --muted: 210 40% 90%;            /* #E2E8F0 */
-    --muted-foreground: 215 20% 45%;  /* #64748B */
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 20% 45%;
 
     /* Borders & Inputs */
-    --border: 214 32% 91%;           /* #E2E8F0 */
-    --input: 214 32% 91%;
-    --ring: 173 80% 40%;
+    --border: 215 28% 83%;           /* Cool Gray #CBD5E1 */
+    --input: 215 28% 83%;
+    --ring: 221 83% 53%;
 
     --radius: 0.5rem;
 
-    /* Charts (same palette) */
-    --chart-1: 173 80% 40%;
-    --chart-2: 190 80% 50%;
-    --chart-3: 215 28% 17%;
-    --chart-4: 210 40% 90%;
-    --chart-5: 210 40% 98%;
+    /* Charts (using the new palette) */
+    --chart-1: 222 47% 11%; /* Midnight Blue */
+    --chart-2: 221 83% 53%; /* Royal Blue */
+    --chart-3: 202 89% 60%; /* Sky Blue #38BDF8 */
+    --chart-4: 215 28% 83%; /* Cool Gray */
+    --chart-5: 210 20% 98%; /* Off White */
   }
 }
 

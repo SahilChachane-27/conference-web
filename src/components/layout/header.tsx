@@ -50,7 +50,7 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
             )}
         >
             {children}
-            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-primary-foreground')} />}
+            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-accent')} />}
         </Link>
     );
 };
@@ -71,7 +71,7 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
               {label}
               <ChevronDown className="h-4 w-4" />
             </button>
-            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-primary-foreground')} />}
+            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-accent')} />}
 
 
             <div className="absolute left-0 hidden min-w-[220px] pt-4 group-hover:block z-20">
@@ -127,7 +127,7 @@ export function Header() {
                     <Bell className="h-5 w-5" />
                     <span className="sr-only">Notifications</span>
                 </Button>
-                 <Button asChild className={cn('transition-all', 'bg-primary-foreground text-primary hover:bg-primary-foreground/90')}>
+                 <Button asChild className={cn('transition-all', 'bg-accent text-accent-foreground hover:bg-accent/90')}>
                     <Link href="/registration">Buy Ticket</Link>
                 </Button>
             </div>
@@ -175,7 +175,7 @@ export function Header() {
                     )}
                   </nav>
                    <div className="mt-6">
-                    <Button asChild className="w-full bg-primary text-primary-foreground">
+                    <Button asChild className="w-full bg-accent text-accent-foreground">
                         <Link href="/registration">Buy Ticket</Link>
                     </Button>
                   </div>
