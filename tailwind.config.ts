@@ -10,9 +10,30 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Space Grotesk', 'sans-serif'],
-        code: ['monospace'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '\'Segoe UI\'',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+          '\'Apple Color Emoji\'',
+          '\'Segoe UI Emoji\'',
+          '\'Segoe UI Symbol\'',
+        ],
+        headline: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '\'Segoe UI\'',
+            'Roboto',
+            'Helvetica',
+            'Arial',
+            'sans-serif',
+            '\'Apple Color Emoji\'',
+            '\'Segoe UI Emoji\'',
+            '\'Segoe UI Symbol\'',
+          ],
       },
       colors: {
         background: 'hsl(var(--background))',
