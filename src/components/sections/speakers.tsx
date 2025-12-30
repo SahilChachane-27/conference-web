@@ -25,7 +25,7 @@ export function Speakers() {
                   alt={`Portrait of ${speaker.name}`}
                   width={160}
                   height={160}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover h-40 w-40"
                   data-ai-hint={speaker.image.imageHint}
                 />
               </div>
