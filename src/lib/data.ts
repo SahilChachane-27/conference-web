@@ -46,32 +46,32 @@ export const objectives = [
     {
         icon: 'Rocket' as const,
         title: 'Promote Innovation',
-        description: 'To promote research and innovation in sustainable technologies and intelligent systems.',
+        description: 'To showcase cutting-edge research in sustainable technologies and intelligent systems.',
     },
     {
         icon: 'Users' as const,
         title: 'Foster Collaboration',
-        description: 'To encourage interdisciplinary collaboration among engineering, technology, management, healthcare, agriculture, and environmental sciences.',
+        description: 'To facilitate networking among experts from academia, industry, and government.',
     },
     {
         icon: 'Globe' as const,
         title: 'Global Platform',
-        description: 'To provide a global platform for research scholars and professionals to present high-quality research.',
+        description: 'To offer a stage for researchers to present high-impact work to a global audience.',
     },
     {
-        icon: 'Bridge' as const,
-        title: 'Bridge Gaps',
-        description: 'To bridge the gap between academia, industry, and society.',
+        icon: 'Lightbulb' as const,
+        title: 'Inspire Solutions',
+        description: 'To inspire novel solutions for global sustainability challenges through technology.',
     },
     {
         icon: 'Cpu' as const,
         title: 'Highlight Technology',
-        description: 'To highlight the role of AI, IoT, cyber-physical systems, and digital twins in sustainable development.',
+        description: 'To highlight the role of AI and IoT in driving sustainable development.',
     },
     {
         icon: 'GraduationCap' as const,
         title: 'Support Researchers',
-        description: 'To support young researchers and students through mentorship and exposure to global research trends.',
+        description: 'To support young researchers with mentorship and exposure to leading trends.',
     },
 ];
 
