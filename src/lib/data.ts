@@ -43,36 +43,36 @@ export const preamble = {
 
 export const objectives = [
     {
-      icon: 'Rocket' as const,
-      title: 'Promote Innovation',
-      description: 'To promote research and innovation in sustainable technologies and intelligent systems.',
+        icon: 'Rocket' as const,
+        title: 'Promote Innovation in Sustainability',
+        description: 'To showcase cutting-edge research and innovation in sustainable technologies and intelligent systems.',
     },
     {
-      icon: 'Users' as const,
-      title: 'Foster Collaboration',
-      description: 'To encourage interdisciplinary collaboration among engineering, technology, management, healthcare, agriculture, and environmental sciences.',
+        icon: 'Users' as const,
+        title: 'Foster Interdisciplinary Collaboration',
+        description: 'To encourage collaboration between engineering, technology, and environmental sciences to solve complex problems.',
     },
     {
-      icon: 'Globe' as const,
-      title: 'Global Platform',
-      description: 'To provide a global platform for research scholars and professionals to present high-quality research.',
+        icon: 'Globe' as const,
+        title: 'Provide a Global Platform',
+        description: 'To offer a stage for researchers and professionals to present high-impact research to an international audience.',
     },
     {
-      icon: 'Bridge' as const,
-      title: 'Bridge Gaps',
-      description: 'To bridge the gap between academia, industry, and society.',
+        icon: 'Bridge' as const,
+        title: 'Bridge Academia and Industry',
+        description: 'To close the gap between academic research and practical industry applications for tangible societal benefits.',
     },
     {
-      icon: 'Cpu' as const,
-      title: 'Highlight Technology',
-      description: 'To highlight the role of AI, IoT, cyber-physical systems, and digital twins in sustainable development.',
+        icon: 'Cpu' as const,
+        title: 'Explore Emerging Technologies',
+        description: 'To highlight the transformative role of AI, IoT, and digital twins in advancing sustainable development.',
     },
     {
-      icon: 'GraduationCap' as const,
-      title: 'Support Researchers',
-      description: 'To support young researchers and students through mentorship and exposure to global research trends.',
+        icon: 'GraduationCap' as const,
+        title: 'Empower Future Researchers',
+        description: 'To mentor and support the next generation of researchers by exposing them to global research trends and experts.',
     },
-  ];
+];
 
   export const callForPapers = {
     description: "Authors are invited to submit original, unpublished, and high-quality research papers that are not under review elsewhere. Papers should present novel research contributions, experimental studies, theoretical analysis, or practical applications related to the conference themes.",
@@ -443,6 +443,7 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
     
 
     
+
 
 
 
