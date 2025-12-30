@@ -9,7 +9,6 @@ import { Preamble } from "@/components/sections/preamble";
 import { AboutCollege } from "@/components/sections/about-college";
 import { Organizers } from "@/components/sections/organizers";
 import { RegisterNowCta } from "@/components/sections/register-now-cta";
-import { CallForPapers } from "@/components/sections/call-for-papers";
 import { HomeSpeakers } from "@/components/sections/home-speakers";
 import { Stats } from "@/components/sections/stats";
 import { Objectives } from "@/components/sections/objectives";
@@ -23,7 +22,6 @@ export default function Home() {
         <div className="relative bg-background z-10">
           <Preamble />
           <Objectives />
-          <CallForPapers />
           <Stats />
           <HomeSpeakers />
           <AboutCollege />
