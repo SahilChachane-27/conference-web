@@ -90,20 +90,22 @@ export default function PublicationDetailsPage() {
                         </h2>
                         <p className="text-muted-foreground mt-2">In collaboration with leading academic publishers.</p>
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                        {publishingPartners.map((partner, index) => (
-                            <Card key={index} className="group overflow-hidden flex items-center justify-center p-6 bg-white hover:shadow-xl transition-shadow duration-300 aspect-square">
-                                <div className="relative w-full h-20">
-                                    <Image 
-                                        src={partner.image.imageUrl}
-                                        alt={partner.name}
-                                        fill
-                                        className="object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                                        data-ai-hint={partner.image.imageHint}
-                                    />
+                    <div className="relative w-full overflow-hidden bg-background py-8">
+                        <div className="flex animate-marquee">
+                            {[...publishingPartners, ...publishingPartners].map((partner, index) => (
+                                <div key={index} className="flex-shrink-0 mx-8" style={{ width: '160px' }}>
+                                    <div className="relative aspect-square h-20 mx-auto">
+                                        <Image 
+                                            src={partner.image.imageUrl}
+                                            alt={partner.name}
+                                            fill
+                                            className="object-contain"
+                                            data-ai-hint={partner.image.imageHint}
+                                        />
+                                    </div>
                                 </div>
-                            </Card>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
