@@ -44,34 +44,34 @@ export const preamble = {
 
 export const objectives = [
     {
-        icon: 'BrainCircuit' as const,
+        icon: 'Rocket' as const,
         title: 'Promote Innovation',
-        description: 'To promote research and innovation in sustainable technologies and intelligent systems.',
+        description: 'Showcase cutting-edge research in sustainable technologies and intelligent systems.',
     },
     {
-        icon: 'Briefcase' as const,
+        icon: 'Users' as const,
         title: 'Foster Collaboration',
-        description: 'To encourage interdisciplinary collaboration among engineering, technology, and sciences.',
+        description: 'Facilitate networking among experts from academia, industry, and government.',
     },
     {
-        icon: 'Presentation' as const,
+        icon: 'Globe' as const,
         title: 'Global Platform',
-        description: 'To provide a global platform for researchers and professionals to present high-quality research.',
+        description: 'Offer a stage for researchers to present high-impact work to a global audience.',
     },
     {
-        icon: 'Bridge' as const,
-        title: 'Bridge Gaps',
-        description: 'To bridge the gap between academia, industry, and society.',
+        icon: 'Lightbulb' as const,
+        title: 'Inspire Solutions',
+        description: 'Inspire novel solutions for global sustainability challenges through technology.',
     },
     {
-        icon: 'Bot' as const,
+        icon: 'Cpu' as const,
         title: 'Highlight Technology',
-        description: 'To highlight the role of AI, IoT, and digital twins in sustainable development.',
+        description: 'Highlight the role of AI and IoT in driving sustainable development.',
     },
     {
-        icon: 'School' as const,
+        icon: 'GraduationCap' as const,
         title: 'Support Researchers',
-        description: 'To support young researchers through mentorship and exposure to global research trends.',
+        description: 'Support young researchers with mentorship and exposure to leading trends.',
     },
 ];
 
@@ -458,4 +458,5 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
     
+
 
