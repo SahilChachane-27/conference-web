@@ -2,7 +2,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Tickets } from "@/components/sections/tickets";
-import "./tickets.css";
+import "../tickets.css";
 
 export default function RegistrationPage() {
   return (
