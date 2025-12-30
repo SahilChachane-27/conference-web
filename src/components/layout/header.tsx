@@ -29,7 +29,7 @@ const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
     />
     <span className={cn(
         "font-bold text-lg hidden sm:inline-block transition-colors",
-        isScrolled ? 'text-white' : 'text-black'
+        'text-white'
     )}>
         SustainTechCon
     </span>
@@ -45,12 +45,12 @@ const NavLink = ({ href, children, isScrolled }: { href: string, children: React
             href={href}
             className={cn(
                 "relative text-sm font-medium transition-colors px-4",
-                isScrolled ? 'text-white/80 hover:text-white' : 'text-black/80 hover:text-black',
-                isActive && (isScrolled ? 'text-white' : 'text-black font-semibold')
+                'text-white/80 hover:text-white',
+                isActive && 'text-white font-semibold'
             )}
         >
             {children}
-            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", isScrolled ? 'bg-white' : 'bg-black')} />}
+            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-white')} />}
         </Link>
     );
 };
@@ -65,13 +65,13 @@ const DropdownLink = ({ label, subLinks, isScrolled }: { label: string, subLinks
               type="button"
               className={cn(
                 "flex items-center gap-1 text-sm font-medium transition-colors",
-                isScrolled ? 'text-white/80 hover:text-white' : 'text-black/80 hover:text-black',
-                isActive && (isScrolled ? 'text-white' : 'text-black font-semibold')
+                'text-white/80 hover:text-white',
+                isActive && 'text-white font-semibold'
             )}>
               {label}
               <ChevronDown className="h-4 w-4" />
             </button>
-            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", isScrolled ? 'bg-white' : 'bg-black')} />}
+            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-white')} />}
 
 
             <div className="absolute left-0 hidden min-w-[220px] pt-4 group-hover:block z-20">
@@ -106,7 +106,7 @@ export function Header() {
   return (
     <header className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? 'bg-black' : 'bg-white'
+        "bg-black"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo isScrolled={isScrolled} />
@@ -123,18 +123,18 @@ export function Header() {
 
         <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-4">
-                <Button variant="ghost" size="icon" className={cn('transition-colors', isScrolled ? 'text-white hover:bg-white/10 hover:text-white' : 'text-black hover:bg-black/5 hover:text-black')}>
+                <Button variant="ghost" size="icon" className={cn('transition-colors', 'text-white hover:bg-white/10 hover:text-white')}>
                     <Bell className="h-5 w-5" />
                     <span className="sr-only">Notifications</span>
                 </Button>
-                 <Button asChild className={cn('transition-all', isScrolled ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800')}>
+                 <Button asChild className={cn('transition-all', 'bg-white text-black hover:bg-gray-200')}>
                     <Link href="/registration">Buy Ticket</Link>
                 </Button>
             </div>
           
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" aria-label="Open Menu" className={cn('transition-colors', isScrolled ? 'text-white hover:text-white' : 'text-black hover:text-black')}>
+                <Button variant="ghost" size="icon" aria-label="Open Menu" className={cn('transition-colors', 'text-white hover:text-white')}>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
