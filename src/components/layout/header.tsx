@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -14,6 +15,12 @@ import { ChevronDown } from 'lucide-react';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +38,7 @@ export function Header() {
                 {navLinks.map((link) => (
                     link.isDropdown && link.subLinks ? (
                         <li key={link.label}>
+                            {isClient ? (
                              <DropdownMenu>
                                 <DropdownMenuTrigger className="flex items-center gap-1 outline-none">
                                     {link.label}
@@ -44,6 +52,12 @@ export function Header() {
                                     ))}
                                 </DropdownMenuContent>
                             </DropdownMenu>
+                            ) : (
+                                <div className="flex items-center gap-1 outline-none" style={{ padding: '18px 20px', fontSize: '14px', fontWeight: 'bold' }}>
+                                    {link.label}
+                                    <ChevronDown className="h-4 w-4" />
+                                </div>
+                             )}
                         </li>
                     ) : (
                         <li key={link.href}>
