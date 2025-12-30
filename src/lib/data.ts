@@ -433,14 +433,14 @@ export const committeeData = {
 };
 
 export const publishingPartners = [
-    { name: 'Skype', image: getImage('sponsor-skype') },
-    { name: 'Envato', image: getImage('sponsor-envato') },
-    { name: 'Dribbble', image: getImage('sponsor-dribbble') },
-    { name: 'Mailchimp', image: getImage('sponsor-mailchimp') },
-    { name: 'Android', image: getImage('sponsor-android') },
-    { name: 'jQuery', image: getImage('sponsor-jquery') },
-    { name: 'Sass', image: getImage('sponsor-sass') },
-    { name: 'Pinterest', image: getImage('sponsor-pinterest') },
+    { name: 'Elsevier', image: getImage('sponsor-elsevier') },
+    { name: 'Springer', image: getImage('sponsor-springer') },
+    { name: 'Google Scholar', image: getImage('sponsor-google-scholar') },
+    { name: 'Scopus', image: getImage('sponsor-scopus') },
+    { name: 'Web of Science', image: getImage('sponsor-web-of-science') },
+    { name: 'IEEE', image: getImage('sponsor-ieee') },
+    { name: 'ACM', image: getImage('sponsor-acm') },
+    { name: 'Wiley', image: getImage('sponsor-wiley') },
 ];
 
 
@@ -489,3 +489,6 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
 
+
+
+    

@@ -9,7 +9,11 @@ const logos = [
     { src: "/google_scholar.png", alt: "Google Scholar" },
     { src: "/Elsevier.png", alt: "Elsevier" },
     { src: "/scopus.png", alt: "Scopus" },
-    { src: "/logo3.png", alt: "Collaborator Logo" },
+    { src: "/logo3.png", alt: "Springer" },
+    { src: "/webofscience.png", alt: "Web of Science" },
+    { src: "/ieee.png", alt: "IEEE" },
+    { src: "/acm.png", alt: "ACM" },
+    { src: "/wiley.png", alt: "Wiley" },
 ];
 
 export function Organizers() {
@@ -46,3 +50,5 @@ export function Organizers() {
     </section>
   );
 }
+
+    
