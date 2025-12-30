@@ -24,10 +24,10 @@ export function Objectives() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {objectives.map((objective, index) => (
-                <Card key={index} className="shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                        <div className="bg-primary/10 p-3 rounded-lg">
-                            <Icon name={objective.icon} className="h-7 w-7 text-primary" />
+                <Card key={index} className="shadow-none border-none bg-transparent text-center flex flex-col items-center">
+                    <CardHeader className="flex flex-col items-center gap-4 pb-4">
+                        <div className="bg-primary/10 p-4 rounded-full">
+                            <Icon name={objective.icon} className="h-8 w-8 text-primary" />
                         </div>
                         <CardTitle className="font-headline text-xl leading-tight">
                             {objective.title}
