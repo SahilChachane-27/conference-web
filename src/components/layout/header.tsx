@@ -42,7 +42,7 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
             href={href}
             className={cn(
                 "relative text-sm font-medium transition-colors hover:text-primary px-4",
-                isActive ? "text-primary" : "text-foreground/80"
+                isActive ? "text-primary" : "text-foreground"
             )}
         >
             {children}
@@ -61,7 +61,7 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
               type="button"
               className={cn(
                 "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : "text-foreground/80"
+                isActive ? "text-primary" : "text-foreground"
             )}>
               {label}
               <ChevronDown className="h-4 w-4" />
