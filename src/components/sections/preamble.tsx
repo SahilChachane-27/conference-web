@@ -5,7 +5,6 @@ export function Preamble() {
     <section id="preamble" className="py-20 md:py-28 bg-gradient-to-br from-background via-muted/50 to-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="relative flex justify-center items-center">
-          <div className="absolute w-full max-w-5xl h-full border-4 border-primary/20 rounded-3xl blur-2xl animate-pulse"></div>
           <div className="relative bg-background/80 backdrop-blur-sm border-2 border-primary/30 rounded-3xl p-12 md:p-20 shadow-2xl max-w-5xl">
             <div className="text-center mb-8">
               <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
