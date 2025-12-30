@@ -82,8 +82,11 @@ export function CallForPapers() {
                     <li key={detail}>{detail}</li>
                   ))}
                 </ul>
-                 <Button asChild className="w-full mt-6">
-                    <Link href="#">Submit Paper (Link disabled)</Link>
+                 <Button asChild variant="outline" className="w-full mt-6">
+                    <Link href="#">
+                        Submit Paper (Link disabled)
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                 </Button>
               </CardContent>
             </Card>
