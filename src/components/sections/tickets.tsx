@@ -63,7 +63,7 @@ export function Tickets() {
                                 </div>
                             </div>
                             <div className="product-image">
-                                <Image src={ticketImage?.imageUrl || ''} alt={ticket.type} />
+                                <Image src={ticketImage?.imageUrl || ''} alt={ticket.type} fill style={{ objectFit: 'cover' }} />
                                 <div className="info">
                                     <h2>Ticket Includes</h2>
                                     <ul>
