@@ -1,19 +1,14 @@
 
-import Image from 'next/image';
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-  } from "@/components/ui/table"
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
 import { schedules } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Calendar } from "lucide-react";
 
 export function Schedule() {
-    const calendarImage = PlaceHolderImages.find(img => img.id === 'hero-1');
-
   return (
     <section id="schedules" className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
@@ -26,25 +21,22 @@ export function Schedule() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-12">
-            <div className="w-full max-w-4xl backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border">
-                <Table>
-                    <TableHeader>
-                        <TableRow className="hover:bg-muted/10">
-                            <TableHead className="text-primary font-bold text-lg">Event</TableHead>
-                            <TableHead className="text-right text-primary font-bold text-lg">Date</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {schedules.map((schedule, index) => (
-                        <TableRow key={index} className="border-b-muted/20 last:border-b-0 hover:bg-muted/5">
-                            <TableCell className="font-semibold text-base text-foreground">{schedule.topic}</TableCell>
-                            <TableCell className="text-right font-medium text-base text-muted-foreground">{schedule.date}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {schedules.map((schedule, index) => (
+            <Card key={index} className="group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center bg-card">
+                <CardHeader>
+                    <div className="flex justify-center">
+                        <div className="bg-primary/10 p-4 rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                            <Calendar className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                        </div>
+                    </div>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                    <p className="text-2xl font-bold font-headline text-primary mb-2">{schedule.date}</p>
+                    <h3 className="text-xl font-bold text-foreground">{schedule.topic}</h3>
+                </CardContent>
+            </Card>
+            ))}
         </div>
       </div>
     </section>
