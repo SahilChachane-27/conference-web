@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import { Inter, Farsan, Old_Standard_TT } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
+import "./menu-bar.css";
+
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const farsan = Farsan({ weight: "400", subsets: ['latin'], variable: '--font-farsan' });
@@ -20,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <head>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" />
+      </head>
       <body className={`${inter.variable} ${farsan.variable} ${oldStandardTT.variable}`}>
         {children}
         <Toaster />
