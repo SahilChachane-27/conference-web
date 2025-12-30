@@ -1,11 +1,8 @@
 
-
 "use client";
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { tickets } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import {
     AlertDialog,
@@ -15,9 +12,11 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-  } from "@/components/ui/alert-dialog"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
-import { ShoppingCart, Star } from 'lucide-react';
+  } from "@/components/ui/alert-dialog";
+import { Button } from '../ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { Check, Ticket as TicketIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export function Tickets() {
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -27,53 +26,53 @@ export function Tickets() {
         setSelectedTicket(ticketType);
         setDialogOpen(true);
     };
-
-    const bgImage = PlaceHolderImages.find(img => img.id === 'tickets-background');
-    const ticketImage = PlaceHolderImages.find(img => img.id === 'hero-1');
     
     return (
-        <section id="tickets" className="relative text-white py-20 md:py-28">
-            <div className="container relative mx-auto px-4 md:px-6">
-                <div className="text-center mb-12">
+        <section id="tickets" className="py-20 md:py-28">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center mb-16">
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">
-                        <span className="text-accent">Registration</span> Details
+                        <span className="text-primary">Registration</span> Details
                     </h2>
-                    <p className="text-lg text-primary-foreground/80 mt-2 max-w-4xl mx-auto">
-                        At least one author must register for each accepted paper to ensure inclusion in the conference proceedings. Registration fee is non-refundable. For detailed guidelines, please <Link href="/registration-guidelines" className='underline hover:text-accent'>click here</Link>.
+                    <p className="text-lg text-muted-foreground mt-3 max-w-4xl mx-auto">
+                        At least one author must register for each accepted paper to ensure inclusion in the conference proceedings. Registration fee is non-refundable. For detailed guidelines, please <Link href="/registration-guidelines" className='underline hover:text-primary'>click here</Link>.
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {tickets.map((ticket, index) => (
-                        <div id="container-ticket" key={index}>
-                            <div className="product-details">
-                                <h1>{ticket.type}</h1>
-                                <span className="hint-star star">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className={`inline-block h-5 w-5 ${i < 4 ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
+                        <Card key={index} className={cn("flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300", ticket.featured && "border-2 border-primary relative ring-4 ring-primary/20")}>
+                            {ticket.featured && (
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                                    <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                                        Most Popular
+                                    </div>
+                                </div>
+                            )}
+                            <CardHeader className="text-center">
+                                <CardTitle className="font-headline text-2xl text-primary">{ticket.type}</CardTitle>
+                                <CardDescription>
+                                    <span className="text-4xl font-bold text-foreground">${ticket.earlyBird.usd.replace('$', '')}</span>
+                                    <span className="text-muted-foreground"> USD</span>
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-3 text-muted-foreground">
+                                    {ticket.features.map((feature, i) => (
+                                        <li key={i} className="flex items-start gap-3">
+                                            <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
+                                            <span>{feature}</span>
+                                        </li>
                                     ))}
-                                </span>
-                                <p className="information">Early bird pricing available! Get your ticket now for the best price.</p>
-                                <div className="control">
-                                    <button className="btn-ticket" onClick={() => handleGetTicket(ticket.type)}>
-                                        <span className="price">{ticket.earlyBird.usd}</span>
-                                        <span className="shopping-cart"><ShoppingCart className="inline-block" /></span>
-                                        <span className="buy">Buy Now</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="product-image">
-                                <Image src={ticketImage?.imageUrl || ''} alt={ticket.type} fill style={{ objectFit: 'cover' }} />
-                                <div className="info">
-                                    <h2>Ticket Includes</h2>
-                                    <ul>
-                                        {ticket.features.map((feature, i) => (
-                                            <li key={i}>{feature}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                </ul>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full" size="lg" onClick={() => handleGetTicket(ticket.type)} variant={ticket.featured ? 'default' : 'outline'}>
+                                    <TicketIcon className="mr-2 h-5 w-5" />
+                                    Buy Now
+                                </Button>
+                            </CardFooter>
+                        </Card>
                     ))}
                 </div>
             </div>
@@ -83,7 +82,7 @@ export function Tickets() {
                     <AlertDialogHeader>
                     <AlertDialogTitle className="text-primary font-headline">Registration Confirmation</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You have successfully simulated registering for the conference.
+                        You have successfully simulated registering for the "{selectedTicket}" ticket.
                         This is a demonstration and no actual registration has been made.
                     </AlertDialogDescription>
                     </AlertDialogHeader>
