@@ -51,8 +51,8 @@ export function Committee() {
                 {committeeData.chiefPatrons.members.map((member, i) => (
                     <Card key={i} className="text-center shadow-lg bg-card border-b-4 border-primary transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center">
                         <CardContent className="p-6">
-                            <p className="font-bold text-lg text-black">{member.name}</p>
-                            <p className="text-sm text-black/80">{member.role}</p>
+                            <p className="font-bold text-lg text-white">{member.name}</p>
+                            <p className="text-sm text-white/80">{member.role}</p>
                         </CardContent>
                     </Card>
                 ))}
