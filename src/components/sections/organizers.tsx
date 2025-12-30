@@ -13,6 +13,9 @@ const logos = [
     { src: "/ieee.png", alt: "IEEE" },
     { src: "/acm.png", alt: "ACM" },
     { src: "/wiley.png", alt: "Wiley" },
+    { src: "/taylor_and_francis.png", alt: "Taylor & Francis" },
+    { src: "/iet.png", alt: "IET" },
+    { src: "/inderscience.png", alt: "InderScience" },
 ];
 
 export function Organizers() {
@@ -29,7 +32,7 @@ export function Organizers() {
         </div>
         
         <div className="relative w-full overflow-hidden bg-background py-8">
-            <div className="flex animate-marquee">
+            <div className="flex animate-marquee hover:[animation-play-state:paused]">
                 {[...logos, ...logos].map((logo, index) => (
                     <div key={index} className="flex-shrink-0 mx-8" style={{ width: '160px' }}>
                         <div className="relative aspect-[3/2] h-20 mx-auto">
