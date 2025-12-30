@@ -417,27 +417,35 @@ export const publishingPartners = [
 ];
 
 
-export const statsData = [
-    { name: 'Student', previousAttendance: 400, currentBookings: 240 },
-    { name: 'PhD Scholar', previousAttendance: 300, currentBookings: 139 },
-    { name: 'Academic', previousAttendance: 200, currentBookings: 380 },
-    { name: 'International', previousAttendance: 278, currentBookings: 190 },
-    { name: 'Attendee', previousAttendance: 189, currentBookings: 280 },
+export const rolesData = [
+    { name: 'Property Manager', value: 41 },
+    { name: 'Regional Supervisor', value: 22 },
+    { name: 'Executive', value: 15 },
+    { name: 'Operations', value: 6 },
+    { name: 'Marketing', value: 4 },
+    { name: 'Other', value: 12 },
 ];
   
-export const chartConfig = {
-    previousAttendance: {
-      label: 'Previous Attendance',
-      color: 'hsl(var(--chart-1))',
-    },
-    currentBookings: {
-      label: 'Current Bookings',
-      color: 'hsl(var(--chart-2))',
-    },
-} satisfies ChartConfig;
+export const experienceData = [
+    { name: 'Over 21 years', value: 28 },
+    { name: '11-20 years', value: 36 },
+    { name: '6-10 years', value: 24 },
+    { name: '5 years or less', value: 12 },
+];
+  
+export const businessTypesData = [
+    { name: 'Conventional Housing', value: 55 },
+    { name: 'Affordable Housing', value: 15 },
+    { name: 'Asset Management', value: 10 },
+    { name: 'Leasing Company', value: 6 },
+    { name: 'Other', value: 14 },
+];
+
+export const COLORS = ['#6A5ACD', '#C71585', '#FFA500', '#00008B', '#4682B4', '#D2B48C'];
     
 
     
+
 
 
 
