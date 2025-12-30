@@ -18,6 +18,7 @@ export const navLinks = [
   { href: "/committee", label: "Committee" },
   { href: "/speakers", label: "Speakers" },
   { href: "/important-dates", label: "Important Dates" },
+  { href: "/timeline", label: "Timeline" },
   { href: "/publication-details", label: "Publication" },
   { href: "/registration", label: "Registration" },
   { href: "/venue", label: "Venue" },
@@ -256,22 +257,27 @@ export const schedules = [
     {
       topic: 'Paper Submission Deadline',
       date: '31 Jan 2026',
+      description: 'Final day for authors to submit their full-length research papers for review.'
     },
     {
       topic: 'Notification of Acceptance',
       date: '10 Feb 2026',
+      description: 'Authors will be notified about the acceptance or rejection of their papers.'
     },
     {
       topic: 'Registration Deadline',
       date: '20 Feb 2026',
+      description: 'Last day for all attendees and presenting authors to register for the conference.'
     },
     {
       topic: 'Conference Day 1',
       date: '06 Mar 2026',
+      description: 'The first day of the conference, featuring keynote speeches, technical sessions, and workshops.'
     },
     {
       topic: 'Conference Day 2',
       date: '07 Mar 2026',
+      description: 'The second day of the conference, including panel discussions, paper presentations, and networking events.'
     },
 ];
 
@@ -413,5 +419,6 @@ export const publishingPartners = [
     
 
     
+
 
 

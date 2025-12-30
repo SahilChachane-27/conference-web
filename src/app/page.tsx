@@ -12,6 +12,7 @@ import { Organizers } from "@/components/sections/organizers";
 import { RegisterNowCta } from "@/components/sections/register-now-cta";
 import { CallForPapers } from "@/components/sections/call-for-papers";
 import { HomeSpeakers } from "@/components/sections/home-speakers";
+import { UpcomingEvents } from "@/components/sections/upcoming-events";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <Preamble />
           <Objectives />
           <CallForPapers />
+          <UpcomingEvents />
           <HomeSpeakers />
           <AboutCollege />
           <Organizers />
