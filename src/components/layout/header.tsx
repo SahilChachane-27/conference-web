@@ -36,7 +36,7 @@ const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
   </Link>
 );
 
-const NavLink = ({ href, children, isScrolled }: { href: string, children: React.ReactNode, isScrolled: boolean }) => {
+const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => {
     const pathname = usePathname();
     const isActive = pathname === href;
 
@@ -55,7 +55,7 @@ const NavLink = ({ href, children, isScrolled }: { href: string, children: React
     );
 };
 
-const DropdownLink = ({ label, subLinks, isScrolled }: { label: string, subLinks: { href: string; label: string }[], isScrolled: boolean }) => {
+const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: string; label: string }[] }) => {
     const pathname = usePathname();
     const isActive = subLinks.some(link => pathname.startsWith(link.href));
     
@@ -114,9 +114,9 @@ export function Header() {
         <nav className="hidden md:flex items-center">
           {navLinks.map((link) =>
             link.isDropdown ? (
-              <DropdownLink key={link.label} label={link.label} subLinks={link.subLinks || []} isScrolled={isScrolled} />
+              <DropdownLink key={link.label} label={link.label} subLinks={link.subLinks || []} />
             ) : (
-              <NavLink key={link.href} href={link.href} isScrolled={isScrolled}>{link.label}</NavLink>
+              <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
             )
           )}
         </nav>
