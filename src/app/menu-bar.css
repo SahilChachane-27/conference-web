@@ -11,25 +11,21 @@
 }
 
 .menu-bar {
-    border-radius: 25px;
-    height: fit-content;
     display: inline-flex;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     align-items: center;
     padding: 0 10px;
-    margin: 20px 0 0 0;
+    margin: 0;
     transition: all 0.3s ease-in-out;
     background-color: #f0f0f0;
+    width: 100%;
+    justify-content: center;
 }
 
 .menu-bar.scrolled {
     background-color: #f0f0f0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0;
-    border-radius: 0;
-    width: 100%;
-    justify-content: center;
 }
 
 .menu-bar ul {
@@ -43,28 +39,15 @@
     color: black;
     font-family: sans-serif;
     font-weight: bold;
-    padding: 12px 14px;
-    margin: 0 4px;
+    padding: 18px 20px;
     position: relative;
     cursor: pointer;
     white-space: nowrap;
     font-size: 14px;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    border-radius: 25px;
-}
-
-.menu-bar.scrolled li {
-    color: black;
-    padding: 18px 20px;
-    border-radius: 0;
 }
 
 .menu-bar li:hover {
-    background-color: #e0e0e0;
-    color: black;
-}
-
-.menu-bar.scrolled li:hover {
     background-color: #e0e0e0;
     color: black;
 }
