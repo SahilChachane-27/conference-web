@@ -49,48 +49,22 @@
     cursor: pointer;
     white-space: nowrap;
     font-size: 14px;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 25px;
 }
 
 .menu-bar.scrolled li {
     color: black;
     padding: 18px 20px;
-}
-
-.menu-bar li::before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transition: .2s;
-    border-radius: 25px;
-}
-
-.menu-bar.scrolled li::before {
     border-radius: 0;
 }
 
-
-.menu-bar li:hover::before {
-    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-    box-shadow: 0px 3px 20px 0px black;
-    transform: scale(1.2);
-}
-
 .menu-bar li:hover {
+    background-color: #e0e0e0;
     color: black;
 }
 
 .menu-bar.scrolled li:hover {
+    background-color: #e0e0e0;
     color: black;
 }
-
-.menu-bar.scrolled li:hover::before {
-    background: #f0f0f0;
-    box-shadow: none;
-    transform: scale(1);
-}
-
