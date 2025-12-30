@@ -163,7 +163,7 @@ export function Header() {
                       ) : (
                         <Link
                           key={link.href}
-                          href="{link.href}"
+                          href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
                           className="text-lg font-medium text-black hover:text-gray-700"
                         >
