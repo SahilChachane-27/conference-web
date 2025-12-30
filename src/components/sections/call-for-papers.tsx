@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { callForPapers } from "@/lib/data";
 import { FileText, BookOpenCheck, ListChecks, Landmark, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
@@ -20,8 +21,8 @@ export function CallForPapers() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Conference Themes */}
-          <div className="lg:col-span-2 space-y-8">
-            <Card className="shadow-lg">
+          <div className="lg:col-span-2 space-y-4">
+             <Card className="shadow-lg">
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
@@ -32,34 +33,36 @@ export function CallForPapers() {
               </CardHeader>
             </Card>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="w-full space-y-4">
                 {callForPapers.tracks.map((track, index) => (
-                    <Card key={index} className="flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader>
-                            <CardTitle className="text-lg font-semibold">{track.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow space-y-4">
-                           <ul className="space-y-2">
-                                {track.topics.map((topic, topicIndex) => (
-                                    <li key={topicIndex} className="flex items-start gap-2">
-                                        <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
-                                        <span className="text-muted-foreground text-sm">{topic}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                        <CardFooter className="bg-muted/50 p-4 mt-auto">
-                            <div>
-                                <p className="font-semibold text-primary text-xs flex items-center gap-2">
-                                    <Landmark className="h-4 w-4" />
-                                    Relevant SDGs: <span className="font-normal text-muted-foreground">{track.sdgs}</span>
-                                </p>
-                                <p className="text-xs text-muted-foreground/80 mt-1 italic">{track.explanation}</p>
-                            </div>
-                        </CardFooter>
+                    <Card key={index} className="shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <AccordionItem value={`item-${index}`} className="border-b-0">
+                            <AccordionTrigger className="p-6 text-lg font-semibold hover:no-underline">
+                                {track.title}
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <div className="px-6 pb-6">
+                                    <ul className="space-y-2 mb-4">
+                                        {track.topics.map((topic, topicIndex) => (
+                                            <li key={topicIndex} className="flex items-start gap-2">
+                                                <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
+                                                <span className="text-muted-foreground text-sm">{topic}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="bg-muted/50 p-4 rounded-md">
+                                        <p className="font-semibold text-primary text-xs flex items-center gap-2">
+                                            <Landmark className="h-4 w-4" />
+                                            Relevant SDGs: <span className="font-normal text-muted-foreground">{track.sdgs}</span>
+                                        </p>
+                                        <p className="text-xs text-muted-foreground/80 mt-1 italic">{track.explanation}</p>
+                                    </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
                     </Card>
                 ))}
-            </div>
+            </Accordion>
           </div>
 
           {/* Submission and Publication Details */}
