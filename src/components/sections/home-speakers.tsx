@@ -1,23 +1,30 @@
 
 import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { speakers } from '@/lib/data';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
-export function Speakers() {
+export function HomeSpeakers() {
+  const featuredSpeakers = speakers.slice(0, 4);
+
   return (
-    <section id="speakers" className="py-20 md:py-28 bg-background">
+    <section id="speakers" className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">
-            <span className="text-primary">Keynote</span> Speakers
-          </h2>
-          <p className="text-lg text-muted-foreground mt-2">
-            Invited talks by eminent academicians, industry experts, and technology leaders.
-          </p>
+        <div className="flex justify-between items-center mb-12">
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">
+                Speakers
+            </h2>
+            <Button asChild variant="link" className="text-primary">
+                <Link href="/speakers">
+                    View all speakers
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </Button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {speakers.map((speaker, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {featuredSpeakers.map((speaker, index) => (
             <div key={index} className="text-center">
               <div className="relative inline-block mb-4">
                 <Image

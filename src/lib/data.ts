@@ -223,28 +223,32 @@ export const objectives = [
 
 export const speakers = [
   {
-    name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
-    image: getImage('speaker-placeholder'),
+    name: 'Dr. John Smith',
+    title: 'Keynote Speaker',
+    affiliation: 'MIT, USA',
+    bio: 'Expert in AI and Sustainable Systems, Dr. Smith will open the conference with a talk on the future of green technology.',
+    image: getImage('speaker-ben'),
   },
   {
-    name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
-    image: getImage('speaker-placeholder'),
+    name: 'Dr. Jane Doe',
+    title: 'Expert in Smart Grids',
+    affiliation: 'Stanford University, USA',
+    bio: 'Dr. Doe is a pioneer in renewable energy integration and will discuss the challenges of building resilient power grids.',
+    image: getImage('speaker-sophie'),
   },
   {
-    name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
-    image: getImage('speaker-placeholder'),
+    name: 'Prof. Alan Turing',
+    title: 'AI Ethics Researcher',
+    affiliation: 'Cambridge University, UK',
+    bio: 'A leading voice in AI ethics, Prof. Turing will explore the moral implications of intelligent systems in society.',
+    image: getImage('speaker-james'),
   },
   {
-    name: 'Coming Soon',
-    title: 'Coming Soon',
-    bio: '',
-    image: getImage('speaker-placeholder'),
+    name: 'Dr. Ada Lovelace',
+    title: 'FinTech Innovator',
+    affiliation: 'Imperial College London, UK',
+    bio: 'Dr. Lovelace will present her latest research on how technology is transforming microfinance and economic inclusion.',
+    image: getImage('speaker-rose'),
   },
 ];
 
@@ -409,4 +413,5 @@ export const publishingPartners = [
     
 
     
+
 
