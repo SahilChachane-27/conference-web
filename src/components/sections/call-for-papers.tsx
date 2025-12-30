@@ -34,11 +34,11 @@ export function CallForPapers() {
                 <Accordion type="multiple" className="w-full" defaultValue={["item-0"]}>
                     {callForPapers.tracks && callForPapers.tracks.map((track, index) => (
                          <AccordionItem key={index} value={`item-${index}`} className={index === callForPapers.tracks.length -1 ? "border-b-0" : ""}>
-                            <AccordionTrigger className="text-base font-semibold text-left">
+                            <AccordionTrigger className="text-base font-semibold text-left hover:no-underline">
                                 {track.title}
                             </AccordionTrigger>
                             <AccordionContent>
-                                <div className="space-y-4">
+                                <div className="space-y-4 pt-2">
                                     <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
                                         {track.topics.map((topic) => (
                                             <li key={topic}>{topic}</li>
@@ -77,6 +77,27 @@ export function CallForPapers() {
                   ))}
                 </ul>
               </CardContent>
+            </Card>
+
+            <Card className="shadow-lg">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        <div className="bg-primary/10 p-3 rounded-lg">
+                            <BookOpenCheck className="h-6 w-6 text-primary" />
+                        </div>
+                        <CardTitle className="font-headline text-2xl">Publication</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-muted-foreground mb-4">
+                        {callForPapers.publicationDetails.description}
+                    </p>
+                    <Button asChild variant="outline" className="w-full">
+                        <Link href="/publication-details">
+                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </CardContent>
             </Card>
           </div>
         </div>
