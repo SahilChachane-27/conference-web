@@ -13,6 +13,7 @@ import { RegisterNowCta } from "@/components/sections/register-now-cta";
 import { CallForPapers } from "@/components/sections/call-for-papers";
 import { HomeSpeakers } from "@/components/sections/home-speakers";
 import { UpcomingEvents } from "@/components/sections/upcoming-events";
+import { Stats } from "@/components/sections/stats";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
           <Objectives />
           <CallForPapers />
           <UpcomingEvents />
+          <Stats />
           <HomeSpeakers />
           <AboutCollege />
           <Organizers />

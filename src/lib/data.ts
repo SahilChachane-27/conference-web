@@ -1,6 +1,7 @@
 
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
+import type { ChartConfig } from '@/components/ui/chart';
 
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id) as ImagePlaceholder;
 
@@ -416,9 +417,28 @@ export const publishingPartners = [
 ];
 
 
+export const statsData = [
+    { name: 'Student', previousAttendance: 400, currentBookings: 240 },
+    { name: 'PhD Scholar', previousAttendance: 300, currentBookings: 139 },
+    { name: 'Academic', previousAttendance: 200, currentBookings: 380 },
+    { name: 'International', previousAttendance: 278, currentBookings: 190 },
+    { name: 'Attendee', previousAttendance: 189, currentBookings: 280 },
+];
+  
+export const chartConfig = {
+    previousAttendance: {
+      label: 'Previous Attendance',
+      color: 'hsl(var(--chart-1))',
+    },
+    currentBookings: {
+      label: 'Current Bookings',
+      color: 'hsl(var(--chart-2))',
+    },
+} satisfies ChartConfig;
     
 
     
+
 
 
 
