@@ -1,6 +1,5 @@
 
 import Image from 'next/image';
-import { Card } from '@/components/ui/card';
 
 const logos = [
     { src: "/college.png", alt: "Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts" },
@@ -29,20 +28,19 @@ export function Organizers() {
           </p>
         </div>
         
-        <div className="max-w-5xl mx-auto">
-            <div className="flex flex-wrap justify-center items-center gap-8">
-                {logos.map((logo, index) => (
-                    <Card key={index} className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center justify-center h-32 w-48">
-                        <div className="relative h-full w-full">
+        <div className="relative w-full overflow-hidden bg-background py-8">
+            <div className="flex animate-marquee">
+                {[...logos, ...logos].map((logo, index) => (
+                    <div key={index} className="flex-shrink-0 mx-8" style={{ width: '160px' }}>
+                        <div className="relative aspect-[3/2] h-20 mx-auto">
                             <Image 
                                 src={logo.src} 
                                 alt={logo.alt} 
                                 fill
-                                style={{ objectFit: "contain" }}
-                                className="grayscale hover:grayscale-0 transition-all duration-300"
+                                className="object-contain"
                             />
                         </div>
-                    </Card>
+                    </div>
                 ))}
             </div>
         </div>
@@ -50,5 +48,3 @@ export function Organizers() {
     </section>
   );
 }
-
-    
