@@ -52,6 +52,7 @@
 
 .menu-bar.scrolled li {
     color: black;
+    padding: 18px 20px;
 }
 
 .menu-bar li::before {
