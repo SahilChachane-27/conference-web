@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -94,11 +93,20 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
-        "bg-primary"
+        isScrolled ? "bg-primary shadow-md" : "bg-transparent",
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo />

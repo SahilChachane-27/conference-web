@@ -5,42 +5,42 @@
 @layer base {
   :root {
     /* Background & Text */
-    --background: 0 0% 96%;          /* #F3F4F4 */
-    --foreground: 196 77% 9%;        /* #061E29 */
+    --background: 210 20% 98%;      /* #F7F9FA */
+    --foreground: 215 28% 17%;      /* #202937 */
 
     /* Cards & Popovers */
-    --card: 0 0% 96%;                /* #F3F4F4 */
-    --card-foreground: 196 77% 9%;   /* #061E29 */
-    --popover: 0 0% 96%;
-    --popover-foreground: 196 77% 9%;
+    --card: 0 0% 100%;               /* #FFFFFF */
+    --card-foreground: 215 28% 17%;  /* #202937 */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
 
     /* Brand Colors */
-    --primary: 198 57% 27%;          /* #1D546D */
-    --primary-foreground: 0 0% 96%;  /* #F3F4F4 */
+    --primary: 217 91% 60%;          /* #3B82F6 */
+    --primary-foreground: 210 40% 98%;  /* #F8FAFC */
 
-    --secondary: 184 22% 48%;        /* #5F9598 */
-    --secondary-foreground: 196 77% 9%;
+    --secondary: 210 40% 96%;        /* #F1F5F9 */
+    --secondary-foreground: 215 28% 17%;
 
-    --accent: 184 22% 48%;           /* #5F9598 */
-    --accent-foreground: 0 0% 96%;
+    --accent: 217 91% 68%;           /* #60A5FA */
+    --accent-foreground: 215 28% 17%;
 
     /* Muted */
-    --muted: 184 22% 48%;
-    --muted-foreground: 196 77% 12%;
+    --muted: 210 40% 90%;            /* #E2E8F0 */
+    --muted-foreground: 215 20% 45%;  /* #64748B */
 
     /* Borders & Inputs */
-    --border: 184 22% 48%;
-    --input: 184 22% 48%;
-    --ring: 198 57% 27%;
+    --border: 214 32% 91%;           /* #E2E8F0 */
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
     /* Charts (same palette) */
-    --chart-1: 196 77% 9%;
-    --chart-2: 198 57% 27%;
-    --chart-3: 184 22% 48%;
-    --chart-4: 184 22% 48%;
-    --chart-5: 0 0% 96%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 190 80% 50%;
+    --chart-3: 215 28% 17%;
+    --chart-4: 210 40% 90%;
+    --chart-5: 210 40% 98%;
   }
 }
 
