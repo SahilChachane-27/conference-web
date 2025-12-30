@@ -4,83 +4,68 @@
 
 @layer base {
   :root {
-    --background: 240 6% 97%;
-    --foreground: 202 75% 9%;
-    --card: 240 6% 97%;
-    --card-foreground: 202 75% 9%;
-    --popover: 240 6% 97%;
-    --popover-foreground: 202 75% 9%;
-    --primary: 198 58% 27%;
-    --primary-foreground: 240 6% 97%;
-    --secondary: 182 23% 48%;
-    --secondary-foreground: 202 75% 9%;
-    --muted: 182 23% 48%;
-    --muted-foreground: 202 75% 15%;
-    --accent: 182 23% 48%;
-    --accent-foreground: 240 6% 97%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 198 58% 85%;
-    --input: 198 58% 85%;
-    --ring: 198 58% 27%;
-    --radius: 0.5rem;
-    --chart-1: 202 75% 9%;
-    --chart-2: 198 58% 27%;
-    --chart-3: 182 23% 48%;
-    --chart-4: 198 58% 57%;
-    --chart-5: 210 14% 87%;
-  }
+    /* Background & Text */
+    --background: 0 0% 96%;          /* #F3F4F4 */
+    --foreground: 196 77% 9%;        /* #061E29 */
 
-  .dark {
-    --background: 202 75% 9%;
-    --foreground: 240 6% 97%;
-    --card: 202 75% 9%;
-    --card-foreground: 240 6% 97%;
-    --popover: 202 75% 9%;
-    --popover-foreground: 240 6% 97%;
-    --primary: 240 6% 97%;
-    --primary-foreground: 202 75% 9%;
-    --secondary: 182 23% 48%;
-    --secondary-foreground: 202 75% 9%;
-    --muted: 198 58% 17%;
-    --muted-foreground: 240 6% 90%;
-    --accent: 240 6% 97%;
-    --accent-foreground: 202 75% 9%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 198 58% 17%;
-    --input: 198 58% 17%;
-    --ring: 240 6% 97%;
-    --chart-1: 240 6% 97%;
-    --chart-2: 182 23% 48%;
-    --chart-3: 198 58% 27%;
-    --chart-4: 202 75% 9%;
-    --chart-5: 240 6% 97%;
+    /* Cards & Popovers */
+    --card: 0 0% 96%;                /* #F3F4F4 */
+    --card-foreground: 196 77% 9%;   /* #061E29 */
+    --popover: 0 0% 96%;
+    --popover-foreground: 196 77% 9%;
+
+    /* Brand Colors */
+    --primary: 198 57% 27%;          /* #1D546D */
+    --primary-foreground: 0 0% 96%;  /* #F3F4F4 */
+
+    --secondary: 184 22% 48%;        /* #5F9598 */
+    --secondary-foreground: 196 77% 9%;
+
+    --accent: 184 22% 48%;           /* #5F9598 */
+    --accent-foreground: 0 0% 96%;
+
+    /* Muted */
+    --muted: 184 22% 48%;
+    --muted-foreground: 196 77% 12%;
+
+    /* Borders & Inputs */
+    --border: 184 22% 48%;
+    --input: 184 22% 48%;
+    --ring: 198 57% 27%;
+
+    --radius: 0.5rem;
+
+    /* Charts (same palette) */
+    --chart-1: 196 77% 9%;
+    --chart-2: 198 57% 27%;
+    --chart-3: 184 22% 48%;
+    --chart-4: 184 22% 48%;
+    --chart-5: 0 0% 96%;
   }
 }
 
 @layer base {
   *,
-  *:before,
-  *:after {
+  *::before,
+  *::after {
     @apply border-border;
     box-sizing: border-box;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
   }
+
   body {
     @apply bg-background text-foreground;
     margin: 0;
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
+
   html {
     scroll-behavior: smooth;
   }
+
   html, body {
     min-height: 100%;
-    height: 100%;
   }
 }
 
@@ -89,6 +74,7 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+
   .animate-marquee {
     animation: marquee 30s linear infinite;
   }

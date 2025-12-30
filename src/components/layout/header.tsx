@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -29,7 +30,7 @@ const Logo = () => (
     />
     <span className={cn(
         "font-bold text-lg hidden sm:inline-block transition-colors",
-        'text-white'
+        'text-primary-foreground'
     )}>
         SustainTechCon
     </span>
@@ -45,12 +46,12 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
             href={href}
             className={cn(
                 "relative text-sm font-medium transition-colors px-4",
-                'text-white hover:text-white/80',
-                isActive && 'text-white font-semibold'
+                'text-primary-foreground hover:text-primary-foreground/80',
+                isActive && 'text-primary-foreground font-semibold'
             )}
         >
             {children}
-            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-white')} />}
+            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-primary-foreground')} />}
         </Link>
     );
 };
@@ -65,13 +66,13 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
               type="button"
               className={cn(
                 "flex items-center gap-1 text-sm font-medium transition-colors",
-                'text-white hover:text-white/80',
-                isActive && 'text-white font-semibold'
+                'text-primary-foreground hover:text-primary-foreground/80',
+                isActive && 'text-primary-foreground font-semibold'
             )}>
               {label}
               <ChevronDown className="h-4 w-4" />
             </button>
-            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-white')} />}
+            {isActive && <span className={cn("absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full", 'bg-primary-foreground')} />}
 
 
             <div className="absolute left-0 hidden min-w-[220px] pt-4 group-hover:block z-20">
@@ -80,7 +81,7 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
                   <Link
                     key={sub.href}
                     href={sub.href}
-                    className="block px-4 py-2 text-sm text-black/80 hover:bg-black/5 hover:text-black"
+                    className="block px-4 py-2 text-sm text-foreground/80 hover:bg-foreground/5 hover:text-foreground"
                   >
                     {sub.label}
                   </Link>
@@ -97,7 +98,7 @@ export function Header() {
   return (
     <header className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
-        "bg-black"
+        "bg-primary"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo />
@@ -114,18 +115,18 @@ export function Header() {
 
         <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-4">
-                <Button variant="ghost" size="icon" className={cn('transition-colors', 'text-white hover:bg-white/10 hover:text-white')}>
+                <Button variant="ghost" size="icon" className={cn('transition-colors', 'text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground')}>
                     <Bell className="h-5 w-5" />
                     <span className="sr-only">Notifications</span>
                 </Button>
-                 <Button asChild className={cn('transition-all', 'bg-white text-black hover:bg-gray-200')}>
+                 <Button asChild className={cn('transition-all', 'bg-primary-foreground text-primary hover:bg-primary-foreground/90')}>
                     <Link href="/registration">Buy Ticket</Link>
                 </Button>
             </div>
           
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" aria-label="Open Menu" className={cn('transition-colors', 'text-white hover:text-white')}>
+                <Button variant="ghost" size="icon" aria-label="Open Menu" className={cn('transition-colors', 'text-primary-foreground hover:text-primary-foreground/80')}>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
@@ -146,7 +147,7 @@ export function Header() {
                                 key={sub.href}
                                 href={sub.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-black hover:text-primary"
+                                className="text-foreground hover:text-primary"
                               >
                                 {sub.label}
                               </Link>
@@ -158,7 +159,7 @@ export function Header() {
                           key={link.href}
                           href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="text-lg font-medium text-black hover:text-primary"
+                          className="text-lg font-medium text-foreground hover:text-primary"
                         >
                           {link.label}
                         </Link>
@@ -166,7 +167,7 @@ export function Header() {
                     )}
                   </nav>
                    <div className="mt-6">
-                    <Button asChild className="w-full bg-black text-white">
+                    <Button asChild className="w-full bg-primary text-primary-foreground">
                         <Link href="/registration">Buy Ticket</Link>
                     </Button>
                   </div>
