@@ -39,11 +39,13 @@ export function CallForPapers() {
                             </AccordionTrigger>
                             <AccordionContent>
                                 <div className="space-y-4 pt-2">
-                                    <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
-                                        {track.topics.map((topic) => (
-                                            <li key={topic}>{topic}</li>
+                                    <div className="divide-y divide-border rounded-md border">
+                                        {track.topics.map((topic, topicIndex) => (
+                                            <div key={topicIndex} className="p-3 text-muted-foreground">
+                                                {topic}
+                                            </div>
                                         ))}
-                                    </ul>
+                                    </div>
                                     <div className="p-3 bg-muted/50 rounded-md">
                                         <p className="font-semibold text-primary text-sm flex items-center gap-2">
                                             <Landmark className="h-4 w-4" />
