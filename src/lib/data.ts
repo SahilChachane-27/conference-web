@@ -251,6 +251,34 @@ export const speakers = [
     bio: 'Dr. Lovelace will present her latest research on how technology is transforming microfinance and economic inclusion.',
     image: getImage('speaker-rose'),
   },
+  {
+    name: 'Prof. Oscar Wilde',
+    title: 'Sustainable Design',
+    affiliation: 'Harvard University, USA',
+    bio: 'Prof. Wilde is an award-winning designer focused on creating sustainable products and systems for a circular economy.',
+    image: getImage('speaker-oscar'),
+  },
+  {
+    name: 'Dr. Isaac Newton',
+    title: 'Materials Scientist',
+    affiliation: 'Oxford University, UK',
+    bio: 'Dr. Newton’s work on biodegradable polymers is revolutionizing the packaging industry and reducing plastic waste.',
+    image: getImage('speaker-isaac'),
+  },
+  {
+    name: 'Dr. Emily Brontë',
+    title: 'Public Health Expert',
+    affiliation: 'Johns Hopkins University, USA',
+    bio: 'Dr. Brontë will discuss how smart sanitation systems can improve public health outcomes in developing nations.',
+    image: getImage('speaker-emily'),
+  },
+  {
+    name: 'Mr. John Keats',
+    title: 'Robotics Engineer',
+    affiliation: 'Carnegie Mellon University, USA',
+    bio: 'Mr. Keats specializes in developing robots for environmental monitoring and will share his latest projects.',
+    image: getImage('speaker-john'),
+  },
 ];
 
 export const schedules = [
@@ -458,5 +486,6 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
     
+
 
 
