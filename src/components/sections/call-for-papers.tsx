@@ -39,9 +39,9 @@ export function CallForPapers() {
                             </AccordionTrigger>
                             <AccordionContent>
                                 <div className="space-y-4 pt-2">
-                                    <div className="divide-y divide-border rounded-md border">
+                                    <div className="space-y-2">
                                         {track.topics.map((topic, topicIndex) => (
-                                            <div key={topicIndex} className="p-3 text-muted-foreground">
+                                            <div key={topicIndex} className="p-3 text-muted-foreground border rounded-md bg-muted/50">
                                                 {topic}
                                             </div>
                                         ))}
