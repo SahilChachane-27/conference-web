@@ -41,7 +41,7 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
         <Link
             href={href}
             className={cn(
-                "relative text-sm font-medium transition-colors hover:text-primary",
+                "relative text-sm font-medium transition-colors hover:text-primary px-4",
                 isActive ? "text-primary" : "text-foreground/80"
             )}
         >
@@ -56,7 +56,7 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
     const isActive = subLinks.some(link => pathname.startsWith(link.href));
     
     return (
-        <div className="relative group">
+        <div className="relative group px-4">
             <button
               type="button"
               className={cn(
@@ -106,7 +106,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Logo />
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center">
           {navLinks.map((link) =>
             link.isDropdown ? (
               <DropdownLink key={link.label} label={link.label} subLinks={link.subLinks || []} />
