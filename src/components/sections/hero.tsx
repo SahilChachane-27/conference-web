@@ -4,7 +4,6 @@ import Link from "next/link";
 import { CalendarDays, MapPin } from "lucide-react";
 
 import { heroData } from "@/lib/data";
-import { Countdown } from "./countdown";
 import { Button } from "../ui/button";
 
 export function Hero() {

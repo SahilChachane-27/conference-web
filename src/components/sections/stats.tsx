@@ -2,7 +2,7 @@
 "use client"
 
 import Image from 'next/image';
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBar, RadialBarChart, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import { ChartContainer, ChartTooltipContent } from '@/components/ui/chart';
 import { statsData, chartConfig } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -32,30 +32,68 @@ export function Stats() {
             A glimpse into our past success and current booking status for SustainTechCon 2026.
           </p>
         </div>
-        <Card className="max-w-4xl mx-auto bg-card/60 backdrop-blur-sm border-border/50">
-            <CardHeader>
-                <CardTitle>Registration Overview</CardTitle>
-                <CardDescription>Previous Attendance vs. Current Bookings</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <ChartContainer config={chartConfig} className="min-h-[300px] w-full">
-                    <ResponsiveContainer width="100%" height={350}>
-                        <BarChart data={statsData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border) / 0.5)" />
-                            <XAxis dataKey="name" stroke="hsl(var(--foreground))" fontSize={12} tickLine={false} axisLine={false} />
-                            <YAxis stroke="hsl(var(--foreground))" fontSize={12} tickLine={false} axisLine={false} />
-                            <Tooltip
-                                cursor={false}
-                                content={<ChartTooltipContent indicator="dot" />}
-                            />
-                            <Legend />
-                            <Bar dataKey="previousAttendance" fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} />
-                            <Bar dataKey="currentBookings" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
-                        </BarChart>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="bg-card/60 backdrop-blur-sm border-border/50">
+                <CardHeader className="items-center pb-0">
+                    <CardTitle>Previous Attendance</CardTitle>
+                    <CardDescription>Breakdown by category</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1 pb-0">
+                    <ChartContainer
+                    config={chartConfig}
+                    className="mx-auto aspect-square h-[250px]"
+                    >
+                    <ResponsiveContainer width="100%" height="100%">
+                        <RadialBarChart
+                        data={statsData}
+                        innerRadius="30%"
+                        outerRadius="80%"
+                        >
+                        <Tooltip content={<ChartTooltipContent />} />
+                        <RadialBar dataKey="previousAttendance" background />
+                        <Legend
+                            iconSize={10}
+                            iconType="circle"
+                            layout="vertical"
+                            verticalAlign="middle"
+                            align="right"
+                        />
+                        </RadialBarChart>
                     </ResponsiveContainer>
-                </ChartContainer>
-            </CardContent>
-        </Card>
+                    </ChartContainer>
+                </CardContent>
+            </Card>
+            <Card className="bg-card/60 backdrop-blur-sm border-border/50">
+                <CardHeader className="items-center pb-0">
+                    <CardTitle>Current Bookings</CardTitle>
+                    <CardDescription>Live registration data</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1 pb-0">
+                    <ChartContainer
+                    config={chartConfig}
+                    className="mx-auto aspect-square h-[250px]"
+                    >
+                    <ResponsiveContainer width="100%" height="100%">
+                        <RadialBarChart
+                        data={statsData}
+                        innerRadius="30%"
+                        outerRadius="80%"
+                        >
+                        <Tooltip content={<ChartTooltipContent />} />
+                        <RadialBar dataKey="currentBookings" background />
+                        <Legend
+                            iconSize={10}
+                            iconType="circle"
+                            layout="vertical"
+                            verticalAlign="middle"
+                            align="right"
+                        />
+                        </RadialBarChart>
+                    </ResponsiveContainer>
+                    </ChartContainer>
+                </CardContent>
+            </Card>
+        </div>
       </div>
     </section>
   );
