@@ -17,7 +17,7 @@ import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 
-const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
+const Logo = () => (
   <Link href="/" className="flex items-center gap-3">
     <Image
       src="/reframed_logo-preview.png"
@@ -45,7 +45,7 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
             href={href}
             className={cn(
                 "relative text-sm font-medium transition-colors px-4",
-                'text-white/80 hover:text-white',
+                'text-white hover:text-white/80',
                 isActive && 'text-white font-semibold'
             )}
         >
@@ -65,7 +65,7 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
               type="button"
               className={cn(
                 "flex items-center gap-1 text-sm font-medium transition-colors",
-                'text-white/80 hover:text-white',
+                'text-white hover:text-white/80',
                 isActive && 'text-white font-semibold'
             )}>
               {label}
@@ -93,15 +93,6 @@ const DropdownLink = ({ label, subLinks }: { label: string, subLinks: { href: st
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header className={cn(
@@ -109,7 +100,7 @@ export function Header() {
         "bg-black"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Logo isScrolled={isScrolled} />
+        <Logo />
 
         <nav className="hidden md:flex items-center">
           {navLinks.map((link) =>
@@ -141,7 +132,7 @@ export function Header() {
 
               <SheetContent side="right">
                 <div className="flex flex-col gap-6 p-6">
-                  <Logo isScrolled={false}/>
+                  <Logo />
                   <nav className="flex flex-col gap-4 mt-4">
                     {navLinks.map((link) =>
                       link.isDropdown ? (
