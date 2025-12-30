@@ -44,34 +44,34 @@ export const preamble = {
 
 export const objectives = [
     {
-        icon: 'Rocket' as const,
+        icon: 'BrainCircuit' as const,
         title: 'Promote Innovation',
-        description: 'To showcase cutting-edge research in sustainable technologies and intelligent systems.',
+        description: 'To promote research and innovation in sustainable technologies and intelligent systems.',
     },
     {
-        icon: 'Users' as const,
+        icon: 'Briefcase' as const,
         title: 'Foster Collaboration',
-        description: 'To facilitate networking among experts from academia, industry, and government.',
+        description: 'To encourage interdisciplinary collaboration among engineering, technology, and sciences.',
     },
     {
-        icon: 'Globe' as const,
+        icon: 'Presentation' as const,
         title: 'Global Platform',
-        description: 'To offer a stage for researchers to present high-impact work to a global audience.',
+        description: 'To provide a global platform for researchers and professionals to present high-quality research.',
     },
     {
-        icon: 'Lightbulb' as const,
-        title: 'Inspire Solutions',
-        description: 'To inspire novel solutions for global sustainability challenges through technology.',
+        icon: 'Bridge' as const,
+        title: 'Bridge Gaps',
+        description: 'To bridge the gap between academia, industry, and society.',
     },
     {
-        icon: 'Cpu' as const,
+        icon: 'Bot' as const,
         title: 'Highlight Technology',
-        description: 'To highlight the role of AI and IoT in driving sustainable development.',
+        description: 'To highlight the role of AI, IoT, and digital twins in sustainable development.',
     },
     {
-        icon: 'GraduationCap' as const,
+        icon: 'School' as const,
         title: 'Support Researchers',
-        description: 'To support young researchers with mentorship and exposure to leading trends.',
+        description: 'To support young researchers through mentorship and exposure to global research trends.',
     },
 ];
 
@@ -458,3 +458,4 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
     
+
