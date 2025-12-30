@@ -9,6 +9,7 @@ export const navLinks = [
   {
     label: "About",
     isDropdown: true,
+    href: "/about",
     subLinks: [
       { href: "/about/conference", label: "About Conference" },
       { href: "/about/researcher-connect", label: "About Researcher Connect" },
@@ -442,6 +443,7 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
     
 
     
+
 
 
 
