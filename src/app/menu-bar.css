@@ -6,6 +6,7 @@
     left: 0;
     right: 0;
     z-index: 50;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .menu-bar {
@@ -17,6 +18,12 @@
     align-items: center;
     padding: 0 10px;
     margin: 20px 0 0 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.menu-bar.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .menu-bar ul {
@@ -36,6 +43,11 @@
     cursor: pointer;
     white-space: nowrap;
     font-size: 14px;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-bar.scrolled li {
+    color: black;
 }
 
 .menu-bar li::before {
@@ -58,4 +70,14 @@
 
 .menu-bar li:hover {
     color: black;
+}
+
+.menu-bar.scrolled li:hover {
+    color: black;
+}
+
+.menu-bar.scrolled li:hover::before {
+    background: #f0f0f0;
+    box-shadow: none;
+    transform: scale(1);
 }
