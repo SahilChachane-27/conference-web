@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { Preamble } from "@/components/sections/preamble";
-import { Objectives } from "@/components/sections/objectives";
 import { AboutCollege } from "@/components/sections/about-college";
 import { Organizers } from "@/components/sections/organizers";
 import { RegisterNowCta } from "@/components/sections/register-now-cta";
@@ -22,7 +21,6 @@ export default function Home() {
         <Hero />
         <div className="relative bg-background z-10">
           <Preamble />
-          <Objectives />
           <CallForPapers />
           <Stats />
           <HomeSpeakers />
