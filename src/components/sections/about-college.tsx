@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,7 +20,7 @@ export function AboutCollege() {
         <div className="absolute inset-0 bg-black/70" />
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="flex justify-center">
-            <Card className="max-w-3xl bg-background/80 backdrop-blur-sm shadow-2xl">
+            <Card className="max-w-2xl bg-background/80 backdrop-blur-sm shadow-2xl">
                 <CardHeader>
                     <CardTitle className="font-headline text-3xl md:text-4xl font-bold text-center">
                         About the <span className="text-primary">College</span>
