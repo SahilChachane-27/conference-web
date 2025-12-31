@@ -7,25 +7,28 @@
     left: 0;
     right: 0;
     z-index: 50;
-    transition: background-color 0.3s ease-in-out;
+    padding-top: 0.75rem; /* Add some space from the top */
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-bar {
     display: inline-flex;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     align-items: center;
-    padding: 0 10px;
+    padding: 0.25rem;
     margin: 0;
     transition: all 0.3s ease-in-out;
-    background-color: #f0f0f0;
-    width: 100%;
-    justify-content: center;
+    background-color: hsla(0, 0%, 94.1%, 0.7);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 9999px; /* Pill shape */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: auto;
 }
 
 .menu-bar.scrolled {
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: hsla(0, 0%, 94.1%, 0.85);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .menu-bar ul {
@@ -39,16 +42,25 @@
     color: black;
     font-family: sans-serif;
     font-weight: bold;
-    padding: 18px 20px;
+    padding: 0; /* Remove padding from li */
     position: relative;
     cursor: pointer;
     white-space: nowrap;
     font-size: 14px;
-    transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
-    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease-in-out;
 }
 
-.menu-bar li:hover {
+/* Style the link/trigger inside the li */
+.menu-bar li > * {
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-bar li:hover > * {
     color: hsl(var(--primary));
-    border-bottom-color: hsl(var(--primary));
+    background-color: white;
 }

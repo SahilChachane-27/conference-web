@@ -36,34 +36,34 @@ export function Header() {
         <div className={cn("menu-bar", { "scrolled": scrolled })}>
             <ul>
                 {navLinks.map((link) => (
-                    link.isDropdown && link.subLinks ? (
-                        <li key={link.label}>
-                            {isClient ? (
-                             <DropdownMenu>
-                                <DropdownMenuTrigger className="flex items-center gap-1 outline-none">
-                                    {link.label}
-                                    <ChevronDown className="h-4 w-4 transition-transform duration-200" />
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    {link.subLinks.map(subLink => (
-                                        <DropdownMenuItem key={subLink.href} asChild>
-                                            <Link href={subLink.href}>{subLink.label}</Link>
-                                        </DropdownMenuItem>
-                                    ))}
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                            ) : (
-                                <div className="flex items-center gap-1 outline-none" style={{ padding: '18px 20px', fontSize: '14px', fontWeight: 'bold' }}>
-                                    {link.label}
-                                    <ChevronDown className="h-4 w-4" />
-                                </div>
-                             )}
-                        </li>
-                    ) : (
-                        <li key={link.href}>
+                    <li key={link.isDropdown ? link.label : link.href}>
+                        {link.isDropdown && link.subLinks ? (
+                             <>
+                                {isClient ? (
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger className="flex items-center gap-1 outline-none">
+                                            {link.label}
+                                            <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent>
+                                            {link.subLinks.map(subLink => (
+                                                <DropdownMenuItem key={subLink.href} asChild>
+                                                    <Link href={subLink.href}>{subLink.label}</Link>
+                                                </DropdownMenuItem>
+                                            ))}
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                ) : (
+                                    <a className="flex items-center gap-1">
+                                        {link.label}
+                                        <ChevronDown className="h-4 w-4" />
+                                    </a>
+                                )}
+                             </>
+                        ) : (
                             <Link href={link.href}>{link.label}</Link>
-                        </li>
-                    )
+                        )}
+                    </li>
                 ))}
             </ul>
         </div>
