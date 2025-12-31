@@ -1,4 +1,5 @@
 
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { committeeData } from "@/lib/data";
@@ -58,13 +59,17 @@ export function Committee() {
                         </div>
                         <div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div>
+                                <div className="flex flex-col items-center">
                                     <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.generalChief.title}</h3>
-                                    <MemberCard {...committeeData.generalChief.members[0]} special />
+                                    <div className="w-full max-w-sm">
+                                      <MemberCard {...committeeData.generalChief.members[0]} special />
+                                    </div>
                                 </div>
-                                <div>
+                                <div className="flex flex-col items-center">
                                     <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.convener.title}</h3>
-                                    <MemberCard {...committeeData.convener.members[0]} special />
+                                    <div className="w-full max-w-sm">
+                                      <MemberCard {...committeeData.convener.members[0]} special />
+                                    </div>
                                 </div>
                             </div>
                         </div>

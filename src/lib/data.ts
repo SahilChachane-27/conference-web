@@ -312,36 +312,31 @@ export const schedules = [
 export const tickets = [
   { 
       type: 'Student UG/PG (India)', 
-      earlyBird: { usd: '$100', inr: '₹8,000' },
-      lateBird: { usd: '$120', inr: '₹10,000' },
+      cost: '₹8,000',
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: false 
   },
   { 
       type: 'PhD / Research Scholar (India)', 
-      earlyBird: { usd: '$125', inr: '₹10,000' },
-      lateBird: { usd: '$150', inr: '₹12,000' },
+      cost: '₹10,000',
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: false 
   },
   { 
       type: 'Academia / Professional (India)', 
-      earlyBird: { usd: '$150', inr: '₹12,000' },
-      lateBird: { usd: '$175', inr: '₹14,000' },
+      cost: '₹12,000',
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: true 
   },
   { 
       type: 'International Author', 
-      earlyBird: { usd: '$200', inr: '₹16,000' },
-      lateBird: { usd: '$225', inr: '₹18,000' },
+      cost: '$200',
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of presentation / participation', 'Lunch and refreshments', 'Publication processing (as applicable)'], 
       featured: false 
   },
   { 
       type: 'Attendee (India)', 
-      earlyBird: { usd: '$50', inr: '₹4,000' },
-      lateBird: { usd: '$60', inr: '₹5,000' },
+      cost: '₹4,000',
       features: ['Access to all conference sessions', 'Conference kit and materials', 'Certificate of participation', 'Lunch and refreshments'], 
       featured: false 
   },

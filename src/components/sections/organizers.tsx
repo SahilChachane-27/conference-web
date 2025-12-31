@@ -2,12 +2,10 @@
 import Image from 'next/image';
 
 const logos = [
-    { src: "/SDG.webp", alt: "Sustainable Development Goals" },
-    { src: "/google_scholar.png", alt: "Google Scholar" },
-    { src: "/Elsevier.png", alt: "Elsevier" },
-    { src: "/scopus.png", alt: "Scopus" },
-    { src: "/logo3.png", alt: "Springer" },
-    ];
+    { src: "/RClogo.webp", alt: "Researcher Connect" },
+    { src: "/VPPCOE_logo.png", alt: "VPPCOE & VA" },
+    { src: "/logo-ias.png", alt: "IAS" },
+];
 
 export function Organizers() {
   return (
@@ -22,17 +20,15 @@ export function Organizers() {
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-center items-center gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-16">
             {logos.map((logo, index) => (
-                <div key={index} className="border text-card-foreground p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center justify-center h-32 w-48">
-                    <div className="relative h-full w-full">
-                        <Image 
-                            src={logo.src} 
-                            alt={logo.alt} 
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
+                <div key={index} className="relative h-24 w-48">
+                    <Image 
+                        src={logo.src} 
+                        alt={logo.alt} 
+                        fill
+                        className="object-contain"
+                    />
                 </div>
             ))}
         </div>

@@ -52,8 +52,7 @@ export function Tickets() {
                             <CardHeader className="text-center">
                                 <CardTitle className="font-headline text-2xl text-primary">{ticket.type}</CardTitle>
                                 <CardDescription>
-                                    <span className="text-4xl font-bold text-foreground">${ticket.earlyBird.usd.replace('$', '')}</span>
-                                    <span className="text-muted-foreground"> USD</span>
+                                    <span className="text-4xl font-bold text-foreground">{ticket.cost}</span>
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="flex-grow">
