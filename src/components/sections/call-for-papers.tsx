@@ -1,9 +1,10 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { callForPapers } from "@/lib/data";
-import { FileText, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { FileText, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const trackIcons: { [key: string]: React.ElementType } = {
     "Track 1": FileText,
@@ -31,41 +32,35 @@ export function CallForPapers() {
           </p>
         </div>
 
-        {/* Conference Tracks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {callForPapers.tracks.map((track, index) => {
-            const Icon = trackIcons[`Track ${index + 1}`] || FileText;
-            return (
-              <Card key={index} className="group flex flex-col shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 p-3 rounded-lg mt-1">
-                        <Icon className="h-6 w-6 text-primary" />
+        {/* Conference Tracks Accordion */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <Accordion type="single" collapsible className="w-full">
+            {callForPapers.tracks.map((track, index) => {
+              const Icon = trackIcons[`Track ${index + 1}`] || FileText;
+              return (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left hover:no-underline">
+                    <div className="flex items-center gap-4 text-lg font-headline">
+                        <div className="bg-primary/10 p-3 rounded-lg">
+                            <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        {track.title}
                     </div>
-                    <div>
-                        <CardTitle className="font-headline text-xl">{track.title}</CardTitle>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <ul className="space-y-2">
-                    {track.topics.slice(0, 4).map((topic, topicIndex) => (
-                      <li key={topicIndex} className="flex items-start gap-2 text-sm">
-                        <ChevronRight className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                        <span className="text-muted-foreground">{topic}</span>
-                      </li>
-                    ))}
-                    {track.topics.length > 4 && (
-                        <li className="flex items-start gap-2 text-sm">
-                            <ChevronRight className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                            <span className="text-muted-foreground italic">and more...</span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2 pl-16 pr-4 pt-2">
+                      {track.topics.map((topic, topicIndex) => (
+                        <li key={topicIndex} className="flex items-start gap-2 text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-primary/80 mt-0.5 shrink-0" />
+                          <span className="text-muted-foreground">{topic}</span>
                         </li>
-                    )}
-                  </ul>
-                </CardContent>
-              </Card>
-            );
-          })}
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
         </div>
 
         {/* Submission Guidelines */}
