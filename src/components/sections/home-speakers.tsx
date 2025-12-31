@@ -30,7 +30,7 @@ export function HomeSpeakers() {
                       alt={`Portrait of ${speaker.name}`}
                       width={400}
                       height={400}
-                      className="object-cover w-full h-64 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="object-cover w-full h-64 transition-all duration-300"
                       data-ai-hint={speaker.image.imageHint}
                     />
                 </div>
