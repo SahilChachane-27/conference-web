@@ -15,8 +15,10 @@ import { ChevronDown } from 'lucide-react';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
+    setIsClient(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
@@ -31,7 +33,7 @@ export function Header() {
             <ul>
                 {navLinks.map((link) => (
                     <li key={link.isDropdown ? link.label : link.href}>
-                        {link.isDropdown && link.subLinks ? (
+                        {link.isDropdown && link.subLinks && isClient ? (
                             <DropdownMenu>
                                 <DropdownMenuTrigger className="flex items-center gap-1 outline-none">
                                     {link.label}
