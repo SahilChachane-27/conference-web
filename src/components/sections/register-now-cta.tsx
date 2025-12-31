@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export function RegisterNowCta() {
   return (
-    <section className="relative bg-primary text-primary-foreground py-20 md:py-28 text-center">
+    <section className="relative bg-primary text-primary-foreground py-16 md:py-24 text-center">
         <Image 
             src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop"
             alt="Networking event"
