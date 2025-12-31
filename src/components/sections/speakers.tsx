@@ -3,13 +3,11 @@
 
 import Image from 'next/image';
 import { speakers } from '@/lib/data';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent } from '@/components/ui/card';
-import { ChevronDown } from 'lucide-react';
 
 export function Speakers() {
   return (
-    <section id="speakers" className="py-20 md:py-28 bg-background">
+    <section id="speakers" className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">
@@ -20,36 +18,27 @@ export function Speakers() {
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {speakers.map((speaker, index) => (
-            <Card key={index} className="shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-              <AccordionItem value={`item-${index}`} className="border-b-0">
-                <AccordionTrigger className="p-6 text-left hover:no-underline group">
-                    <div className="flex items-center gap-6">
-                        <Image
-                            src={speaker.image.imageUrl}
-                            alt={`Portrait of ${speaker.name}`}
-                            width={100}
-                            height={100}
-                            className="rounded-full object-cover h-24 w-24 border-4 border-transparent group-hover:border-primary/20 transition-colors"
-                            data-ai-hint={speaker.image.imageHint}
-                        />
-                        <div className="flex-grow">
-                            <h3 className="text-xl font-bold font-headline text-foreground">{speaker.name}</h3>
-                            <p className="text-md text-primary font-semibold">{speaker.title}</p>
-                            <p className="text-sm text-muted-foreground mt-1">{speaker.affiliation}</p>
-                        </div>
-                    </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="px-6 pb-6 text-muted-foreground text-sm prose max-w-none">
-                    <p>{speaker.bio}</p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+            <Card key={index} className="group overflow-hidden text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                <div className="relative bg-muted/50">
+                    <Image
+                      src={speaker.image.imageUrl}
+                      alt={`Portrait of ${speaker.name}`}
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-64 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      data-ai-hint={speaker.image.imageHint}
+                    />
+                </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold font-headline">{speaker.name}</h3>
+                <p className="text-sm text-primary font-semibold">{speaker.title}</p>
+                <p className="text-sm text-muted-foreground mt-1">{speaker.affiliation}</p>
+              </CardContent>
             </Card>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
