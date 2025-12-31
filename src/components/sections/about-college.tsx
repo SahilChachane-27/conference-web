@@ -38,14 +38,6 @@ export function AboutCollege() {
                               The college is approved by AICTE, DTE, and DOA, and is accredited by NAAC with an 'A' grade. The Computer and IT programs are NBA accredited.
                           </p>
                       </div>
-                       <div className="mt-8">
-                          <Button asChild variant="outline" size="lg">
-                              <Link href="/about/college">
-                                  Read More
-                                  <ArrowRight className="ml-2 h-4 w-4" />
-                              </Link>
-                          </Button>
-                      </div>
                    </div>
               </div>
           </div>
