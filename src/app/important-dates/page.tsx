@@ -21,45 +21,42 @@ export default function ImportantDatesPage() {
 
           <div className="relative max-w-6xl mx-auto">
             {/* Desktop timeline */}
-            <div className="hidden md:flex items-center">
-              {schedules.map((item, index) => (
-                <div key={index} className="flex-1 relative">
-                  {/* Line */}
-                  <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border transform -translate-y-1/2"></div>
-                   {/* Circle and Content */}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center">
-                        <div className="w-4 h-4 bg-primary rounded-full"></div>
+            <div className="hidden md:flex items-start justify-center">
+              <div className="relative w-full">
+                <div className="absolute top-4 left-0 w-full h-0.5 bg-border"></div>
+                <div className="flex justify-between relative">
+                  {schedules.map((item, index) => (
+                    <div key={index} className="flex-1 min-w-0">
+                      <div className="relative z-10 flex flex-col items-center pt-4">
+                        <div className="w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center -mt-4">
+                            <div className="w-4 h-4 bg-primary rounded-full"></div>
+                        </div>
+                        <div className="mt-4 text-center px-2">
+                          <p className="font-bold text-lg text-foreground">{item.topic}</p>
+                          <p className="text-primary font-semibold">{item.date}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-4 text-center">
-                      <p className="font-bold text-lg text-foreground">{item.topic}</p>
-                      <p className="text-primary font-semibold">{item.date}</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
 
             {/* Mobile timeline */}
             <div className="md:hidden relative max-w-2xl mx-auto">
-              <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border" aria-hidden="true"></div>
-              <div className="relative space-y-12">
+              <div className="absolute left-4 h-full w-0.5 bg-border" aria-hidden="true"></div>
+              <div className="relative space-y-12 pl-12">
                 {schedules.map((item, index) => (
-                  <div key={index} className="relative flex items-center">
-                    <div className={`flex items-center justify-center w-full`}>
-                      <div className="w-full p-4">
-                        <div className={`bg-card p-6 rounded-lg shadow-lg border-l-4 border-primary relative ml-8`}>
-                          <div className={`absolute top-1/2 -translate-y-1/2 h-4 w-4 bg-primary rounded-full left-0 -ml-10`}>
-                            <div className="absolute inset-0.5 bg-background rounded-full"></div>
-                          </div>
-                          <p className="text-xl font-bold text-foreground mb-1">{item.topic}</p>
-                          <p className="text-primary font-semibold text-md mb-3">{item.date}</p>
+                  <div key={index} className="relative">
+                     <div className="absolute -left-16 top-0 flex items-center">
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-8 ring-background">
+                            <Calendar className="h-4 w-4 text-primary-foreground" />
                         </div>
-                      </div>
                     </div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-background rounded-full flex items-center justify-center border-2 border-border md:hidden">
-                          <Calendar className="h-5 w-5 text-primary" />
-                      </div>
+                    <div className="bg-card p-5 rounded-lg shadow-md border border-border/50">
+                        <p className="text-xl font-bold text-foreground mb-1">{item.topic}</p>
+                        <p className="text-primary font-semibold text-md">{item.date}</p>
+                    </div>
                   </div>
                 ))}
               </div>
