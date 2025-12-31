@@ -2,21 +2,12 @@
 import Image from 'next/image';
 
 const logos = [
-    { src: "/college.png", alt: "Vasantdada Patil Pratishthan’s College of Engineering & Visual Arts" },
     { src: "/SDG.webp", alt: "Sustainable Development Goals" },
-    { src: "/RC_Updated.jpeg", alt: "Researcher Connect" },
     { src: "/google_scholar.png", alt: "Google Scholar" },
     { src: "/Elsevier.png", alt: "Elsevier" },
     { src: "/scopus.png", alt: "Scopus" },
     { src: "/logo3.png", alt: "Springer" },
-    { src: "/webofscience.png", alt: "Web of Science" },
-    { src: "/ieee.png", alt: "IEEE" },
-    { src: "/acm.png", alt: "ACM" },
-    { src: "/wiley.png", alt: "Wiley" },
-    { src: "/taylor_and_francis.png", alt: "Taylor & Francis" },
-    { src: "/iet.png", alt: "IET" },
-    { src: "/inderscience.png", alt: "InderScience" },
-];
+    ];
 
 export function Organizers() {
   return (

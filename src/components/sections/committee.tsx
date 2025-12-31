@@ -1,35 +1,27 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { committeeData } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { Users, Star, Phone, Shield } from "lucide-react";
 
-const SectionTitle = ({ title }: { title: string }) => (
-    <div className="mb-8 text-center">
-        <h3 className="font-headline text-3xl font-bold text-primary">{title}</h3>
-        <div className="w-20 h-0.5 bg-primary/50 mx-auto mt-2"></div>
-    </div>
-);
-
-const MemberCard = ({ name, role, isAdvisory }: { name:string, role: string, isAdvisory?: boolean}) => (
+const MemberCard = ({ name, role, special }: { name: string; role: string; special?: boolean }) => (
     <Card className={cn(
-        "text-center shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col justify-center",
-        isAdvisory && "bg-primary/5 border-primary/20 hover:bg-primary/10"
+        "text-center shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center p-4",
+        special && "bg-primary/5 border-primary/20"
     )}>
-        <CardContent className="p-6">
-            <p className="font-bold text-lg text-foreground">{name}</p>
-            <p className="text-sm text-muted-foreground">{role}</p>
-        </CardContent>
+        <p className="font-bold text-lg text-foreground">{name}</p>
+        <p className="text-sm text-muted-foreground">{role}</p>
     </Card>
 );
 
-const ContactCard = ({ name, role }: { name:string, role: string}) => (
-    <Card className="text-center shadow-md hover:shadow-lg transition-shadow duration-300">
-        <CardContent className="p-6 flex flex-col items-center justify-center">
-            <p className="font-bold text-lg text-foreground">{name}</p>
-            <p className="text-sm text-primary font-semibold">{role}</p>
-        </CardContent>
+const ContactCard = ({ name, role }: { name: string; role: string }) => (
+    <Card className="text-center shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center p-4 bg-secondary/50">
+        <p className="font-bold text-lg text-foreground">{name}</p>
+        <p className="text-sm text-primary font-semibold">{role}</p>
     </Card>
 );
+
 
 export function Committee() {
   return (
@@ -44,60 +36,68 @@ export function Committee() {
           </p>
         </div>
 
-        {/* Leadership */}
-        <div className="mb-16">
-            <SectionTitle title={committeeData.chiefPatrons.title} />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {committeeData.chiefPatrons.members.map((member, i) => (
-                    <Card key={i} className="text-center shadow-lg bg-card border-b-4 border-primary transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center">
-                        <CardContent className="p-6">
-                            <p className="font-bold text-lg text-white">{member.name}</p>
-                            <p className="text-sm text-white/80">{member.role}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </div>
+        <Tabs defaultValue="leadership" className="max-w-6xl mx-auto">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto">
+            <TabsTrigger value="leadership" className="py-2.5"><Star className="mr-2 h-4 w-4" />Leadership</TabsTrigger>
+            <TabsTrigger value="patrons" className="py-2.5"><Shield className="mr-2 h-4 w-4" />Patrons</TabsTrigger>
+            <TabsTrigger value="advisory" className="py-2.5"><Users className="mr-2 h-4 w-4" />Advisory</TabsTrigger>
+            <TabsTrigger value="contact" className="py-2.5"><Phone className="mr-2 h-4 w-4" />Contact</TabsTrigger>
+          </TabsList>
+          
+          <div className="mt-8">
+            <TabsContent value="leadership">
+                <Card className="bg-card/80 p-6 md:p-8">
+                    <div className="space-y-12">
+                        <div>
+                            <h3 className="font-headline text-2xl font-bold text-primary text-center mb-6">{committeeData.chiefPatrons.title}</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {committeeData.chiefPatrons.members.map((member, i) => (
+                                    <MemberCard key={i} {...member} special />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.generalChief.title}</h3>
+                                <MemberCard {...committeeData.generalChief.members[0]} special />
+                            </div>
+                            <div>
+                                <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.convener.title}</h3>
+                                <MemberCard {...committeeData.convener.members[0]} special />
+                            </div>
+                        </div>
+                    </div>
+                </Card>
+            </TabsContent>
 
-        <div className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.generalChief.title}</h3>
-              <MemberCard {...committeeData.generalChief.members[0]} />
-            </div>
-            <div>
-              <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.convener.title}</h3>
-              <MemberCard {...committeeData.convener.members[0]} />
-            </div>
+            <TabsContent value="patrons">
+                <Card className="bg-card/80 p-6 md:p-8">
+                    <h3 className="font-headline text-2xl font-bold text-primary text-center mb-6">{committeeData.patrons.title}</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {committeeData.patrons.members.map((member, i) => <MemberCard key={i} {...member} />)}
+                    </div>
+                </Card>
+            </TabsContent>
+
+            <TabsContent value="advisory">
+                <Card className="bg-card/80 p-6 md:p-8">
+                    <h3 className="font-headline text-2xl font-bold text-primary text-center mb-6">{committeeData.advisoryCommittee.title}</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {committeeData.advisoryCommittee.members.map((member, i) => <MemberCard key={i} {...member} />)}
+                    </div>
+                </Card>
+            </TabsContent>
+
+            <TabsContent value="contact">
+                 <Card className="bg-card/80 p-6 md:p-8">
+                    <h3 className="font-headline text-2xl font-bold text-primary text-center mb-6">{committeeData.correspondenceContact.title}</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {committeeData.correspondenceContact.members.map((member, i) => <ContactCard key={i} {...member} />)}
+                    </div>
+                </Card>
+            </TabsContent>
           </div>
-        </div>
-
-
-        {/* Patrons */}
-        <div className="my-16">
-            <SectionTitle title={committeeData.patrons.title} />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {committeeData.patrons.members.map((member, i) => <MemberCard key={i} {...member} />)}
-            </div>
-        </div>
-
-        {/* Advisory Committee */}
-        <div className="my-16">
-            <SectionTitle title={committeeData.advisoryCommittee.title} />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {committeeData.advisoryCommittee.members.map((member, i) => <MemberCard key={i} {...member} isAdvisory />)}
-            </div>
-        </div>
-        
-        {/* Co-convener and Contacts */}
-        <div className="my-16">
-            <SectionTitle title={committeeData.correspondenceContact.title} />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {committeeData.correspondenceContact.members.map((member, i) => (
-                    <ContactCard key={i} {...member} />
-                ))}
-            </div>
-        </div>
+        </Tabs>
 
       </div>
     </section>
