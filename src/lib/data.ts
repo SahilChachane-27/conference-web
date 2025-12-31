@@ -21,7 +21,6 @@ export const navLinks = [
   { href: "/committee", label: "Committee" },
   { href: "/speakers", label: "Speakers" },
   { href: "/important-dates", label: "Important Dates" },
-  { href: "/timeline", label: "Timeline" },
   { href: "/publication-details", label: "Publication" },
   { href: "/registration", label: "Registration" },
   { href: "/venue", label: "Venue" },
@@ -487,3 +486,4 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
     
+

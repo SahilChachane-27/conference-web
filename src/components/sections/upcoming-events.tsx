@@ -17,7 +17,7 @@ export function UpcomingEvents() {
                 Upcoming <span className="text-primary">Events</span>
             </h2>
             <Button asChild variant="link" className="text-primary">
-                <Link href="/timeline">
+                <Link href="/important-dates">
                     View Full Timeline
                     <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
