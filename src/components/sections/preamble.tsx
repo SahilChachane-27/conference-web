@@ -39,14 +39,6 @@ export function Preamble() {
                         {preamble.content.split('. ').slice(2).join('. ')}
                       </p>
                   </div>
-                  <div className="mt-8">
-                    <Button asChild>
-                        <Link href="/about/conference">
-                            Learn More
-                            <ArrowRight className="ml-2" />
-                        </Link>
-                    </Button>
-                  </div>
               </div>
           </div>
       </div>
