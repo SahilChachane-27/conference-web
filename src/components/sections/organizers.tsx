@@ -10,6 +10,9 @@ const logos = [
     { src: "/taylor-and-francis.png", alt: "Taylor & Francis", width: 192 },
     { src: "/iet.png", alt: "IET", width: 128 },
     { src: "/inderscience.png", alt: "InderScience", width: 192 },
+    { src: "/wiley.png", alt: "Wiley", width: 128 },
+    { src: "/acm.png", alt: "ACM", width: 128 },
+    { src: "/ieee.png", alt: "IEEE", width: 128 },
 ];
 
 export function Organizers() {
