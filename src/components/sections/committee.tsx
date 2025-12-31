@@ -56,14 +56,16 @@ export function Committee() {
                                 ))}
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div>
-                                <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.generalChief.title}</h3>
-                                <MemberCard {...committeeData.generalChief.members[0]} special />
-                            </div>
-                            <div>
-                                <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.convener.title}</h3>
-                                <MemberCard {...committeeData.convener.members[0]} special />
+                        <div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                                <div>
+                                    <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.generalChief.title}</h3>
+                                    <MemberCard {...committeeData.generalChief.members[0]} special />
+                                </div>
+                                <div>
+                                    <h3 className="font-headline text-2xl font-bold text-primary text-center mb-4">{committeeData.convener.title}</h3>
+                                    <MemberCard {...committeeData.convener.members[0]} special />
+                                </div>
                             </div>
                         </div>
                     </div>
