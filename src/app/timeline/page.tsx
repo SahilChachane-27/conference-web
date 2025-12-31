@@ -19,30 +19,30 @@ export default function TimelinePage() {
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Desktop Timeline */}
-            <div className="hidden md:block">
-              <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border" aria-hidden="true"></div>
-              <div className="relative space-y-12">
-                {schedules.map((item, index) => (
-                  <div key={index} className="relative flex items-center">
-                    <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 ml-auto text-left'}`}>
-                       <div className="bg-card p-6 rounded-lg shadow-lg border-t-4 border-primary relative">
-                         <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-background rounded-full border-2 border-primary ${index % 2 === 0 ? 'right-0 -mr-[33px]' : 'left-0 -ml-[33px]'}`}>
-                           <div className="absolute inset-1 bg-primary rounded-full"></div>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Desktop timeline */}
+            <div className="hidden md:flex items-start justify-center">
+              <div className="relative w-full">
+                <div className="absolute top-4 left-0 w-full h-0.5 bg-border"></div>
+                <div className="flex justify-between relative">
+                  {schedules.map((item, index) => (
+                    <div key={index} className="flex-1 min-w-0">
+                      <div className="relative z-10 flex flex-col items-center pt-4">
+                        <div className="w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center -mt-4">
+                            <div className="w-4 h-4 bg-primary rounded-full"></div>
                         </div>
-
-                        <p className="text-primary font-semibold text-md mb-1">{item.date}</p>
-                        <h3 className="text-xl font-bold text-foreground mb-2">{item.topic}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                        <div className="mt-4 text-center px-2">
+                          <p className="font-bold text-lg text-foreground">{item.topic}</p>
+                          <p className="text-primary font-semibold">{item.date}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Mobile Timeline */}
+            {/* Mobile timeline */}
             <div className="md:hidden relative max-w-2xl mx-auto">
               <div className="absolute left-4 h-full w-0.5 bg-border" aria-hidden="true"></div>
               <div className="relative space-y-12 pl-12">
@@ -54,9 +54,8 @@ export default function TimelinePage() {
                         </div>
                     </div>
                     <div className="bg-card p-5 rounded-lg shadow-md border border-border/50">
-                        <p className="text-primary font-semibold text-md mb-1">{item.date}</p>
-                        <h3 className="text-xl font-bold text-foreground mb-2">{item.topic}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                        <p className="text-xl font-bold text-foreground mb-1">{item.topic}</p>
+                        <p className="text-primary font-semibold text-md">{item.date}</p>
                     </div>
                   </div>
                 ))}
