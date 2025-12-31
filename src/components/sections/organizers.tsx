@@ -31,21 +31,19 @@ export function Organizers() {
           </p>
         </div>
         
-        <div className="relative w-full overflow-hidden bg-background py-8">
-            <div className="flex animate-marquee hover:[animation-play-state:paused]">
-                {[...logos, ...logos].map((logo, index) => (
-                    <div key={index} className="flex-shrink-0 mx-8" style={{ width: '160px' }}>
-                        <div className="relative aspect-[3/2] h-20 mx-auto">
-                            <Image 
-                                src={logo.src} 
-                                alt={logo.alt} 
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
+        <div className="flex flex-wrap justify-center items-center gap-8">
+            {logos.map((logo, index) => (
+                <div key={index} className="border text-card-foreground p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center justify-center h-32 w-48">
+                    <div className="relative h-full w-full">
+                        <Image 
+                            src={logo.src} 
+                            alt={logo.alt} 
+                            fill
+                            className="object-contain"
+                        />
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
       </div>
     </section>
