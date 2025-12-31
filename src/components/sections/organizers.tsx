@@ -2,9 +2,14 @@
 import Image from 'next/image';
 
 const logos = [
-    { src: "/RClogo.webp", alt: "Researcher Connect" },
-    { src: "/VPPCOE_logo.png", alt: "VPPCOE & VA" },
-    { src: "/logo-ias.png", alt: "IAS" },
+    { src: "/RClogo.webp", alt: "Researcher Connect", width: 192 },
+    { src: "/VPPCOE_logo.png", alt: "VPPCOE & VA", width: 128 },
+    { src: "/logo-ias.png", alt: "IAS", width: 128 },
+    { src: "/Elsevier.png", alt: "Elsevier", width: 192 },
+    { src: "/logo3.png", alt: "Springer", width: 192 },
+    { src: "/taylor-and-francis.png", alt: "Taylor & Francis", width: 192 },
+    { src: "/iet.png", alt: "IET", width: 128 },
+    { src: "/inderscience.png", alt: "InderScience", width: 192 },
 ];
 
 export function Organizers() {
@@ -20,17 +25,21 @@ export function Organizers() {
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-center items-center gap-16">
-            {logos.map((logo, index) => (
-                <div key={index} className="relative h-24 w-48">
-                    <Image 
-                        src={logo.src} 
-                        alt={logo.alt} 
-                        fill
-                        className="object-contain"
-                    />
-                </div>
-            ))}
+        <div className="relative w-full overflow-hidden bg-background">
+            <div className="flex animate-marquee">
+                {[...logos, ...logos].map((logo, index) => (
+                    <div key={index} className="flex-shrink-0 mx-8" style={{ width: `${logo.width}px` }}>
+                        <div className="relative h-20">
+                            <Image 
+                                src={logo.src} 
+                                alt={logo.alt} 
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
       </div>
     </section>
