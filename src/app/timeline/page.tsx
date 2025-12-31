@@ -23,7 +23,7 @@ export default function TimelinePage() {
             {/* Desktop Timeline */}
             <div className="hidden md:block">
               <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border" aria-hidden="true"></div>
-              <div className="relative space-y-16">
+              <div className="relative space-y-12">
                 {schedules.map((item, index) => (
                   <div key={index} className="relative flex items-center">
                     <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 ml-auto text-left'}`}>
