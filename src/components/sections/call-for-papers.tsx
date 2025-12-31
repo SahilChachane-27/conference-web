@@ -91,26 +91,6 @@ export function CallForPapers() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg">
-                <CardHeader>
-                    <div className="flex items-center gap-4">
-                        <div className="bg-primary/10 p-3 rounded-lg">
-                            <BookOpenCheck className="h-6 w-6 text-primary" />
-                        </div>
-                        <CardTitle className="font-headline text-2xl">Publication</CardTitle>
-                    </div>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                        {callForPapers.publicationDetails.description}
-                    </p>
-                    <Button asChild variant="outline" className="w-full">
-                        <Link href="/publication-details">
-                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                    </Button>
-                </CardContent>
-            </Card>
           </div>
         </div>
       </div>
