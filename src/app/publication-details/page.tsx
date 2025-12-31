@@ -32,20 +32,6 @@ export default function PublicationDetailsPage() {
                     </p>
                 </article>
 
-                <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                    <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">At a Glance</h3>
-                    <ul className="space-y-3 text-muted-foreground">
-                       <li className="flex items-start gap-3">
-                            <Award className="h-5 w-5 text-primary mt-1 shrink-0" />
-                            <span><span className="font-bold">Indexing:</span> Scopus (selected)</span>
-                        </li>
-                         <li className="flex items-start gap-3">
-                            <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                            <span><span className="font-bold">Ethics:</span> Original work required</span>
-                        </li>
-                    </ul>
-                </div>
-
                 <Separator className="my-8 bg-border" />
                 
                 <article>
@@ -59,6 +45,7 @@ export default function PublicationDetailsPage() {
                             <ShieldCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
                             <span>Submissions are meticulously scanned for originality and plagiarism using industry-standard software to uphold the highest levels of academic integrity.</span>
                         </li>
+
                         <li className="flex items-start gap-3">
                             <BookOpenCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
                             <span>Final acceptance is contingent on the thorough incorporation of reviewer feedback and strict adherence to all formatting guidelines provided.</span>
