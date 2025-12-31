@@ -53,24 +53,10 @@ export default function PublicationDetailsPage() {
                             </li>
                         </ul>
                     </article>
-                </div>
+                    
+                    <Separator className="my-8 bg-border" />
 
-                {/* Sidebar Column */}
-                <aside className="md:col-span-1 space-y-8 mt-12 md:mt-0">
                     <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                        <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">At a Glance</h3>
-                        <ul className="space-y-3 text-muted-foreground">
-                           <li className="flex items-start gap-3">
-                                <Award className="h-5 w-5 text-primary mt-1 shrink-0" />
-                                <span><span className="font-bold">Indexing:</span> Scopus (selected)</span>
-                            </li>
-                             <li className="flex items-start gap-3">
-                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                <span><span className="font-bold">Ethics:</span> Original work required</span>
-                            </li>
-                        </ul>
-                    </div>
-                     <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
                         <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">Publishing Partners</h3>
                         <p className="text-muted-foreground mb-4 text-sm">In collaboration with leading academic publishers.</p>
                         <div className="relative w-full overflow-hidden bg-transparent">
@@ -90,6 +76,23 @@ export default function PublicationDetailsPage() {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Sidebar Column */}
+                <aside className="md:col-span-1 space-y-8 mt-12 md:mt-0">
+                    <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                        <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">At a Glance</h3>
+                        <ul className="space-y-3 text-muted-foreground">
+                           <li className="flex items-start gap-3">
+                                <Award className="h-5 w-5 text-primary mt-1 shrink-0" />
+                                <span><span className="font-bold">Indexing:</span> Scopus (selected)</span>
+                            </li>
+                             <li className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
+                                <span><span className="font-bold">Ethics:</span> Original work required</span>
+                            </li>
+                        </ul>
                     </div>
                 </aside>
             </div>
