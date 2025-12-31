@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarDays, MapPin } from "lucide-react";
+import { CalendarDays, MapPin, ArrowDown, Ticket } from "lucide-react";
 
 import { heroData } from "@/lib/data";
 import { Button } from "../ui/button";
@@ -56,12 +56,18 @@ export function Hero() {
           </div>
 
           <div className="pt-4">
-            <div className="flex justify-center gap-4">
-                <Button asChild size="lg" variant="secondary">
-                    <Link href="#preamble">View Highlights</Link>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <Button asChild size="lg" variant="outline" className="bg-transparent border-white/80 hover:bg-white/10 hover:text-white">
+                    <Link href="#preamble">
+                        <ArrowDown />
+                        View Highlights
+                    </Link>
                 </Button>
-                <Button asChild size="lg">
-                    <Link href="/registration">Buy Ticket</Link>
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                    <Link href="/registration">
+                        <Ticket />
+                        Buy Ticket
+                    </Link>
                 </Button>
             </div>
           </div>
