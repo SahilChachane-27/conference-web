@@ -341,6 +341,13 @@ export const tickets = [
   },
 ];
 
+export const registrationFees = [
+    { category: 'Student UG/PG', indianDelegateFee: '₹8,000', foreignDelegateFee: '$200' },
+    { category: 'PhD / Research Scholar', indianDelegateFee: '₹10,000', foreignDelegateFee: '$200' },
+    { category: 'Academia / Professional', indianDelegateFee: '₹12,000', foreignDelegateFee: '$200' },
+    { category: 'Attendee/Co-author', indianDelegateFee: '₹4,000', foreignDelegateFee: '$100' },
+];
+
 
 export const testimonials = [
     { quote: "A fantastic platform for sharing cutting-edge research in sustainable tech. The keynote sessions were particularly insightful.", author: "A. Sharma, University of Delhi" },
@@ -486,4 +493,5 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
     
+
 

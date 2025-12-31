@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from 'react';
-import { tickets } from '@/lib/data';
+import { registrationFees } from '@/lib/data';
 import Link from 'next/link';
 import {
     AlertDialog,
@@ -14,9 +14,8 @@ import {
     AlertDialogTitle,
   } from "@/components/ui/alert-dialog";
 import { Button } from '../ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
-import { Check, Ticket as TicketIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Ticket as TicketIcon } from 'lucide-react';
 
 export function Tickets() {
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -39,40 +38,32 @@ export function Tickets() {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                    {tickets.map((ticket, index) => (
-                        <Card key={index} className={cn("flex flex-col shadow-lg hover:shadow-2xl transition-shadow duration-300", ticket.featured && "border-2 border-primary relative ring-4 ring-primary/20")}>
-                            {ticket.featured && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                    <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                                        Most Popular
-                                    </div>
-                                </div>
-                            )}
-                            <CardHeader className="text-center">
-                                <CardTitle className="font-headline text-2xl text-primary">{ticket.type}</CardTitle>
-                                <CardDescription>
-                                    <span className="text-4xl font-bold text-foreground">{ticket.cost}</span>
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <ul className="space-y-3 text-muted-foreground">
-                                    {ticket.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start gap-3">
-                                            <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                            <CardFooter>
-                                <Button className="w-full" size="lg" onClick={() => handleGetTicket(ticket.type)} variant={ticket.featured ? 'default' : 'outline'}>
-                                    <TicketIcon className="mr-2 h-5 w-5" />
-                                    Buy Now
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                    ))}
+                <div className="max-w-5xl mx-auto border rounded-lg shadow-lg">
+                    <Table>
+                        <TableHeader>
+                            <TableRow className="bg-muted/50">
+                                <TableHead className="font-bold text-foreground">Category</TableHead>
+                                <TableHead className="font-bold text-foreground text-center">Indian Delegate</TableHead>
+                                <TableHead className="font-bold text-foreground text-center">Foreign Delegate</TableHead>
+                                <TableHead className="font-bold text-foreground text-center">Registration</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {registrationFees.map((fee, index) => (
+                                <TableRow key={index}>
+                                    <TableCell className="font-semibold">{fee.category}</TableCell>
+                                    <TableCell className="text-center">{fee.indianDelegateFee}</TableCell>
+                                    <TableCell className="text-center">{fee.foreignDelegateFee}</TableCell>
+                                    <TableCell className="text-center">
+                                        <Button size="sm" onClick={() => handleGetTicket(fee.category)}>
+                                            <TicketIcon className="mr-2 h-4 w-4" />
+                                            Register
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
                 </div>
             </div>
 
@@ -81,7 +72,7 @@ export function Tickets() {
                     <AlertDialogHeader>
                     <AlertDialogTitle className="text-primary font-headline">Registration Confirmation</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You have successfully simulated registering for the "{selectedTicket}" ticket.
+                        You have successfully simulated registering for the "{selectedTicket}" category.
                         This is a demonstration and no actual registration has been made.
                     </AlertDialogDescription>
                     </AlertDialogHeader>

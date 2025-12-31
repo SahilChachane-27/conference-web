@@ -1,8 +1,13 @@
 
+
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { tickets } from "@/lib/data";
+import { registrationFees, tickets } from "@/lib/data";
 import { Check } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Ticket } from "lucide-react";
 
 export default function RegistrationGuidelinesPage() {
   return (
@@ -19,14 +24,26 @@ export default function RegistrationGuidelinesPage() {
 
                 <div>
                     <h2 className="text-2xl font-headline font-bold text-foreground mb-4">Fee Structure</h2>
-                    <p>The registration fees for different categories are as follows:</p>
-                    <ul className="list-disc pl-5 space-y-2 mt-4">
-                        {tickets.map(ticket => (
-                            <li key={ticket.type}>
-                                <span className="font-semibold">{ticket.type}:</span> {ticket.cost}
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="border rounded-lg overflow-hidden">
+                        <Table>
+                            <TableHeader>
+                                <TableRow className="bg-muted/50">
+                                    <TableHead className="font-bold text-foreground">Category</TableHead>
+                                    <TableHead className="font-bold text-foreground">Indian Delegate</TableHead>
+                                    <TableHead className="font-bold text-foreground">Foreign Delegate</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {registrationFees.map((fee, index) => (
+                                    <TableRow key={index}>
+                                        <TableCell className="font-semibold">{fee.category}</TableCell>
+                                        <TableCell>{fee.indianDelegateFee}</TableCell>
+                                        <TableCell>{fee.foreignDelegateFee}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </div>
                 </div>
 
                 <div>
@@ -49,7 +66,7 @@ export default function RegistrationGuidelinesPage() {
                      <ul className="list-disc pl-5 space-y-2">
                         <li>The registration fee is non-refundable under any circumstances.</li>
                         <li>The fee covers one paper presentation. Additional papers by the same author may require a separate registration.</li>
-                        <li>All payments must be made in USD.</li>
+                        <li>All payments must be made in USD or INR as applicable.</li>
                         <li>Please ensure you complete your registration and payment before the final camera-ready submission deadline to avoid any issues.</li>
                     </ul>
                 </div>
@@ -57,8 +74,16 @@ export default function RegistrationGuidelinesPage() {
                  <div>
                     <h2 className="text-2xl font-headline font-bold text-foreground mb-4">How to Register</h2>
                      <p>
-                        The registration process is simulated for this demonstration website. On a live conference site, you would typically follow a link to a payment portal and fill out a registration form.
+                        To register, please visit our registration page and select your category. The registration process is simulated for this demonstration website.
                     </p>
+                    <div className='mt-4'>
+                        <Button asChild>
+                            <Link href="/registration">
+                                <Ticket className="mr-2 h-4 w-4" />
+                                Go to Registration Page
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
 
             </div>
