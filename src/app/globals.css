@@ -65,6 +65,10 @@
   html, body {
     min-height: 100%;
   }
+
+  .font-serif {
+    font-family: var(--font-old-standard-tt), serif;
+  }
 }
 
 @layer utilities {

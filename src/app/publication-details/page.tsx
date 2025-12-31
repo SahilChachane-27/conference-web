@@ -5,6 +5,7 @@ import { callForPapers, publishingPartners } from "@/lib/data";
 import { Check, BookOpenCheck, ShieldCheck, SearchCheck, Award } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export default function PublicationDetailsPage() {
 
@@ -13,102 +14,86 @@ export default function PublicationDetailsPage() {
       <Header />
       <main className="flex-grow pt-28 md:pt-36">
         <div className="container mx-auto px-4 md:px-6 py-12">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-2">
-                Publication Details
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                    {callForPapers.publicationDetails.description}
-                </p>
-            </div>
+          <div className="max-w-5xl mx-auto font-serif">
             
-            <div className="space-y-8">
-                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                        <div className="flex items-center gap-4">
-                            <div className="bg-primary/10 p-3 rounded-lg">
-                                <Award className="h-7 w-7 text-primary" />
-                            </div>
-                            <CardTitle className="font-headline text-2xl">Indexing & Visibility</CardTitle>
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground">
-                            Selected high-quality papers will be published in proceedings indexed by <span className="font-semibold text-primary">{callForPapers.publicationDetails.indexing}</span>. This ensures maximum visibility and impact for your research, connecting it with a global academic audience.
-                        </p>
-                    </CardContent>
-                </Card>
+            {/* Headline */}
+            <div className="text-center mb-8 border-b-2 border-foreground pb-4">
+                <h1 className="text-5xl md:text-7xl font-bold font-headline text-foreground">
+                    The SustainTech Times
+                </h1>
+                <p className="text-lg text-muted-foreground mt-2">Your Trusted Source for Conference Publication News</p>
+            </div>
 
-                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                        <div className="flex items-center gap-4">
-                            <div className="bg-primary/10 p-3 rounded-lg">
-                                <SearchCheck className="h-7 w-7 text-primary" />
-                            </div>
-                            <CardTitle className="font-headline text-2xl">Peer Review Process</CardTitle>
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                         <ul className="space-y-3 text-muted-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12">
+                {/* Main Content Column */}
+                <div className="md:col-span-2 space-y-8">
+                    <article>
+                        <h2 className="text-3xl font-bold font-headline mb-4">Publication Details</h2>
+                        <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+                            <span className="float-left text-5xl font-bold mr-3 mt-1">S</span>elected high-quality papers will be published in Scopus-Indexed Conference Proceedings or Scopus Journals, subject to publisher approval and potential additional charges. Further accepted papers may find a home in peer-reviewed journals with a DOI. Every submission undergoes a stringent process of peer review, plagiarism checks, and quality assessment, with final publication contingent on adherence to publisher norms and ethical guidelines.
+                        </p>
+                    </article>
+
+                    <Separator className="my-8 bg-border" />
+                    
+                    <article>
+                        <h2 className="text-3xl font-bold font-headline mb-4">Peer Review Process</h2>
+                        <ul className="space-y-4 text-muted-foreground text-justify">
                             <li className="flex items-start gap-3">
-                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                <span>All submitted papers will undergo a rigorous <span className="font-semibold">double-blind peer review</span> process by at least two independent reviewers.</span>
+                                <SearchCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
+                                <span>All submitted papers undergo a rigorous <span className="font-semibold">double-blind peer review</span> by at least two independent experts to ensure unbiased evaluation.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                <span>Submissions are meticulously checked for originality and plagiarism using industry-standard software to ensure academic integrity.</span>
+                                <ShieldCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
+                                <span>Submissions are meticulously scanned for originality and plagiarism using industry-standard software to uphold the highest levels of academic integrity.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
-                                <span>Final acceptance is contingent on incorporating reviewer feedback and adhering to all formatting guidelines provided by the conference.</span>
+                                <BookOpenCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
+                                <span>Final acceptance is contingent on the thorough incorporation of reviewer feedback and strict adherence to all formatting guidelines provided.</span>
                             </li>
                         </ul>
-                    </CardContent>
-                </Card>
-
-                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader>
-                        <div className="flex items-center gap-4">
-                            <div className="bg-primary/10 p-3 rounded-lg">
-                                <ShieldCheck className="h-7 w-7 text-primary" />
-                            </div>
-                            <CardTitle className="font-headline text-2xl">Ethical Guidelines</CardTitle>
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                         <p className="text-muted-foreground">
-                            We are committed to the highest standards of publication ethics. Authors must ensure their work is original and has not been published elsewhere. Any use of AI-generated content must be clearly disclosed and comply with the publisher's policies to maintain transparency and academic honesty.
-                        </p>
-                    </CardContent>
-                </Card>
-
-                <div className="pt-8">
-                    <div className="text-center mb-12">
-                        <h2 className="font-headline text-3xl font-bold">
-                            Our <span className="text-primary">Publishing Partners</span>
-                        </h2>
-                        <p className="text-muted-foreground mt-2">In collaboration with leading academic publishers.</p>
-                    </div>
-                    <div className="relative w-full overflow-hidden bg-background py-8">
-                        <div className="flex animate-marquee">
-                            {[...publishingPartners, ...publishingPartners].map((partner, index) => (
-                                <div key={index} className="flex-shrink-0 mx-8" style={{ width: '160px' }}>
-                                    <div className="relative aspect-square h-20 mx-auto">
-                                        <Image 
-                                            src={partner.image.imageUrl}
-                                            alt={partner.name}
-                                            fill
-                                            className="object-contain"
-                                            data-ai-hint={partner.image.imageHint}
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    </article>
                 </div>
+
+                {/* Sidebar Column */}
+                <aside className="md:col-span-1 space-y-8 mt-12 md:mt-0">
+                    <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                        <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">At a Glance</h3>
+                        <ul className="space-y-3 text-muted-foreground">
+                           <li className="flex items-start gap-3">
+                                <Award className="h-5 w-5 text-primary mt-1 shrink-0" />
+                                <span><span className="font-bold">Indexing:</span> Scopus (selected)</span>
+                            </li>
+                             <li className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
+                                <span><span className="font-bold">Ethics:</span> Original work required</span>
+                            </li>
+                        </ul>
+                    </div>
+                     <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                        <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">Publishing Partners</h3>
+                        <p className="text-muted-foreground mb-4 text-sm">In collaboration with leading academic publishers.</p>
+                        <div className="relative w-full overflow-hidden bg-transparent">
+                            <div className="flex animate-marquee">
+                                {[...publishingPartners, ...publishingPartners].map((partner, index) => (
+                                    <div key={index} className="flex-shrink-0 mx-6" style={{ width: '120px' }}>
+                                        <div className="relative aspect-video h-14 mx-auto">
+                                            <Image 
+                                                src={partner.image.imageUrl}
+                                                alt={partner.name}
+                                                fill
+                                                className="object-contain"
+                                                data-ai-hint={partner.image.imageHint}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </aside>
             </div>
+            
           </div>
         </div>
       </main>
