@@ -1,33 +1,40 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export function RegisterNowCta() {
   return (
-    <section className="bg-primary text-primary-foreground py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
-          <div className="md:mr-8">
-            <h2 className="font-headline text-3xl font-bold">
+    <section className="relative bg-primary text-primary-foreground py-20 md:py-28 text-center">
+        <Image 
+            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop"
+            alt="Networking event"
+            fill
+            className="object-cover"
+            data-ai-hint="conference networking"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      <div className="container relative mx-auto px-4 md:px-6">
+        <div className="max-w-3xl mx-auto">
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">
               Ready to Join Us?
             </h2>
-            <p className="mt-2 text-primary-foreground/80 max-w-2xl">
+            <p className="mt-4 text-primary-foreground/80 max-w-2xl mx-auto text-lg">
               Secure your spot at SustainTechCon 2026 and be part of the future of sustainable technology.
             </p>
-          </div>
-          <div className="flex-shrink-0">
-            <Button 
-              asChild 
-              size="lg" 
-              variant="outline" 
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-2 border-primary-foreground hover:border-primary-foreground/90"
-            >
-              <Link href="/registration">
-                Register Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
+            <div className="mt-8">
+                <Button 
+                asChild 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground border-2 border-primary-foreground/50 hover:border-primary-foreground/80"
+                >
+                <Link href="/registration">
+                    Register Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                </Button>
+            </div>
         </div>
       </div>
     </section>
