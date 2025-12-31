@@ -22,21 +22,20 @@ export default function ImportantDatesPage() {
           <div className="relative max-w-6xl mx-auto">
             {/* Desktop timeline */}
             <div className="hidden md:block">
-              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2"></div>
+              <div className="absolute top-8 left-0 w-full h-0.5 bg-border"></div>
               <div className="relative flex justify-between">
                 {schedules.map((item, index) => (
                   <div key={index} className="relative flex-1 flex flex-col items-center group">
-                    <div className={`w-full max-w-xs ${index % 2 === 0 ? 'order-1 mb-auto' : 'order-3 mt-auto'}`}>
-                        <div className={`bg-card shadow-lg rounded-lg p-4 border border-border/50 text-center transition-transform duration-300 group-hover:scale-105 ${index % 2 === 0 ? 'mb-16' : 'mt-16'}`}>
-                          <p className="font-bold text-lg text-foreground">{item.topic}</p>
-                          <p className="text-primary font-semibold">{item.date}</p>
-                        </div>
-                    </div>
-                    <div className="order-2 relative z-10 flex flex-col items-center">
+                     <div className="relative z-10 flex flex-col items-center">
                         <div className="w-8 h-8 bg-background border-4 border-primary rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                             <div className="w-3 h-3 bg-primary rounded-full"></div>
                         </div>
-                         <div className={`absolute left-1/2 w-0.5 h-16 bg-border -translate-x-1/2 ${index % 2 === 0 ? 'top-[-4rem]' : 'bottom-[-4rem]'}`}></div>
+                    </div>
+                    <div className="mt-4 w-full max-w-xs">
+                        <div className="bg-card shadow-lg rounded-lg p-4 border border-border/50 text-center transition-transform duration-300 group-hover:scale-105">
+                          <p className="text-primary font-semibold">{item.date}</p>
+                          <p className="font-bold text-lg text-foreground mt-1">{item.topic}</p>
+                        </div>
                     </div>
                   </div>
                 ))}
@@ -55,8 +54,8 @@ export default function ImportantDatesPage() {
                         </div>
                     </div>
                     <div className="bg-card p-5 rounded-lg shadow-md border border-border/50">
-                        <p className="text-xl font-bold text-foreground mb-1">{item.topic}</p>
-                        <p className="text-primary font-semibold text-md">{item.date}</p>
+                        <p className="text-primary font-semibold text-md mb-1">{item.date}</p>
+                        <p className="text-xl font-bold text-foreground">{item.topic}</p>
                     </div>
                   </div>
                 ))}
