@@ -22,19 +22,19 @@ export default function ImportantDatesPage() {
           <div className="relative max-w-6xl mx-auto">
             {/* Desktop timeline */}
             <div className="hidden md:block">
-              <div className="absolute top-8 left-0 w-full h-0.5 bg-border"></div>
-              <div className="relative flex justify-between">
+              <div className="absolute top-4 left-0 w-full h-0.5 bg-border"></div>
+              <div className="relative flex justify-center gap-20">
                 {schedules.map((item, index) => (
-                  <div key={index} className="relative flex-1 flex flex-col items-center group">
+                  <div key={index} className="relative flex flex-col items-center group">
                      <div className="relative z-10 flex flex-col items-center">
                         <div className="w-8 h-8 bg-background border-4 border-primary rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                             <div className="w-3 h-3 bg-primary rounded-full"></div>
                         </div>
                     </div>
                     <div className="mt-4 w-full max-w-xs">
-                        <div className="bg-card shadow-lg rounded-lg p-4 border border-border/50 text-center transition-transform duration-300 group-hover:scale-105">
-                          <p className="text-primary font-semibold">{item.date}</p>
+                        <div className="bg-card shadow-lg rounded-lg p-4 border border-border/50 text-center transition-transform duration-300 group-hover:scale-105 w-48">
                           <p className="font-bold text-lg text-foreground mt-1">{item.topic}</p>
+                          <p className="text-primary font-semibold mt-2">{item.date}</p>
                         </div>
                     </div>
                   </div>
@@ -54,8 +54,8 @@ export default function ImportantDatesPage() {
                         </div>
                     </div>
                     <div className="bg-card p-5 rounded-lg shadow-md border border-border/50">
-                        <p className="text-primary font-semibold text-md mb-1">{item.date}</p>
                         <p className="text-xl font-bold text-foreground">{item.topic}</p>
+                        <p className="text-primary font-semibold text-md mt-1">{item.date}</p>
                     </div>
                   </div>
                 ))}
