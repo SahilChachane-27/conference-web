@@ -23,7 +23,7 @@ export function RegisterNowCta() {
             <p className="mt-4 text-primary-foreground/80 max-w-2xl mx-auto text-lg">
               Secure your spot at SustainTechCon 2026 and be part of the future of sustainable technology.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 mb-8">
                 <Button 
                 asChild 
                 size="lg" 
