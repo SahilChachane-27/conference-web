@@ -76,8 +76,8 @@ export default function PublicationDetailsPage() {
                         <div className="relative w-full overflow-hidden bg-transparent">
                             <div className="flex animate-marquee">
                                 {[...publishingPartners, ...publishingPartners].map((partner, index) => (
-                                    <div key={index} className="flex-shrink-0 mx-6" style={{ width: '120px' }}>
-                                        <div className="relative aspect-video h-14 mx-auto">
+                                    <div key={index} className="flex-shrink-0 mx-6 w-36">
+                                        <div className="relative aspect-video h-20 mx-auto">
                                             <Image 
                                                 src={partner.image.imageUrl}
                                                 alt={partner.name}
