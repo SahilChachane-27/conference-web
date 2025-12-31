@@ -21,24 +21,29 @@ export default function ImportantDatesPage() {
 
           <div className="relative max-w-6xl mx-auto">
             {/* Desktop timeline */}
-            <div className="hidden md:flex items-start justify-center">
-              <div className="relative w-full">
-                <div className="absolute top-4 left-0 w-full h-0.5 bg-border"></div>
-                <div className="flex justify-between relative">
-                  {schedules.map((item, index) => (
-                    <div key={index} className="flex-1 min-w-0">
-                      <div className="relative z-10 flex flex-col items-center pt-4">
-                        <div className="w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center -mt-4">
-                            <div className="w-4 h-4 bg-primary rounded-full"></div>
+            <div className="hidden md:block">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2"></div>
+              <div className="relative flex justify-between">
+                {schedules.map((item, index) => (
+                  <div key={index} className="relative flex-1 flex flex-col items-center">
+                    <div className="relative z-10 flex flex-col items-center">
+                        {/* Vertical Connector */}
+                        <div className={`absolute left-1/2 w-0.5 h-12 bg-border -translate-x-1/2 ${index % 2 === 0 ? 'top-[-3rem]' : 'bottom-[-3rem]'}`}></div>
+
+                        {/* Dot */}
+                        <div className="w-8 h-8 bg-background border-4 border-primary rounded-full flex items-center justify-center">
+                            <div className="w-3 h-3 bg-primary rounded-full"></div>
                         </div>
-                        <div className="mt-4 text-center px-2">
+                    </div>
+                    {/* Card */}
+                    <div className={`w-full max-w-xs mt-4 ${index % 2 === 0 ? 'mb-auto' : 'mt-auto'}`}>
+                        <div className={`bg-card shadow-lg rounded-lg p-4 border border-border/50 text-center ${index % 2 === 0 ? 'mb-12' : 'mt-12'}`}>
                           <p className="font-bold text-lg text-foreground">{item.topic}</p>
                           <p className="text-primary font-semibold">{item.date}</p>
                         </div>
-                      </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
 
