@@ -1,8 +1,8 @@
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { callForPapers, publishingPartners } from "@/lib/data";
-import { Check, BookOpenCheck, ShieldCheck, SearchCheck, Award } from "lucide-react";
+import { publishingPartners } from "@/lib/data";
+import { BookOpenCheck, ShieldCheck, SearchCheck, Award, FileText, CheckCircle, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -14,50 +14,89 @@ export default function PublicationDetailsPage() {
       <Header />
       <main className="flex-grow pt-28 md:pt-36">
         <div className="container mx-auto px-4 md:px-6 py-12">
-          <div className="max-w-5xl mx-auto font-serif">
+          <div className="max-w-5xl mx-auto">
             
-            {/* Headline */}
-            <div className="text-center mb-8 border-b-2 border-foreground pb-4">
-                <h1 className="text-5xl md:text-7xl font-bold font-headline text-foreground">
-                    The SustainTech Times
+            <div className="text-center mb-12">
+                <h1 className="text-5xl md:text-6xl font-bold font-headline text-foreground">
+                    Publication & Guidelines
                 </h1>
-                <p className="text-lg text-muted-foreground mt-2">Your Trusted Source for Conference Publication News</p>
+                <p className="text-lg text-muted-foreground mt-3 max-w-3xl mx-auto">Your guide to submitting and publishing with SustainTechCon 2026.</p>
             </div>
 
-            <div className="space-y-8">
-                <article>
-                    <h2 className="text-3xl font-bold font-headline mb-4">Publication Details</h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed text-justify">
-                        Selected high-quality papers will be published in Scopus-Indexed Conference Proceedings or Scopus Journals, subject to publisher approval and potential additional charges. Further accepted papers may find a home in peer-reviewed journals with a DOI. Every submission undergoes a stringent process of peer review, plagiarism checks, and quality assessment, with final publication contingent on adherence to publisher norms and ethical guidelines.
-                    </p>
-                </article>
+            <div className="space-y-12">
+                <Card className="shadow-lg border-primary/20">
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-3 font-headline text-3xl">
+                            <FileText className="h-7 w-7 text-primary" />
+                            Publication Details
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground leading-relaxed">
+                            Selected high-quality papers will be published in Scopus-Indexed Conference Proceedings / Scopus Journals (subject to publisher approval and potential additional APC charges). Additional accepted papers may be published in peer-reviewed journals with DOI. All papers will be subjected to rigorous peer review, plagiarism, and quality checks. Publication is subject to publisher norms and ethical guidelines.
+                        </p>
+                    </CardContent>
+                </Card>
 
-                <Separator className="my-8 bg-border" />
+                <div className="grid md:grid-cols-2 gap-8">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-3 font-headline text-2xl">
+                                <Award className="h-6 w-6 text-primary" />
+                                Indexing
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">
+                                Selected high-quality papers will be published in proceedings indexed by Scopus, ensuring maximum visibility and impact for your research.
+                            </p>
+                        </CardContent>
+                    </Card>
+                    <Card>
+                         <CardHeader>
+                            <CardTitle className="flex items-center gap-3 font-headline text-2xl">
+                                <Sparkles className="h-6 w-6 text-primary" />
+                                Ethical Guidelines
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">
+                                Authors must ensure work is original. Any use of AI-generated content must be clearly disclosed and comply with publisher policies.
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
                 
-                <article>
-                    <h2 className="text-3xl font-bold font-headline mb-4">Peer Review Process</h2>
-                    <ul className="space-y-4 text-muted-foreground text-justify">
-                        <li className="flex items-start gap-3">
-                            <SearchCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
-                            <span>All submitted papers undergo a rigorous <span className="font-semibold">double-blind peer review</span> by at least two independent experts to ensure unbiased evaluation.</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <ShieldCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
-                            <span>Submissions are meticulously scanned for originality and plagiarism using industry-standard software to uphold the highest levels of academic integrity.</span>
-                        </li>
-
-                        <li className="flex items-start gap-3">
-                            <BookOpenCheck className="h-6 w-6 text-primary mt-1 shrink-0" />
-                            <span>Final acceptance is contingent on the thorough incorporation of reviewer feedback and strict adherence to all formatting guidelines provided.</span>
-                        </li>
-                    </ul>
-                </article>
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-3 font-headline text-2xl">
+                             <SearchCheck className="h-6 w-6 text-primary" />
+                            Review Process
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-4 text-muted-foreground">
+                            <li className="flex items-start gap-3">
+                                <CheckCircle className="h-5 w-5 text-green-500 mt-1 shrink-0" />
+                                <span>All submitted papers will undergo a rigorous <span className="font-semibold">double-blind peer review</span> process by at least two independent reviewers.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <CheckCircle className="h-5 w-5 text-green-500 mt-1 shrink-0" />
+                                <span>Submissions will be checked for originality and plagiarism using industry-standard tools.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <CheckCircle className="h-5 w-5 text-green-500 mt-1 shrink-0" />
+                                <span>Final acceptance is contingent on incorporating reviewer feedback and adhering to all formatting guidelines.</span>
+                            </li>
+                        </ul>
+                    </CardContent>
+                </Card>
                 
                 <Separator className="my-8 bg-border" />
 
-                <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                    <h3 className="text-2xl font-bold font-headline mb-4 border-b border-border pb-2">Publishing Partners</h3>
-                    <p className="text-muted-foreground mb-4 text-sm">In collaboration with leading academic publishers.</p>
+                <div className="text-center">
+                    <h3 className="text-2xl font-bold font-headline mb-4">Publishing Partners</h3>
+                    <p className="text-muted-foreground mb-8 text-sm">In collaboration with leading academic publishers.</p>
                     <div className="relative w-full overflow-hidden bg-transparent">
                         <div className="flex animate-marquee">
                             {[...publishingPartners, ...publishingPartners].map((partner, index) => (
