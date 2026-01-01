@@ -2,6 +2,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { navLinks } from '@/lib/data';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
@@ -30,7 +31,16 @@ export function Header() {
   return (
     <header className="menu-bar-container">
         <div className={cn("menu-bar", { "scrolled": scrolled })}>
-            <ul>
+            <Link href="/" className="mr-4">
+                <Image 
+                    src="/logo.png" 
+                    alt="SustainTechCon 2026 Logo"
+                    width={180}
+                    height={40}
+                    className="h-10 w-auto"
+                />
+            </Link>
+            <ul className='ml-auto'>
                 {navLinks.map((link) => (
                     <li key={link.isDropdown ? link.label : link.href}>
                         {link.isDropdown && link.subLinks && isClient ? (
