@@ -7,7 +7,6 @@ import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { Preamble } from "@/components/sections/preamble";
 import { AboutCollege } from "@/components/sections/about-college";
-import { Organizers } from "@/components/sections/organizers";
 import { RegisterNowCta } from "@/components/sections/register-now-cta";
 import { HomeSpeakers } from "@/components/sections/home-speakers";
 import { Objectives } from "@/components/sections/objectives";
@@ -23,7 +22,6 @@ export default function Home() {
           <Objectives />
           <HomeSpeakers />
           <AboutCollege />
-          <Organizers />
           <RegisterNowCta />
         </div>
       </main>
