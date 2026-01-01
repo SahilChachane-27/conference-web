@@ -45,7 +45,6 @@ export function Tickets() {
                                 <TableHead className="font-bold text-foreground">Category</TableHead>
                                 <TableHead className="font-bold text-foreground text-center">Indian Delegate</TableHead>
                                 <TableHead className="font-bold text-foreground text-center">Foreign Delegate</TableHead>
-                                <TableHead className="font-bold text-foreground text-center">Registration</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -54,26 +53,26 @@ export function Tickets() {
                                     <TableCell className="font-semibold">{fee.category}</TableCell>
                                     <TableCell className="text-center">{fee.indianDelegateFee}</TableCell>
                                     <TableCell className="text-center">{fee.foreignDelegateFee}</TableCell>
-                                    <TableCell className="text-center">
-                                        <Button size="sm" onClick={() => handleGetTicket(fee.category)}>
-                                            <TicketIcon className="mr-2 h-4 w-4" />
-                                            Register
-                                        </Button>
-                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
                     </Table>
+                </div>
+
+                <div className="text-center mt-8">
+                    <Button onClick={() => handleGetTicket('General Registration')}>
+                        <TicketIcon className="mr-2 h-4 w-4" />
+                        Proceed to Registration
+                    </Button>
                 </div>
             </div>
 
             <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
-                    <AlertDialogTitle className="text-primary font-headline">Registration Confirmation</AlertDialogTitle>
+                    <AlertDialogTitle className="text-primary font-headline">Registration Portal</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You have successfully simulated registering for the "{selectedTicket}" category.
-                        This is a demonstration and no actual registration has been made.
+                        You are being redirected to the registration portal. This is a demonstration and no actual registration will be made.
                     </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
