@@ -28,7 +28,7 @@ export default function PublicationDetailsPage() {
                 <article>
                     <h2 className="text-3xl font-bold font-headline mb-4">Publication Details</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed text-justify">
-                        <span className="float-left text-5xl font-bold mr-3 mt-1">S</span>elected high-quality papers will be published in Scopus-Indexed Conference Proceedings or Scopus Journals, subject to publisher approval and potential additional charges. Further accepted papers may find a home in peer-reviewed journals with a DOI. Every submission undergoes a stringent process of peer review, plagiarism checks, and quality assessment, with final publication contingent on adherence to publisher norms and ethical guidelines.
+                        Selected high-quality papers will be published in Scopus-Indexed Conference Proceedings or Scopus Journals, subject to publisher approval and potential additional charges. Further accepted papers may find a home in peer-reviewed journals with a DOI. Every submission undergoes a stringent process of peer review, plagiarism checks, and quality assessment, with final publication contingent on adherence to publisher norms and ethical guidelines.
                     </p>
                 </article>
 
