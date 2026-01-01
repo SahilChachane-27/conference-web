@@ -444,34 +444,6 @@ export const publishingPartners = [
     { name: 'Wiley', image: getImage('sponsor-wiley') },
 ];
 
-
-export const rolesData = [
-    { name: 'Property Manager', value: 41 },
-    { name: 'Regional Supervisor', value: 22 },
-    { name: 'Executive', value: 15 },
-    { name: 'Operations', value: 6 },
-    { name: 'Marketing', value: 4 },
-    { name: 'Other', value: 12 },
-];
-  
-export const experienceData = [
-    { name: 'Over 21 years', value: 28 },
-    { name: '11-20 years', value: 36 },
-    { name: '6-10 years', value: 24 },
-    { name: '5 years or less', value: 12 },
-];
-  
-export const businessTypesData = [
-    { name: 'Conventional Housing', value: 55 },
-    { name: 'Affordable Housing', value: 15 },
-    { name: 'Asset Management', value: 10 },
-    { name: 'Leasing Company', value: 6 },
-    { name: 'Other', value: 14 },
-];
-
-export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#FF9800'];
-    
-
     
 
 
@@ -493,5 +465,6 @@ export const COLORS = ['#29ABE2', '#FFB347', '#4CAF50', '#F44336', '#9C27B0', '#
 
 
     
+
 
 
