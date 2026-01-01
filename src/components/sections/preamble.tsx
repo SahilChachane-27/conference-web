@@ -9,7 +9,7 @@ export function Preamble() {
         <div className="max-w-4xl mx-auto">
           <Card className="bg-background text-foreground shadow-lg">
             <CardHeader>
-              <CardTitle className="font-headline text-4xl md:text-5xl font-bold text-center">
+              <CardTitle className="font-headline text-4xl md:text-5xl font-bold text-center underline underline-offset-8">
                 {preamble.title} of the Conference
               </CardTitle>
             </CardHeader>
