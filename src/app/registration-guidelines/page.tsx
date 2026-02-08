@@ -1,15 +1,30 @@
 
-
+'use client';
+import { useMemo } from 'react';
+import { collection } from 'firebase/firestore';
+import { useFirestore, useCollection, FirebaseClientProvider } from '@/firebase';
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { registrationFees, tickets } from "@/lib/data";
+import { tickets as defaultTicketsData } from "@/lib/data";
 import { Check } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Ticket } from "lucide-react";
+import { Ticket as TicketIcon } from "lucide-react";
+import { Skeleton } from '@/components/ui/skeleton';
 
-export default function RegistrationGuidelinesPage() {
+type Ticket = {
+    id: string;
+    category: string;
+    indianDelegateFee: string;
+    foreignDelegateFee: string;
+};
+
+function RegistrationGuidelinesPageContent() {
+    const firestore = useFirestore();
+    const ticketsRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
+    const { data: tickets, isLoading } = useCollection(ticketsRef);
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -34,13 +49,33 @@ export default function RegistrationGuidelinesPage() {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {registrationFees.map((fee, index) => (
-                                    <TableRow key={index}>
-                                        <TableCell className="font-semibold">{fee.category}</TableCell>
-                                        <TableCell>{fee.indianDelegateFee}</TableCell>
-                                        <TableCell>{fee.foreignDelegateFee}</TableCell>
-                                    </TableRow>
-                                ))}
+                                {isLoading ? (
+                                    <>
+                                        <TableRow>
+                                            <TableCell><Skeleton className="h-5 w-3/4" /></TableCell>
+                                            <TableCell><Skeleton className="h-5 w-1/2" /></TableCell>
+                                            <TableCell><Skeleton className="h-5 w-1/2" /></TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell><Skeleton className="h-5 w-3/4" /></TableCell>
+                                            <TableCell><Skeleton className="h-5 w-1/2" /></TableCell>
+                                            <TableCell><Skeleton className="h-5 w-1/2" /></TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell><Skeleton className="h-5 w-3/4" /></TableCell>
+                                            <TableCell><Skeleton className="h-5 w-1/2" /></TableCell>
+                                            <TableCell><Skeleton className="h-5 w-1/2" /></TableCell>
+                                        </TableRow>
+                                    </>
+                                ) : (
+                                    tickets && tickets.map((fee: Ticket) => (
+                                        <TableRow key={fee.id}>
+                                            <TableCell className="font-semibold">{fee.category}</TableCell>
+                                            <TableCell>{fee.indianDelegateFee}</TableCell>
+                                            <TableCell>{fee.foreignDelegateFee}</TableCell>
+                                        </TableRow>
+                                    ))
+                                )}
                             </TableBody>
                         </Table>
                     </div>
@@ -49,7 +84,7 @@ export default function RegistrationGuidelinesPage() {
                 <div>
                     <h2 className="text-2xl font-headline font-bold text-foreground mb-4">Entitlements for Registered Authors/Attendees</h2>
                      <ul className="space-y-3">
-                        {tickets[0].features.map((feature, i) => (
+                        {defaultTicketsData[0].features.map((feature, i) => (
                             <li key={i} className="flex items-start gap-3">
                                 <Check className="h-5 w-5 text-green-500 mt-1 shrink-0" />
                                 <span>{feature}</span>
@@ -79,7 +114,7 @@ export default function RegistrationGuidelinesPage() {
                     <div className='mt-4'>
                         <Button asChild>
                             <Link href="/registration">
-                                <Ticket className="mr-2 h-4 w-4" />
+                                <TicketIcon className="mr-2 h-4 w-4" />
                                 Go to Registration Page
                             </Link>
                         </Button>
@@ -93,4 +128,13 @@ export default function RegistrationGuidelinesPage() {
       <Footer />
     </div>
   );
+}
+
+
+export default function RegistrationGuidelinesPage() {
+    return (
+        <FirebaseClientProvider>
+            <RegistrationGuidelinesPageContent />
+        </FirebaseClientProvider>
+    )
 }
