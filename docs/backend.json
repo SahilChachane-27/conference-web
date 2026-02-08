@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "conferenceConfig": {
+      "title": "Conference Configuration",
+      "description": "General settings for the conference.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The main title of the conference." },
+        "subtitle": { "type": "string", "description": "The subtitle or tagline for the conference." },
+        "date": { "type": "string", "description": "The dates of the conference." },
+        "location": { "type": "string", "description": "The location where the conference will be held." }
+      },
+      "required": ["title", "subtitle", "date", "location"]
+    },
+    "ticket": {
+      "title": "Ticket",
+      "description": "A ticket for the conference.",
+      "type": "object",
+      "properties": {
+        "category": { "type": "string" },
+        "indianDelegateFee": { "type": "string" },
+        "foreignDelegateFee": { "type": "string" }
+      },
+      "required": ["category", "indianDelegateFee", "foreignDelegateFee"]
+    }
+  },
+  "auth": {
+    "providers": ["password"]
+  },
+  "firestore": {
+    "/config/{configId}": {
+      "schema": { "$ref": "#/entities/conferenceConfig" },
+      "description": "Stores conference configuration settings. Only authenticated users can write."
+    },
+    "/tickets/{ticketId}": {
+      "schema": { "$ref": "#/entities/ticket" },
+      "description": "Stores conference ticket types and prices. Only authenticated users can write."
+    }
+  }
+}
