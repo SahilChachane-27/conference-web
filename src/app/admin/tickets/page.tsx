@@ -68,7 +68,7 @@ type NewTicketFormValues = z.infer<typeof newTicketSchema>;
 export default function AdminTicketsPage() {
   const firestore = useFirestore();
   const { toast } = useToast();
-  const ticketsRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
+  const ticketsRef = useMemo(() => firestore ? collection(firestore, 'conferences', 'main', 'tickets') : null, [firestore]);
   const { data: ticketsData, isLoading: isTicketsLoading } = useCollection(ticketsRef);
 
   const [editedTickets, setEditedTickets] = useState<Ticket[]>([]);
@@ -130,7 +130,7 @@ export default function AdminTicketsPage() {
     const batch = writeBatch(firestore);
     editedTickets.forEach((ticket) => {
       const { id, ...ticketData } = ticket;
-      const ticketRef = doc(firestore, 'tickets', id);
+      const ticketRef = doc(firestore, 'conferences', 'main', 'tickets', id);
       batch.update(ticketRef, ticketData);
     });
 
@@ -143,7 +143,7 @@ export default function AdminTicketsPage() {
       })
       .catch(async (serverError) => {
         const permissionError = new FirestorePermissionError({
-          path: '/tickets', // Batch update can span multiple docs
+          path: '/conferences/main/tickets', // Batch update can span multiple docs
           operation: 'update',
           requestResourceData: editedTickets,
         });
@@ -179,7 +179,7 @@ export default function AdminTicketsPage() {
   const handleDeleteTicket = async () => {
     if (!firestore || !ticketToDelete) return;
 
-    const ticketRef = doc(firestore, 'tickets', ticketToDelete.id);
+    const ticketRef = doc(firestore, 'conferences', 'main', 'tickets', ticketToDelete.id);
     deleteDoc(ticketRef)
       .then(() => {
         toast({

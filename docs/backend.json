@@ -1,7 +1,7 @@
 {
   "entities": {
-    "conferenceConfig": {
-      "title": "Conference Configuration",
+    "conference": {
+      "title": "Conference",
       "description": "General settings for the conference.",
       "type": "object",
       "properties": {
@@ -28,11 +28,11 @@
     "providers": ["password"]
   },
   "firestore": {
-    "/config/{configId}": {
-      "schema": { "$ref": "#/entities/conferenceConfig" },
+    "/conferences/{conferenceId}": {
+      "schema": { "$ref": "#/entities/conference" },
       "description": "Stores conference configuration settings. Only authenticated users can write."
     },
-    "/tickets/{ticketId}": {
+    "/conferences/{conferenceId}/tickets/{ticketId}": {
       "schema": { "$ref": "#/entities/ticket" },
       "description": "Stores conference ticket types and prices. Only authenticated users can write."
     }

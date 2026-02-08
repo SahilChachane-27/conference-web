@@ -22,7 +22,7 @@ type Ticket = {
 
 function RegistrationGuidelinesPageContent() {
     const firestore = useFirestore();
-    const ticketsRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
+    const ticketsRef = useMemo(() => firestore ? collection(firestore, 'conferences', 'main', 'tickets') : null, [firestore]);
     const { data: tickets, isLoading } = useCollection(ticketsRef);
 
   return (

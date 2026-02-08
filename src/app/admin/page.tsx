@@ -32,7 +32,7 @@ type ConferenceFormValues = z.infer<typeof conferenceSchema>;
 export default function AdminPage() {
   const firestore = useFirestore();
   const { toast } = useToast();
-  const configRef = useMemo(() => firestore ? doc(firestore, 'config', 'main') : null, [firestore]);
+  const configRef = useMemo(() => firestore ? doc(firestore, 'conferences', 'main') : null, [firestore]);
   const { data: configData, isLoading: isConfigLoading } = useDoc(configRef);
 
   const {
