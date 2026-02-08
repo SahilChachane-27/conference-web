@@ -15,6 +15,7 @@ import {
   SidebarMenuButton,
   SidebarInset,
   SidebarTrigger,
+  SidebarRail,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -50,14 +51,15 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <Sidebar>
+      <Sidebar collapsible="icon">
+        <SidebarRail />
         <SidebarHeader>
           <h2 className="text-xl font-semibold">Admin Panel</h2>
         </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === '/admin'}>
+              <SidebarMenuButton asChild isActive={pathname === '/admin'} tooltip="Conference Settings">
                 <Link href="/admin">
                   <Settings />
                   <span>Conference Settings</span>
@@ -65,7 +67,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild isActive={pathname === '/admin/tickets'}>
+              <SidebarMenuButton asChild isActive={pathname === '/admin/tickets'} tooltip="Registration Fees">
                 <Link href="/admin/tickets">
                   <Ticket />
                   <span>Registration Fees</span>
@@ -75,10 +77,14 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
           </SidebarMenu>
         </SidebarContent>
         <SidebarFooter>
-          <Button variant="ghost" onClick={handleLogout} className="w-full justify-start gap-2">
-            <LogOut />
-            <span>Logout</span>
-          </Button>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton onClick={handleLogout} tooltip="Logout">
+                <LogOut />
+                <span>Logout</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
         </SidebarFooter>
       </Sidebar>
       <SidebarInset>
