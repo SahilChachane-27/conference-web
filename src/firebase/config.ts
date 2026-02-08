@@ -6,14 +6,15 @@
 //
 // YOU MUST NOT MODIFY THIS FILE MANUALLY.
 
-// This configuration is for a project in the Project anubhav-S2-421303,
+// This configuration is for a project in the Project website-data-dd505,
 // and is not intended for production use. It is for local development only.
 
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyCBZXJ2_gNsaAr5gq9S-OIeBRziCe4QN4c",
+  authDomain: "website-data-dd505.firebaseapp.com",
+  projectId: "website-data-dd505",
+  storageBucket: "website-data-dd505.appspot.com",
+  messagingSenderId: "282951914168",
+  appId: "1:282951914168:web:307039a355eb6b8e2dda4d",
+  measurementId: "G-WTHJNQC9M3"
 };
