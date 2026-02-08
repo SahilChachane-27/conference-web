@@ -51,7 +51,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <Sidebar collapsible="icon">
+      <Sidebar collapsible="icon" variant="floating">
         <SidebarRail />
         <SidebarHeader>
           <h2 className="text-xl font-semibold">Admin Panel</h2>
