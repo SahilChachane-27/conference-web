@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
-import { collection, doc, writeBatch, addDoc } from 'firebase/firestore';
+import { collection, doc, writeBatch } from 'firebase/firestore';
 import { useFirestore, useCollection } from '@/firebase';
 import { registrationFees as defaultTickets } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -55,29 +55,36 @@ export default function AdminTicketsPage() {
     );
   };
   
-  const handleInitializeTickets = async () => {
+  const handleInitializeTickets = () => {
     if (!firestore) return;
     setIsInitializing(true);
-    try {
-      const batch = writeBatch(firestore);
-      defaultTickets.forEach((ticket) => {
-        const newTicketRef = doc(collection(firestore, 'tickets'));
-        batch.set(newTicketRef, ticket);
-      });
-      await batch.commit();
-      toast({
-        title: 'Success',
-        description: 'Default tickets have been created.',
-      });
-    } catch (error: any) {
+    
+    const batch = writeBatch(firestore);
+    const ticketsCollectionRef = collection(firestore, 'tickets');
+
+    defaultTickets.forEach((ticket) => {
+      const newTicketRef = doc(ticketsCollectionRef);
+      batch.set(newTicketRef, ticket);
+    });
+
+    batch.commit()
+      .then(() => {
         toast({
-            variant: 'destructive',
-            title: 'Error Initializing Tickets',
-            description: 'Could not create default tickets.',
+          title: 'Success',
+          description: 'Default tickets have been created.',
         });
-    } finally {
+      })
+      .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+          path: '/tickets',
+          operation: 'create',
+          requestResourceData: defaultTickets,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+      })
+      .finally(() => {
         setIsInitializing(false);
-    }
+      });
   };
 
   const handleSaveChanges = async () => {
