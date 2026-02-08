@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { collection, doc, writeBatch, addDoc } from 'firebase/firestore';
 import { useFirestore, useCollection } from '@/firebase';
 import { registrationFees as defaultTickets } from '@/lib/data';
@@ -36,7 +36,7 @@ type Ticket = {
 export default function AdminTicketsPage() {
   const firestore = useFirestore();
   const { toast } = useToast();
-  const ticketsRef = firestore ? collection(firestore, 'tickets') : null;
+  const ticketsRef = useMemo(() => firestore ? collection(firestore, 'tickets') : null, [firestore]);
   const { data: ticketsData, isLoading: isTicketsLoading } = useCollection(ticketsRef);
 
   const [editedTickets, setEditedTickets] = useState<Ticket[]>([]);

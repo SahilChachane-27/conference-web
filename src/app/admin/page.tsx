@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -32,7 +32,7 @@ type ConferenceFormValues = z.infer<typeof conferenceSchema>;
 export default function AdminPage() {
   const firestore = useFirestore();
   const { toast } = useToast();
-  const configRef = firestore ? doc(firestore, 'config', 'main') : null;
+  const configRef = useMemo(() => firestore ? doc(firestore, 'config', 'main') : null, [firestore]);
   const { data: configData, isLoading: isConfigLoading } = useDoc(configRef);
 
   const {
