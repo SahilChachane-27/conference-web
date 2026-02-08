@@ -15,8 +15,9 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { FirebaseClientProvider } from '@/firebase/client-provider';
 
-export default function LoginPage() {
+function LoginPageContent() {
   const auth = useAuth();
   const router = useRouter();
   const { toast } = useToast();
@@ -85,4 +86,13 @@ export default function LoginPage() {
       </Card>
     </div>
   );
+}
+
+
+export default function LoginPage() {
+    return (
+        <FirebaseClientProvider>
+            <LoginPageContent />
+        </FirebaseClientProvider>
+    )
 }
