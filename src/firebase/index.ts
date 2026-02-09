@@ -8,13 +8,10 @@ import { useUser } from './auth/use-user';
 import { FirebaseProvider, useFirebase, useFirebaseApp, useAuth, useFirestore } from './provider';
 import { FirebaseClientProvider } from './client-provider';
 
-function initializeFirebase(): { app: FirebaseApp; auth: Auth; firestore: Firestore } {
+function initializeFirebase(): { app: FirebaseApp | null; auth: Auth | null; firestore: Firestore | null } {
   if (typeof window === 'undefined') {
-    // On the server, we return dummy instances.
-    const app = { name: '[SERVER]', options: {} } as FirebaseApp;
-    const auth = {} as Auth;
-    const firestore = {} as Firestore;
-    return { app, auth, firestore };
+    // On the server, we return null instances.
+    return { app: null, auth: null, firestore: null };
   }
 
   const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
